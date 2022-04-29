@@ -23,7 +23,8 @@ void UBaseHealthComponent::BeginPlay()
 	// ...
 	CurrentHealth = MaxHealth;
 	GetOwner()->OnTakeAnyDamage.AddDynamic(this,&UBaseHealthComponent::DamageActor);
-	OnDeath.AddDynamic(this, &UBaseHealthComponent::KillActor);
+	if(DestroyOwnerOnDeath)
+		OnDeath.AddDynamic(this, &UBaseHealthComponent::KillActor);
 }
 
 
