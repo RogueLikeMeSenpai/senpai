@@ -1,0 +1,5 @@
+@RD /S /Q ".\Binaries"
+@RD /S /Q ".\Build"
+@RD /S /Q ".\Intermediate"
+@RD /S /Q ".\Saved"
+@DEL /S /Q ".\senpai.sln"
