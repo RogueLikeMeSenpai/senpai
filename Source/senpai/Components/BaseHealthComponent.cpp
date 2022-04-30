@@ -22,7 +22,7 @@ void UBaseHealthComponent::BeginPlay()
 
 	// ...
 	CurrentHealth = MaxHealth;
-	GetOwner()->OnTakeAnyDamage.AddDynamic(this,&UBaseHealthComponent::DamageActor);
+	GetOwner()->OnTakeAnyDamage.AddDynamic(this, &UBaseHealthComponent::DamageActor);
 	if(DestroyOwnerOnDeath)
 		OnDeath.AddDynamic(this, &UBaseHealthComponent::KillActor);
 }
@@ -32,13 +32,14 @@ void UBaseHealthComponent::DamageActor(AActor* DamagedActor, float Damage, const
 	AController* InstigatedBy, AActor* DamageCauser)
 {
 	ReceiveDamage(Damage);
-	UE_LOG(LogTemp,Warning,TEXT("Got %f Damage"), Damage);
+	UE_LOG(LogTemp, Warning, TEXT("Got %f Damage"), Damage);
 }
 
 void UBaseHealthComponent::KillActor(AActor* DeadActor)
 {
-	UE_LOG(LogTemp,Warning,TEXT("%s died!"),*GetName());
-	GetOwner()->Destroy();
+	UE_LOG(LogTemp, Warning, TEXT("%s died!"), *GetName());
+	GetOwner()->OnTakeAnyDamage.RemoveAll(this);
+	//GetOwner()->Destroy();
 }
 
 // Called every frame
@@ -53,12 +54,13 @@ void UBaseHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 void UBaseHealthComponent::ReceiveDamage(float Damage)
 {
 	CurrentHealth -= Damage;
-	CurrentHealth = FMath::Clamp(CurrentHealth,0.f,MaxHealth);
-	UE_LOG(LogTemp,Warning,TEXT("%s got %f damage"),*GetName(),Damage);
+	CurrentHealth = FMath::Clamp(CurrentHealth, 0.f, MaxHealth);
+	UE_LOG(LogTemp, Warning, TEXT("%s got %f damage"), *GetName(), Damage);
 	if(CurrentHealth <= 0.f)
 	{
 		//Dead
-		UE_LOG(LogTemp,Warning,TEXT("%s should die"),*GetName());
+		UE_LOG(LogTemp, Warning, TEXT("%s should die"), *GetName());
+		GetOwner()->OnTakeAnyDamage.RemoveAll(this);
 		OnDeath.Broadcast(GetOwner());
 	}
 }
