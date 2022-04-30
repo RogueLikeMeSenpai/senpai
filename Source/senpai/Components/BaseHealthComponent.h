@@ -22,10 +22,13 @@ public:
 	
 protected:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Health")
-	float MaxHealth;
+	float MaxHealth = 100;
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Health")
 	float CurrentHealth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Health")
+	bool DestroyOwnerOnDeath = false;
 	
 	// Called when the game starts
 	virtual void BeginPlay() override;

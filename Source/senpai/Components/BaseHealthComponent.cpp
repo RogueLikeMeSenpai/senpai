@@ -23,7 +23,8 @@ void UBaseHealthComponent::BeginPlay()
 	// ...
 	CurrentHealth = MaxHealth;
 	GetOwner()->OnTakeAnyDamage.AddDynamic(this, &UBaseHealthComponent::DamageActor);
-	OnDeath.AddDynamic(this, &UBaseHealthComponent::KillActor);
+	if(DestroyOwnerOnDeath)
+		OnDeath.AddDynamic(this, &UBaseHealthComponent::KillActor);
 }
 
 
@@ -59,6 +60,7 @@ void UBaseHealthComponent::ReceiveDamage(float Damage)
 	{
 		//Dead
 		UE_LOG(LogTemp, Warning, TEXT("%s should die"), *GetName());
+		GetOwner()->OnTakeAnyDamage.RemoveAll(this);
 		OnDeath.Broadcast(GetOwner());
 	}
 }
