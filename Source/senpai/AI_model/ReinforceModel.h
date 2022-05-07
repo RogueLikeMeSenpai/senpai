@@ -20,19 +20,19 @@ public:
 	UReinforceModel();
    
     UFUNCTION(BlueprintCallable, Category = "AImodel")
-    FString createEnemy() const;
+    FString createEnemy();
 
     UFUNCTION(BlueprintCallable, Category = "AImodel")
-    TArray<int> enemyToIntArray(FString enemy) const;
+    TArray<int> enemyToIntArray(const FString enemy) const;
 
     UFUNCTION(BlueprintCallable, Category = "AImodel")
-    void giveReward(FString enemyIn, double reward);
+    void giveReward(const FString enemyIn, double reward);
 
     UFUNCTION(BlueprintCallable, Category = "AImodel")
     TMap<FString, double> getQtable() const;
 
     UFUNCTION(BlueprintCallable, Category = "AImodel")
-    void setQtable(TMap<FString, double> Qtable);
+    void setQtable(const TMap<FString, double> Qtable);
 
     UFUNCTION(BlueprintCallable, Category = "AImodel")
     FString printQtable() const;

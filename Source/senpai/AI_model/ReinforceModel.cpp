@@ -82,7 +82,7 @@ void UReinforceModel::setQtable(TMap<FString, double> Qtable) {
 }
 
 
-FString UReinforceModel::createEnemy() const {
+FString UReinforceModel::createEnemy() {
     FString enemy = blankEnemy;
     FString enemyTmp;
     for (int i = 0; i < m_LayerCount;++i) {
@@ -103,7 +103,7 @@ FString UReinforceModel::createEnemy() const {
 }
 
 
-TArray<int> UReinforceModel::enemyToIntArray(FString enemy) const {
+TArray<int> UReinforceModel::enemyToIntArray(const FString enemy) const {
     int enemyInt = FCString::Atoi(*enemy);;
     TArray<int> enemyArr;
     enemyArr.Init(0, m_TagCount);
@@ -117,7 +117,7 @@ TArray<int> UReinforceModel::enemyToIntArray(FString enemy) const {
 
 }
 
-void UReinforceModel::giveReward(FString enemyIn, double reward) {
+void UReinforceModel::giveReward(const FString enemyIn, double reward) {
     //TODO: bias and learning rate for reward
     assert(QtableContains(enemyIn));
     TArray<FNestedStringArray> possEnemy;
