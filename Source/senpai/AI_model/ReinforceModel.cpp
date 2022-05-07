@@ -4,7 +4,7 @@
 #include "ReinforceModel.h"
 
 // Sets default values for this component's properties
-UReinforceModel::UReinforceModel() : m_LayerCount(3), m_TagCount(8), m_Qtable({})
+UReinforceModel::UReinforceModel() : m_Qtable({}), m_LayerCount(3), m_TagCount(8)
 {
     m_Layers.Init(FNestedIntArray(), 3);
     blankEnemy = "00000000";
@@ -98,25 +98,39 @@ FString UReinforceModel::createEnemy() const {
         enemy[rolledTag] = (char)((int)enemy[rolledTag] + 1);
     }
     
-    return FString(enemy);
+    return FString(*enemy);
+  
+}
+
+
+TArray<int> UReinforceModel::enemyToIntArray(FString enemy) const {
+    int enemyInt = FCString::Atoi(*enemy);;
+    TArray<int> enemyArr;
+    enemyArr.Init(0, m_TagCount);
+
+    for (int i = m_TagCount - 1; i >= 0;--i) {
+        enemyArr[i] = enemyInt % 10; // get last digit
+        enemyInt /= 10;
+    }
+
+    return enemyArr;
 
 }
 
 void UReinforceModel::giveReward(FString enemyIn, double reward) {
     //TODO: bias and learning rate for reward
-    FString enemyInStd(TCHAR_TO_UTF8(*enemyIn));
-    assert(QtableContains(enemyInStd));
+    assert(QtableContains(enemyIn));
     TArray<FNestedStringArray> possEnemy;
     possEnemy.Init(FNestedStringArray(), m_LayerCount + 1);
-    possEnemy[m_LayerCount].A.Add(enemyInStd);
-    m_Qtable.Add(enemyInStd, *m_Qtable.Find(enemyInStd) + reward);
+    possEnemy[m_LayerCount].A.Add(enemyIn);
+    m_Qtable.Add(enemyIn, *m_Qtable.Find(enemyIn) + reward);
     for (int i = m_LayerCount - 1; i >= 0;--i) { // propagate backwards
         for (int tag_back : m_Layers[i].A) { // revert each action on enemy
             for (FString enemy : possEnemy[i + 1].A) {
                 enemy[tag_back] = (char)((int)enemy[tag_back] - 1); //decrease number at position
                 if (QtableContains(enemy)) { // check if reverting tag yields possible enemy
                     // check if already in possible enemies
-                    if (!possEnemy[i].A.Find(enemy)) {
+                    if (!possEnemy[i].A.Contains(enemy)) {
                         possEnemy[i].A.Add(enemy);
                     }
                     TArray<double> Qvalues; //Q values of all possible next enemies
@@ -135,6 +149,32 @@ void UReinforceModel::giveReward(FString enemyIn, double reward) {
             }
         }
     }
+}
+
+FString UReinforceModel::printQtable() const {
+    FString QtableString = "";
+    TArray<FNestedStringArray> possEnemy;
+    possEnemy.Init(FNestedStringArray(), m_LayerCount + 1);
+    for (auto const& pair : m_Qtable) {
+        FString enemy = pair.Key;
+        int activeTags = 0;
+        for (auto c : enemy) {
+            activeTags += ((int)c - (int)'0');
+        }
+        FString entry = "{" + pair.Key + ": " + FString::SanitizeFloat(pair.Value) + "}\n";
+        possEnemy[activeTags].A.Add(entry);
+    }
+    for (int i = 0; i <= m_LayerCount;++i) {
+
+        for (FString entry : possEnemy[i].A) {
+            for (int j = 0; j < i;++j) {
+                QtableString += "    ";
+            }
+            QtableString += entry;
+        }
+    }
+    QtableString += "\n";
+    return QtableString;
 }
 
 
@@ -177,12 +217,7 @@ TArray<double> UReinforceModel::cumsum(const TArray<double> pvalues) const {
 int UReinforceModel::rollFromProb(const TArray<double> pvalues) const {
     int i = 0;
     TArray<double> cumpvalues = cumsum(pvalues);
-    //from: https://en.cppreference.com/w/cpp/numeric/random/uniform_real_distribution
-    //std::random_device rd;
-    //std::mt19937 gen(rd());
-    //std::uniform_real_distribution<> dis(0.0, 1.0);
-    double roll = (double)FMath::RandRange(0, 1);
-    //double roll = (double)dis(gen);
+    double roll = (double)FMath::RandRange(0., 1.);
     for (double cump : cumpvalues) {
         if (roll > cump) ++i;
     }

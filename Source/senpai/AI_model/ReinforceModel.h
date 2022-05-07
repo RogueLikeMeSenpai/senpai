@@ -1,13 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-#include <iostream>
 #include <assert.h>  
 #include "Math/UnrealMathUtility.h"
 #include "CoreMinimal.h"
+#include "Core.h"
 #include "Components/ActorComponent.h"
 #include "ReinforceModel.generated.h"
-
 
 
 
@@ -24,7 +23,20 @@ public:
     FString createEnemy() const;
 
     UFUNCTION(BlueprintCallable, Category = "AImodel")
+    TArray<int> enemyToIntArray(FString enemy) const;
+
+    UFUNCTION(BlueprintCallable, Category = "AImodel")
     void giveReward(FString enemyIn, double reward);
+
+    UFUNCTION(BlueprintCallable, Category = "AImodel")
+    TMap<FString, double> getQtable() const;
+
+    UFUNCTION(BlueprintCallable, Category = "AImodel")
+    void setQtable(TMap<FString, double> Qtable);
+
+    UFUNCTION(BlueprintCallable, Category = "AImodel")
+    FString printQtable() const;
+
 
 protected:
 	// Called when the game starts
@@ -43,12 +55,6 @@ protected:
 
     //create all possible enemies in Qtable
     void initQtable();
-
-    TMap<FString, double> getQtable() const;
-
-    void setQtable(TMap<FString, double> Qtable);
-
-    void printLayers() const;
 
     // helper functions
     TArray<double> softmax(const TArray<double> Qvalues) const;
