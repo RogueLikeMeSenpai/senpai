@@ -19,6 +19,7 @@ public:
 	UFUNCTION(BlueprintCallable,BlueprintImplementableEvent)
 	void Attack();
 
+	UFUNCTION(BlueprintCallable)
 	bool CanAttack();
 
 protected:
@@ -26,6 +27,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	float CooldownTime = 1;
 
+	UPROPERTY(EditAnywhere)
 	FTimerHandle CooldownResetTimer;
 
 	bool bCanAttack;
