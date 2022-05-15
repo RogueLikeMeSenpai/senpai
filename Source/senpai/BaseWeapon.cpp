@@ -21,8 +21,13 @@ ABaseWeapon::ABaseWeapon()
 
 void ABaseWeapon::PlayAttackEffects(FTransform Location)
 {
-	if(!AttackEffect) return;
-	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), AttackEffect, Location);
+	if (AttackEffect) {
+		// This spawns the chosen effect on the owning WeaponMuzzle SceneComponent
+		UNiagaraComponent* NiagaraComp = UNiagaraFunctionLibrary::SpawnSystemAttached(AttackEffect, MeshComp, NAME_None, FVector(0.f), FRotator(0.f), EAttachLocation::Type::KeepRelativeOffset, true);
+		// Parameters can be set like this (see documentation for further info) - the names and type must match the user exposed parameter in the Niagara System
+		//NiagaraComp->SetNiagaraVariableFloat(FString("StrengthCoef"), CoefStrength);
+	}
+
 }
 
 void ABaseWeapon::Attack_Implementation()
@@ -32,7 +37,7 @@ void ABaseWeapon::Attack_Implementation()
 	UE_LOG(LogTemp,Warning,TEXT("Attack Parent called"));
 	bCanAttack = false;
 	GetWorldTimerManager().SetTimer(TimerHandle_TimeBetweenAttacks,this,&ABaseWeapon::ResetCooldown,Cooldown,false);
-	
+	PlayAttackEffects(FTransform::Identity);
 }
 
 void ABaseWeapon::ResetCooldown()
