@@ -18,6 +18,8 @@ public:
 	// Sets default values for this actor's properties
 	ABaseWeapon();
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	APawn* WeaponOwner;
 protected:
 
 	UPROPERTY( EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
@@ -29,7 +31,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UNiagaraSystem* AttackEffect;
 	
-	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	float BaseDamage;
 
 	UFUNCTION(BlueprintCallable)
@@ -37,11 +39,13 @@ protected:
 
 	void ResetCooldown();
 	
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	float Cooldown;
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite)
 	bool bCanAttack;
+
+	
 	
 	FTimerHandle TimerHandle_TimeBetweenAttacks;
 	
