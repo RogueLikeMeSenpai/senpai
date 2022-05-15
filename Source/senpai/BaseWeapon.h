@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraComponent.h"
+
 #include "BaseWeapon.generated.h"
 
 UCLASS()
@@ -24,7 +27,7 @@ protected:
 	TSubclassOf<UDamageType> DamageType;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-	UParticleSystem* AttackEffect;
+	UNiagaraSystem* AttackEffect;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
 	float BaseDamage;
