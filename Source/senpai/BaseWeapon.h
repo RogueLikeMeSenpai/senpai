@@ -35,7 +35,7 @@ protected:
 	float BaseDamage;
 
 	UFUNCTION(BlueprintCallable)
-	void PlayAttackEffects(FTransform Location);
+	void PlayAttackEffects();
 
 	void ResetCooldown();
 	
