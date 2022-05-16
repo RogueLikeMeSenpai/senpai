@@ -19,17 +19,16 @@ ABaseWeapon::ABaseWeapon()
 	bCanAttack = true;
 }
 
-void ABaseWeapon::PlayAttackEffects(FTransform Location)
+void ABaseWeapon::PlayAttackEffects()
 {
 	if (AttackEffect) {
-		// This spawns the chosen effect on the owning WeaponMuzzle SceneComponent
 		UNiagaraComponent* NiagaraComp = UNiagaraFunctionLibrary::SpawnSystemAttached(AttackEffect, MeshComp, NAME_None, FVector(0.f), FRotator(0.f), EAttachLocation::Type::KeepRelativeOffset, true);
 		// Parameters can be set like this (see documentation for further info) - the names and type must match the user exposed parameter in the Niagara System
 		//NiagaraComp->SetNiagaraVariableFloat(FString("StrengthCoef"), CoefStrength);
 	}
 
 }
-
+// Should always be calles last to set cooldown timer
 void ABaseWeapon::Attack_Implementation()
 {
 	if(!bCanAttack) return;
@@ -37,7 +36,7 @@ void ABaseWeapon::Attack_Implementation()
 	UE_LOG(LogTemp,Warning,TEXT("Attack Parent called"));
 	bCanAttack = false;
 	GetWorldTimerManager().SetTimer(TimerHandle_TimeBetweenAttacks,this,&ABaseWeapon::ResetCooldown,Cooldown,false);
-	PlayAttackEffects(FTransform::Identity);
+	//PlayAttackEffects(FTransform::Identity);
 }
 
 void ABaseWeapon::ResetCooldown()
