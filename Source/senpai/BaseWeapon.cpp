@@ -58,3 +58,12 @@ void ABaseWeapon::Tick(float DeltaTime)
 
 }
 
+void ABaseWeapon::TriggerDamageDealt(float Damage, AActor* DamagedActor)
+{
+	OnDealtDamage.Broadcast(Damage, DamagedActor);
+}
+
+//void ABaseWeapon::DealtDamage()
+//{
+//	UE_LOG(LogTemp, Display, TEXT("Damage Dealt"));
+//}

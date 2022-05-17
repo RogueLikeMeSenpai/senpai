@@ -7,7 +7,12 @@
 #include "NiagaraFunctionLibrary.h"
 #include "NiagaraComponent.h"
 
+#include "Delegates/Delegate.h"
 #include "BaseWeapon.generated.h"
+
+
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDealtDamageSignature, float, Damage, AActor*, DamagedActor);
 
 UCLASS()
 class SENPAI_API ABaseWeapon : public AActor
@@ -20,6 +25,11 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	APawn* WeaponOwner;
+
+
+	UPROPERTY(BlueprintAssignable, Category = "Weapon")
+	FDealtDamageSignature OnDealtDamage;
+
 protected:
 
 	UPROPERTY( EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
@@ -36,6 +46,11 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 	void PlayAttackEffects();
+
+	UFUNCTION(BlueprintCallable, Category = "Weapon")
+	void TriggerDamageDealt(float Damage, AActor* DamagedActor);
+
+	
 
 	void ResetCooldown();
 	
