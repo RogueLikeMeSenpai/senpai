@@ -12,7 +12,7 @@ ABaseWeapon::ABaseWeapon()
 	PrimaryActorTick.bCanEverTick = true;
 	MeshComp =CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
 	//MeshComp->SetupAttachment(RootComponent);
-	//RootComponent = MeshComp;
+	RootComponent = MeshComp;
 
 	Cooldown = 1;
 	BaseDamage = 50;
