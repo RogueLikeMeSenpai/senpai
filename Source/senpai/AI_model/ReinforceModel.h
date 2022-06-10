@@ -42,10 +42,13 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+    
     TMap<FString, double> m_Qtable;
     TArray<FNestedIntArray> m_Layers;
     unsigned short m_LayerCount;
     unsigned short m_TagCount;
+    float m_maxQvalue;
+    float m_minQvalue;
     FString blankEnemy;
     
 

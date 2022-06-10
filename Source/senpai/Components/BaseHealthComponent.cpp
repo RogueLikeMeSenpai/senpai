@@ -32,12 +32,12 @@ void UBaseHealthComponent::DamageActor(AActor* DamagedActor, float Damage, const
 	AController* InstigatedBy, AActor* DamageCauser)
 {
 	ReceiveDamage(Damage);
-	UE_LOG(LogTemp, Warning, TEXT("Got %f Damage"), Damage);
+	//UE_LOG(LogTemp, Warning, TEXT("Got %f Damage"), Damage);
 }
 
 void UBaseHealthComponent::KillActor(AActor* DeadActor)
 {
-	UE_LOG(LogTemp, Warning, TEXT("%s died!"), *GetName());
+	//UE_LOG(LogTemp, Warning, TEXT("%s died!"), *GetName());
 	GetOwner()->OnTakeAnyDamage.RemoveAll(this);
 	//GetOwner()->Destroy();
 }
@@ -55,12 +55,12 @@ void UBaseHealthComponent::ReceiveDamage(float Damage)
 {
 	CurrentHealth -= Damage;
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0.f, MaxHealth);
-	UE_LOG(LogTemp, Warning, TEXT("%s got %f damage"), *GetName(), Damage);
+	//UE_LOG(LogTemp, Warning, TEXT("%s got %f damage"), *GetName(), Damage);
 	OnHealthChanged.Broadcast(GetOwner());
 	if(CurrentHealth <= 0.f)
 	{
 		//Dead
-		UE_LOG(LogTemp, Warning, TEXT("%s should die"), *GetName());
+		//UE_LOG(LogTemp, Warning, TEXT("%s should die"), *GetName());
 		GetOwner()->OnTakeAnyDamage.RemoveAll(this);
 		OnDeath.Broadcast(GetOwner());
 	}

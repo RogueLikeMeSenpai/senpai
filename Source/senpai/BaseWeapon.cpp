@@ -33,7 +33,7 @@ void ABaseWeapon::Attack_Implementation()
 {
 	if(!bCanAttack) return;
 
-	UE_LOG(LogTemp,Warning,TEXT("Attack Parent called"));
+	//UE_LOG(LogTemp,Warning,TEXT("Attack Parent called"));
 	bCanAttack = false;
 	GetWorldTimerManager().SetTimer(TimerHandle_TimeBetweenAttacks,this,&ABaseWeapon::ResetCooldown,Cooldown,false);
 	//PlayAttackEffects(FTransform::Identity);

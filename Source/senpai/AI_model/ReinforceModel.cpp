@@ -4,7 +4,8 @@
 #include "ReinforceModel.h"
 
 // Sets default values for this component's properties
-UReinforceModel::UReinforceModel() : m_Qtable({}), m_LayerCount(3), m_TagCount(8)
+UReinforceModel::UReinforceModel() 
+    : m_Qtable({}), m_LayerCount(3), m_TagCount(8), m_maxQvalue(5.), m_minQvalue(-5.)
 {
     m_Layers.Init(FNestedIntArray(), 3);
     blankEnemy = "00000000";
@@ -123,7 +124,10 @@ void UReinforceModel::giveReward(const FString enemyIn, double reward) {
     TArray<FNestedStringArray> possEnemy;
     possEnemy.Init(FNestedStringArray(), m_LayerCount + 1);
     possEnemy[m_LayerCount].A.Add(enemyIn);
-    m_Qtable.Add(enemyIn, *m_Qtable.Find(enemyIn) + reward);
+    float newQvalue = *m_Qtable.Find(enemyIn) + reward;
+    if (newQvalue > m_maxQvalue) newQvalue = m_maxQvalue;
+    if (newQvalue < m_minQvalue) newQvalue = m_minQvalue;
+    m_Qtable.Add(enemyIn, newQvalue);
     for (int i = m_LayerCount - 1; i >= 0;--i) { // propagate backwards
         for (int tag_back : m_Layers[i].A) { // revert each action on enemy
             for (FString enemy : possEnemy[i + 1].A) {
