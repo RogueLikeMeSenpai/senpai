@@ -14,9 +14,13 @@ ABaseWeapon::ABaseWeapon()
 	//MeshComp->SetupAttachment(RootComponent);
 	RootComponent = MeshComp;
 
-	Cooldown = 1;
-	BaseDamage = 50;
-	bCanAttack = true;
+	PrimaryCooldown = 1;
+	PrimaryBaseDamage = 50;
+	bCanUsePrimaryAttack = true;
+
+	SecondaryCooldown = 2;
+	SecondaryBaseDamage = 100;
+	bCanUseSecondaryAttack = true;
 }
 
 void ABaseWeapon::PlayAttackEffects()
@@ -29,19 +33,44 @@ void ABaseWeapon::PlayAttackEffects()
 
 }
 // Should always be calles last to set cooldown timer
-void ABaseWeapon::Attack_Implementation()
+void ABaseWeapon::UsePrimaryAttack_Implementation()
 {
-	if(!bCanAttack) return;
+	if(!bCanUsePrimaryAttack) return;
 
-	//UE_LOG(LogTemp,Warning,TEXT("Attack Parent called"));
-	bCanAttack = false;
-	GetWorldTimerManager().SetTimer(TimerHandle_TimeBetweenAttacks,this,&ABaseWeapon::ResetCooldown,Cooldown,false);
+	//UE_LOG(LogTemp,Warning,TEXT("UsePrimaryAttack Parent called"));
+	bCanUsePrimaryAttack = false;
+	GetWorldTimerManager().SetTimer(TimerHandle_ResetTimer,this,&ABaseWeapon::ResetPrimaryCooldown,PrimaryCooldown,false);
 	//PlayAttackEffects(FTransform::Identity);
 }
 
-void ABaseWeapon::ResetCooldown()
+void ABaseWeapon::UseSecondaryAttack_Implementation()
 {
-	bCanAttack = true;
+	if(!bCanUseSecondaryAttack) return;
+
+	bCanUseSecondaryAttack = false;
+
+	GetWorldTimerManager().SetTimer(TimerHandle_SecondaryResetTimer, this , &ABaseWeapon::ResetSecondaryCooldown,SecondaryCooldown,false);
+}
+
+void ABaseWeapon::EndPrimaryAttack_Implementation()
+{
+	
+}
+
+void ABaseWeapon::EndSecondaryAttack_Implementation()
+{
+	
+}
+
+
+void ABaseWeapon::ResetPrimaryCooldown()
+{
+	bCanUsePrimaryAttack = true;
+}
+
+void ABaseWeapon::ResetSecondaryCooldown()
+{
+	bCanUseSecondaryAttack = true;
 }
 
 // Called when the game starts or when spawned

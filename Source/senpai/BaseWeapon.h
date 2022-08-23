@@ -41,8 +41,6 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UNiagaraSystem* AttackEffect;
 	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-	float BaseDamage;
 
 	UFUNCTION(BlueprintCallable)
 	void PlayAttackEffects();
@@ -50,19 +48,33 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 	void TriggerDamageDealt(float Damage, AActor* DamagedActor);
 
-	
+	void ResetPrimaryCooldown();
 
-	void ResetCooldown();
+	void ResetSecondaryCooldown();
 	
+	//###Primary attack variables###
+
+	//Base damage for primary attack
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	float PrimaryBaseDamage;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	float Cooldown;
-
+	float PrimaryCooldown;
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite)
-	bool bCanAttack;
+	bool bCanUsePrimaryAttack;
 
-	
-	
-	FTimerHandle TimerHandle_TimeBetweenAttacks;
+	FTimerHandle TimerHandle_ResetTimer;
+
+	//###Secondary attack variables###
+
+	//Base damage for secondary attack
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	float SecondaryBaseDamage;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	float SecondaryCooldown;
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite)
+	bool bCanUseSecondaryAttack;
+
+	FTimerHandle TimerHandle_SecondaryResetTimer;
 	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -70,8 +82,23 @@ protected:
 public:	
 	// Called every frame
 
+	//Starts the primary attack
 	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
-	void Attack();
+	void UsePrimaryAttack();
+
+	//Starts the secondary attack
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void UseSecondaryAttack();
+
+	//Used to finalize the attack (ending tracing or similar effects)
+	//usage is optional
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void EndPrimaryAttack();
+	//Used to finalize the attack (ending tracing or similar effects)
+	//usage is optional
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void EndSecondaryAttack();
+
 	
 	virtual void Tick(float DeltaTime) override;
 
