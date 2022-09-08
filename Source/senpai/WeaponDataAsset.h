@@ -10,18 +10,18 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType)
 class SENPAI_API UWeaponDataAsset : public UDataAsset
 {
 	GENERATED_BODY()
 	
 	public:
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	TSubclassOf<ABaseWeapon> WeaponType;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	UAnimMontage* PrimaryAttackMontage;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	UAnimMontage* SecondaryAttackMontage;
 
 	
