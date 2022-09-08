@@ -7,6 +7,13 @@
 #include "Engine/DataAsset.h"
 #include "WeaponDataAsset.generated.h"
 
+
+UENUM(BlueprintType)
+enum class EWeaponSocket: uint8{
+	LEFT,
+	RIGHT
+};
+
 /**
  * 
  */
@@ -24,6 +31,8 @@ class SENPAI_API UWeaponDataAsset : public UDataAsset
 	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	UAnimMontage* SecondaryAttackMontage;
 
+	UPROPERTY(EditAnywhere,BlueprintReadOnly)
+	EWeaponSocket HandSocket;
 	
 
 };
