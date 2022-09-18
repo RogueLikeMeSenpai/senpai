@@ -62,7 +62,7 @@ protected:
     void add2Layer(unsigned short iLayer, TArray<unsigned int> tagNumbers);
 
     // helper functions
-    TArray<double> softmax(const TArray<double> Qvalues) const;
+    TArray<double> softmax(const TArray<double> Qvalues, const double beta) const;
 
     TArray<double> cumsum(const TArray<double> pvalues) const;
 
