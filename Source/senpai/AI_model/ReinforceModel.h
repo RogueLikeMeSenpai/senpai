@@ -18,6 +18,11 @@ class SENPAI_API UReinforceModel : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UReinforceModel();
+
+
+    //create/set all possible enemies in Qtable with 0
+    UFUNCTION(BlueprintCallable, Category = "AImodel")
+    void initQtable();
    
     UFUNCTION(BlueprintCallable, Category = "AImodel")
     FString createEnemy();
@@ -56,11 +61,8 @@ protected:
 
     void add2Layer(unsigned short iLayer, TArray<unsigned int> tagNumbers);
 
-    //create all possible enemies in Qtable
-    void initQtable();
-
     // helper functions
-    TArray<double> softmax(const TArray<double> Qvalues) const;
+    TArray<double> softmax(const TArray<double> Qvalues, const double beta) const;
 
     TArray<double> cumsum(const TArray<double> pvalues) const;
 
