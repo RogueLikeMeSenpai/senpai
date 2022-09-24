@@ -134,7 +134,18 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 	if (!bIsUsingGamepad)
 	{
 		FHitResult hit;
-		UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetHitResultUnderCursor(ECC_WorldStatic, true, hit);
+		FVector WorldOrigin;
+		FVector WorldDirection;
+		FVector2D ScreenPosition;
+		FCollisionQueryParams CollisionQueryParams;
+		CollisionQueryParams.AddIgnoredActor(this);
+		const APlayerController* controller = Cast<APlayerController>(GetController());
+		controller->GetMousePosition(ScreenPosition.X,ScreenPosition.Y);
+		if (UGameplayStatics::DeprojectScreenToWorld(controller, ScreenPosition, WorldOrigin, WorldDirection) == true)
+		{
+			GetWorld()->LineTraceSingleByChannel(hit, WorldOrigin, WorldOrigin + WorldDirection * CameraBoom->TargetArmLength*2, ECC_WorldStatic, CollisionQueryParams);
+		}
+		//UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetHitResultUnderCursor(ECC_WorldStatic, true, hit);
 		FVector location = hit.Location;
 		FRotator lookAt = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), location);
 		SetActorRotation(FRotator(0, lookAt.Yaw, 0));
