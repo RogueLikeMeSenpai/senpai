@@ -4,22 +4,24 @@
 
 #include "CoreMinimal.h"
 #include "AImodel.h"
-#include "ReinforceModel.generated.h"
+#include "DriftingBandits.generated.h"
 
-
+/**
+ * 
+ */
 UCLASS(Blueprintable, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-class SENPAI_API UReinforceModel : public UAImodel
+class SENPAI_API UDriftingBandits : public UAImodel
 {
 	GENERATED_BODY()
 
-public:	
-	// Sets default values for this component's properties
-	UReinforceModel();
-
+public:
+    // Sets default values for this component's properties
+    UDriftingBandits();
 
     //create/set all possible enemies in Qtable with 0
+
     void initQtable();
-   
+
     FString createEnemy();
 
     void giveReward(const FString enemyIn, double reward);
@@ -29,7 +31,6 @@ public:
     TMap<FString, double> getQtable() const;
 
     void setQtable(const TMap<FString, double> Qtable);
-
 
     TArray<double> getQArray() const;
 
@@ -48,33 +49,19 @@ public:
     void setIndex2Name(const TArray<FString> i2n);
 
 
+
+
 protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
+    TMap<FString, unsigned short> m_Name2Index;
+    TArray<FString> m_Index2Name;
+    TArray<double> m_Qtable;
+    TArray<int> m_Ntable;
+    TArray<int> m_Ttable;
+    unsigned short m_EnemyCount;
+    double m_rho;
+    double m_beta;
 
     
-    TMap<FString, double> m_Qtable;
-    TArray<FNestedIntArray> m_Layers;
-    unsigned short m_LayerCount;
-    unsigned short m_TagCount;
-    float m_maxQvalue;
-    float m_minQvalue;
-    FString blankEnemy;
-    
-
-    void add2Layer(unsigned short iLayer, unsigned int tagNumber);
-
-    void add2Layer(unsigned short iLayer, TArray<unsigned int> tagNumbers);
-
-    bool QtableContains(FString enemy);
-
-    bool checkQtableValid(const TMap<FString, double> Qtable) const;
-
-
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-		
+    void addEnemy(FString enemy);
+	
 };
-
