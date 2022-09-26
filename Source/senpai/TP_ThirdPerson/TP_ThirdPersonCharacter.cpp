@@ -143,7 +143,7 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 		controller->GetMousePosition(ScreenPosition.X,ScreenPosition.Y);
 		if (UGameplayStatics::DeprojectScreenToWorld(controller, ScreenPosition, WorldOrigin, WorldDirection) == true)
 		{
-			GetWorld()->LineTraceSingleByChannel(hit, WorldOrigin, WorldOrigin + WorldDirection * CameraBoom->TargetArmLength*2, ECC_WorldStatic, CollisionQueryParams);
+			GetWorld()->LineTraceSingleByChannel(hit, WorldOrigin, WorldOrigin + WorldDirection * CameraBoom->TargetArmLength*8, ECC_WorldStatic, CollisionQueryParams);
 		}
 		//UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetHitResultUnderCursor(ECC_WorldStatic, true, hit);
 		FVector location = hit.Location;
