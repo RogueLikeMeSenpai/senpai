@@ -40,7 +40,9 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UNiagaraSystem* AttackEffect;
-	
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	UTexture2D* WeaponIcon;
 
 	UFUNCTION(BlueprintCallable)
 	void PlayAttackEffects();

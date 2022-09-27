@@ -93,7 +93,7 @@ FString UReinforceModel::createEnemy() {
             enemyTmp[tag] = (char)((int)enemyTmp[tag] + 1); //increase number at position
             Qvalues.Add(*m_Qtable.Find(enemyTmp));
         }
-        TArray<double> pvalues = softmax(Qvalues); //softmax on Q values 
+        TArray<double> pvalues = softmax(Qvalues, 1); //softmax on Q values 
         int iRolledTag = rollFromProb(pvalues); //roll according to probability distribution
         int rolledTag = m_Layers[i].A[iRolledTag];
         enemy[rolledTag] = (char)((int)enemy[rolledTag] + 1);
@@ -183,7 +183,7 @@ FString UReinforceModel::printQtable() const {
 
 
 // helper functions
-TArray<double> UReinforceModel::softmax(const TArray<double> Qvalues) const {
+TArray<double> UReinforceModel::softmax(const TArray<double> Qvalues, const double beta) const {
     // from https://slaystudy.com/implementation-of-softmax-activation-function-in-c-c/
     TArray<double> softmax;
     double m, sum, constant;
@@ -197,12 +197,12 @@ TArray<double> UReinforceModel::softmax(const TArray<double> Qvalues) const {
 
     sum = 0.0;
     for (double Qi : Qvalues) {
-        sum += exp(Qi - m);
+        sum += exp(beta * (Qi - m));
     }
 
-    constant = m + log(sum);
+    constant = beta * m + log(sum);
     for (double Qi : Qvalues) {
-        softmax.Add(exp(Qi - constant));
+        softmax.Add(exp(beta * Qi - constant));
     }
 
     return softmax;
