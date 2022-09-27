@@ -40,9 +40,6 @@ class SENPAI_API UWeaponDataAsset : public UDataAsset
 	float SecondaryAttackPlayRate = 1;
 
 	UPROPERTY(EditAnywhere,BlueprintReadOnly)
-	bool IsSecondaryStationary= false;
-
-	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	EWeaponSocket HandSocket;
 	
 
