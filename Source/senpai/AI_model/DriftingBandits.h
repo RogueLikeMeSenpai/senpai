@@ -63,5 +63,6 @@ protected:
 
     
     void addEnemy(FString enemy);
+    void populateEnemies();
 	
 };

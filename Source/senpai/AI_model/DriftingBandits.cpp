@@ -9,8 +9,7 @@ UDriftingBandits::UDriftingBandits() : m_Name2Index({}) {
     m_rho = 0.7;
     m_beta = 1.0;
     m_TagCount = 8;
-    addEnemy("11000001");
-    addEnemy("10100001");
+    populateEnemies();
 }
 
 void UDriftingBandits::addEnemy(FString enemy) {
@@ -24,6 +23,28 @@ void UDriftingBandits::addEnemy(FString enemy) {
     m_Name2Index.Add(enemy, m_EnemyCount);
     m_EnemyCount++;
   
+}
+
+/*
+populate according to current plan:
+only 1 weapon from tags [0,2]
+only 1 behavior from tags [3,4]
+only 1 armor from tags [5,7]
+*/
+void UDriftingBandits::populateEnemies() {
+    FString blankenemy = "00000000";
+    for (int weapon = 0; weapon <= 2;++weapon) {
+        for (int behavior = 3; behavior <= 4;++behavior) { 
+            for (int armor = 5; armor <= 7;++armor) { 
+                FString enemy = blankenemy;
+                enemy[weapon] = (char)((int)enemy[weapon] + 1);
+                enemy[behavior] = (char)((int)enemy[behavior] + 1);
+                enemy[armor] = (char)((int)enemy[armor] + 1);
+                addEnemy(enemy);
+            }
+        }
+    }
+
 }
 
 //wipe previous learnings
@@ -54,7 +75,7 @@ FString UDriftingBandits::printQtable() const {
     FString QtableString = "";
     TArray<double> pvalues = softmax(m_Qtable, m_beta); //softmax on Q values 
     for (int i = 0; i < m_EnemyCount;++i) {
-        QtableString += m_Index2Name[i] + "   Q: ";
+        QtableString += m_Index2Name[i] + "   n: " + FString::FromInt(m_Ntable[i]) + "   ,   Q: ";
         if (m_Qtable[i] < 0) QtableString += FString::SanitizeFloat(round(m_Qtable[i] * 10000) / 10000., 4);
         else QtableString += "  " + FString::SanitizeFloat(round(m_Qtable[i] * 10000) / 10000., 4);
         QtableString += "   ,   p: " + FString::SanitizeFloat(round(pvalues[i]*10000)/100.,2) + "%\n";
