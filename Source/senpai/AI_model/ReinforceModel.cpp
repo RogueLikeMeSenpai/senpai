@@ -13,9 +13,9 @@ UReinforceModel::UReinforceModel()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-    add2Layer(0, { 0,1,7 });
-    add2Layer(1, { 2,3 });
-    add2Layer(2, { 4,5,6,7 });
+    add2Layer(0, { 0,1,2 });
+    add2Layer(1, { 3,4 });
+    add2Layer(2, { 5,6,7 });
     initQtable();
 }
 
