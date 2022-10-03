@@ -41,6 +41,4 @@ class SENPAI_API UWeaponDataAsset : public UDataAsset
 
 	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	EWeaponSocket HandSocket;
-	
-
 };
