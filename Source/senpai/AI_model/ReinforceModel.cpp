@@ -13,9 +13,9 @@ UReinforceModel::UReinforceModel()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-    add2Layer(0, { 0,1,7 });
-    add2Layer(1, { 2,3 });
-    add2Layer(2, { 4,5,6,7 });
+    add2Layer(0, { 0,1,2 });
+    add2Layer(1, { 3,4 });
+    add2Layer(2, { 5,6,7 });
     initQtable();
 }
 
@@ -103,21 +103,6 @@ FString UReinforceModel::createEnemy() {
   
 }
 
-
-TArray<int> UReinforceModel::enemyToIntArray(const FString enemy) const {
-    int enemyInt = FCString::Atoi(*enemy);;
-    TArray<int> enemyArr;
-    enemyArr.Init(0, m_TagCount);
-
-    for (int i = m_TagCount - 1; i >= 0;--i) {
-        enemyArr[i] = enemyInt % 10; // get last digit
-        enemyInt /= 10;
-    }
-
-    return enemyArr;
-
-}
-
 void UReinforceModel::giveReward(const FString enemyIn, double reward) {
     //TODO: bias and learning rate for reward
     assert(QtableContains(enemyIn));
@@ -182,53 +167,6 @@ FString UReinforceModel::printQtable() const {
 }
 
 
-// helper functions
-TArray<double> UReinforceModel::softmax(const TArray<double> Qvalues, const double beta) const {
-    // from https://slaystudy.com/implementation-of-softmax-activation-function-in-c-c/
-    TArray<double> softmax;
-    double m, sum, constant;
-
-    m = -INFINITY;
-    for (double Qi : Qvalues) {
-        if (m < Qi) {
-            m = Qi;
-        }
-    }
-
-    sum = 0.0;
-    for (double Qi : Qvalues) {
-        sum += exp(beta * (Qi - m));
-    }
-
-    constant = beta * m + log(sum);
-    for (double Qi : Qvalues) {
-        softmax.Add(exp(beta * Qi - constant));
-    }
-
-    return softmax;
-}
-
-TArray<double> UReinforceModel::cumsum(const TArray<double> pvalues) const {
-    TArray<double> cumsum;
-    double psum = 0.;
-    for (double p : pvalues) {
-        psum += p;
-        cumsum.Add(psum);
-    }
-    return cumsum;
-}
-
-int UReinforceModel::rollFromProb(const TArray<double> pvalues) const {
-    int i = 0;
-    TArray<double> cumpvalues = cumsum(pvalues);
-    double roll = (double)FMath::RandRange(0., 1.);
-    for (double cump : cumpvalues) {
-        if (roll > cump) ++i;
-    }
-    if (i == pvalues.Num()) --i; // for rare case, that RNG rolls 1.0 and softmax has a rounding error
-    return i;
-}
-
 bool UReinforceModel::QtableContains(FString enemy) {
     return (m_Qtable.Contains(enemy));
 }
@@ -249,7 +187,40 @@ bool UReinforceModel::checkQtableValid(const TMap<FString, double> Qtable) const
         }
     }
     return true;
-};
+}
+
+
+TArray<double> UReinforceModel::getQArray() const {
+    return TArray<double> {};
+}
+
+void UReinforceModel::setQArray(const TArray<double> Qarray) {
+    
+}
+
+TArray<int> UReinforceModel::getNArray() const {
+    return TArray<int> {};
+}
+
+void UReinforceModel::setNArray(const TArray<int> Narray) {
+   
+}
+
+TArray<int> UReinforceModel::getTArray() const {
+    return TArray<int> {};
+}
+
+void UReinforceModel::setTArray(const TArray<int> Tarray) {
+    
+}
+
+TArray<FString> UReinforceModel::getIndex2Name() const {
+    return TArray<FString> {};
+}
+
+void UReinforceModel::setIndex2Name(const TArray<FString> i2n) {
+
+}
 
 
 

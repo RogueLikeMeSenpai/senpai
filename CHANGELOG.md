@@ -1,5 +1,13 @@
 # ChangeLog
 
+## 0.0.3
+
+### Changes
+- added basic primary combos for sword and hammer
+- added basic dash (left shift, gamepad face button left)
+
+### Fixes
+
 ## 0.0.2
 
 ### Changes
