@@ -24,21 +24,27 @@ class SENPAI_API UWeaponDataAsset : public UDataAsset
 	
 	public:
 
-	UPROPERTY(EditAnywhere,BlueprintReadOnly)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Type")
 	TSubclassOf<ABaseWeapon> WeaponType;
 
-	UPROPERTY(EditAnywhere,BlueprintReadOnly)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Primary")
 	UAnimMontage* PrimaryAttackMontage;
 
-	UPROPERTY(EditAnywhere,BlueprintReadOnly)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Primary")
 	float PrimaryAttackPlayRate = 1;
 
-	UPROPERTY(EditAnywhere,BlueprintReadOnly)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Primary")
+	float PrimaryStaminaCost = 10;
+
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Secondary")
 	UAnimMontage* SecondaryAttackMontage;
 
-	UPROPERTY(EditAnywhere,BlueprintReadOnly)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Secondary")
 	float SecondaryAttackPlayRate = 1;
 
-	UPROPERTY(EditAnywhere,BlueprintReadOnly)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Secondary")
+	float SecondaryStaminaCost = 20;
+
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = "Location")
 	EWeaponSocket HandSocket;
 };
