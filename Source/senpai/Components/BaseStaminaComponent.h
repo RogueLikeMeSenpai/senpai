@@ -44,5 +44,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	float GetCurrentStamina() const;
+
+	UFUNCTION(BlueprintCallable)
+	bool HasEnoughStaminaFor(float Amount);
 		
 };

@@ -42,6 +42,11 @@ bool UBaseStaminaComponent::UseStamina(float Amount)
 	return true;
 }
 
+bool UBaseStaminaComponent::HasEnoughStaminaFor(float Amount)
+{
+	return CurrentStamina >= Amount;
+}
+
 float UBaseStaminaComponent::GetCurrentStamina() const
 {
 	return CurrentStamina;
