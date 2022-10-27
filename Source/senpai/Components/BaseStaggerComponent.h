@@ -21,21 +21,26 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FStaggerSignature OnFullStagger;
 	UPROPERTY(BlueprintAssignable)
-	FStaggerChangedSignature OnStaggerValueChanged;
+	FStaggerChangedSignature OnStaggerValueIncreased;
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Stagger")
 	float MaxStaggerValue = 100;
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite,Category="Stagger")
 	float CurrentStaggerValue = 0;
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Stagger")
 	float DeteriorationRate = 1;
 
 	UFUNCTION()
 	void StaggerActor(AActor *DamagedActor, float Damage, const class UDamageType *DamageType, class AController *InstigatedBy, AActor *DamageCauser);
 
 	void IncreaseStaggerValue(float Amount);
+
+	public:	
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
 };
