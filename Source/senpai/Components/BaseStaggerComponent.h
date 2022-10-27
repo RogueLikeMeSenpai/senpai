@@ -6,7 +6,8 @@
 #include "Components/ActorComponent.h"
 #include "BaseStaggerComponent.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStaggerSignature, AActor *, StaggeredActor);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStaggerFullSignature, AActor *, StaggeredActor);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStaggerResetSignature, AActor *, StaggeredActor);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStaggerChangedSignature, AActor *, StaggeredActor);
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
@@ -19,19 +20,21 @@ public:
 	UBaseStaggerComponent();
 
 	UPROPERTY(BlueprintAssignable)
-	FStaggerSignature OnFullStagger;
+	FStaggerFullSignature OnFullStagger;
 	UPROPERTY(BlueprintAssignable)
 	FStaggerChangedSignature OnStaggerValueIncreased;
+	UPROPERTY(BlueprintAssignable)
+	FStaggerResetSignature OnStaggerReset;
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Stagger")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stagger")
 	float MaxStaggerValue = 100;
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite,Category="Stagger")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Stagger")
 	float CurrentStaggerValue = 0;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite,Category="Stagger")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stagger")
 	float DeteriorationRate = 1;
 
 	UFUNCTION()
@@ -39,8 +42,18 @@ protected:
 
 	void IncreaseStaggerValue(float Amount);
 
-	public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float TimeToResetAfterFull = 1;
 
+	FTimerHandle resetHandle;
+
+	UFUNCTION()
+	void ResetValue();
+
+	UPROPERTY(VisibleAnywhere)
+	bool isFullyStaggered = false;
+
+public:
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 };

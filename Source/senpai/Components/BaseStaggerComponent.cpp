@@ -31,22 +31,31 @@ void UBaseStaggerComponent::StaggerActor(AActor *DamagedActor, float Damage, con
 
 void UBaseStaggerComponent::IncreaseStaggerValue(float Amount)
 {
+	if(isFullyStaggered) return;
 	CurrentStaggerValue += Amount;
 	CurrentStaggerValue = FMath::Clamp(CurrentStaggerValue, 0.f, MaxStaggerValue);
 	OnStaggerValueIncreased.Broadcast(GetOwner());
 
-	if (CurrentStaggerValue > MaxStaggerValue)
+	if (CurrentStaggerValue == MaxStaggerValue)
 	{
 		OnFullStagger.Broadcast(GetOwner());
-		CurrentStaggerValue = 0;
+		//CurrentStaggerValue = 0;
+		isFullyStaggered = true;
+		GetWorld()->GetTimerManager().SetTimer(resetHandle,this,&UBaseStaggerComponent::ResetValue,TimeToResetAfterFull,false);
 	}
 }
 
 void UBaseStaggerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+	if(isFullyStaggered) return;
 	CurrentStaggerValue -= DeteriorationRate * DeltaTime;
 	CurrentStaggerValue  = FMath::Clamp(CurrentStaggerValue,0,MaxStaggerValue);
 
+}
+
+void UBaseStaggerComponent::ResetValue(){
+	CurrentStaggerValue = 0;
+	isFullyStaggered = false;
+	OnStaggerReset.Broadcast(GetOwner());
 }
