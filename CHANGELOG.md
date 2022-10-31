@@ -1,5 +1,16 @@
 # ChangeLog
 
+## 0.0.3
+
+### Changes
+- added basic primary combos with root motion for sword and hammer
+- added basic dash (left shift, gamepad face button left)
+- added stamina system
+- reworked ai model
+- added hammer for enemies
+
+### Fixes
+
 ## 0.0.2
 
 ### Changes
