@@ -38,7 +38,7 @@ protected:
 	float DeteriorationRate = 1;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stagger")
-	TMap<TSubclassOf<UDamageType>,float> DmageTypeMultipliers; 
+	TMap<TSubclassOf<UDamageType>,float> DamageTypeMultipliers; 
 
 	UFUNCTION()
 	void StaggerActor(AActor *DamagedActor, float Damage, const class UDamageType *DamageType, class AController *InstigatedBy, AActor *DamageCauser);

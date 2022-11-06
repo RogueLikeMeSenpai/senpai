@@ -26,7 +26,13 @@ void UBaseStaggerComponent::BeginPlay()
 void UBaseStaggerComponent::StaggerActor(AActor *DamagedActor, float Damage, const class UDamageType *DamageType, class AController *InstigatedBy, AActor *DamageCauser)
 {
 	// Check Damage Type here for stagger multiplier
-	IncreaseStaggerValue(Damage);
+	float Multiplier = 1;
+	//return value is pointer, because if key not found return value is null
+	float* MapValue = DamageTypeMultipliers.Find(DamageType->StaticClass());
+
+	if(MapValue) Multiplier = *MapValue;
+
+	IncreaseStaggerValue(Damage * Multiplier);
 }
 
 void UBaseStaggerComponent::IncreaseStaggerValue(float Amount)
