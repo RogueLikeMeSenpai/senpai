@@ -28,7 +28,7 @@ void UBaseStaggerComponent::StaggerActor(AActor *DamagedActor, float Damage, con
 	// Check Damage Type here for stagger multiplier
 	float Multiplier = 1;
 	//return value is pointer, because if key not found return value is null
-	float* MapValue = DamageTypeMultipliers.Find(DamageType->StaticClass());
+	float* MapValue = DamageTypeMultipliers.Find(DamageType->GetClass());
 
 	if(MapValue) Multiplier = *MapValue;
 
