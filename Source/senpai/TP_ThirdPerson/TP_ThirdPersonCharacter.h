@@ -25,6 +25,10 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
 
+	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	bool Dashing;
+
 protected:
 
 	/** Called for forwards/backward input */

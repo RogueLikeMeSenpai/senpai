@@ -148,7 +148,9 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 		//UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetHitResultUnderCursor(ECC_WorldStatic, true, hit);
 		FVector location = hit.Location;
 		FRotator lookAt = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), location);
-		SetActorRotation(FRotator(0, lookAt.Yaw, 0));
+		if (!Dashing) {
+			SetActorRotation(FRotator(0, lookAt.Yaw, 0));
+		}
 	}
 	else
 	{
@@ -165,7 +167,9 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 			                                                         GetActorLocation() + CameraRelativeLocation);
 			// UE_LOG(LogTemp, Warning, TEXT("relative vector: %f %f %f"), CameraRelativeLocation.X,
 			//        CameraRelativeLocation.Y, CameraRelativeLocation.Z)
-			SetActorRotation(FRotator(0, lookAt.Yaw, 0));
+			if (!Dashing) {
+				SetActorRotation(FRotator(0, lookAt.Yaw, 0));
+			}
 		}
 		else
 		{
