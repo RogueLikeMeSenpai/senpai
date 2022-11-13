@@ -1,0 +1,1217 @@
+﻿Log file open, 11/13/22 15:02:53
+LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
+LogWindows: File 'aqProf.dll' does not exist
+LogProfilingDebugging: Loading WinPixEventRuntime.dll for PIX profiling (from ../../../Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64).
+LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi.dll' does not exist
+LogWindows: Failed to load 'VtuneApi32e.dll' (GetLastError=126)
+LogWindows: File 'VtuneApi32e.dll' does not exist
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogConsoleResponse: Display: Failed to find resolution value strings in scalability ini. Falling back to default.
+LogCore: Display: UnrealTraceServer: Unable to launch the trace store with '"../../../Engine//Binaries/Win64/UnrealTraceServer.exe" fork' (00000002)
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.0-CL-20979098"
+LogCsvProfiler: Display: Metadata set : engineversion="5.0.3-20979098+++UE5+Release-5.0"
+LogCsvProfiler: Display: Metadata set : commandline="" senpai""
+LogCsvProfiler: Display: Metadata set : os="Windows 10 (21H1) [10.0.19043.2251] "
+LogCsvProfiler: Display: Metadata set : cpu="AuthenticAMD|AMD Ryzen 7 5800X 8-Core Processor"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : loginid="685217344889e3c4fcf353938d24e6a2"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogIoDispatcher: Display: Reading toc: ../../../senpai/Content/Paks/global.utoc
+LogIoDispatcher: Display: Toc signature hash: 0000000000000000000000000000000000000000
+LogIoDispatcher: Display: Mounting container '../../../senpai/Content/Paks/global.utoc' in location slot 0
+LogPakFile: Display: Initialized I/O dispatcher file backend. Mounted the global container: ../../../senpai/Content/Paks/global.utoc
+LogPakFile: Display: Found Pak file ../../../senpai/Content/Paks/senpai-Windows.pak attempting to mount.
+LogPakFile: Display: Mounting pak file ../../../senpai/Content/Paks/senpai-Windows.pak.
+LogIoDispatcher: Display: Reading toc: ../../../senpai/Content/Paks/senpai-Windows.utoc
+LogIoDispatcher: Display: Toc signature hash: 0000000000000000000000000000000000000000
+LogIoDispatcher: Display: Mounting container '../../../senpai/Content/Paks/senpai-Windows.utoc' in location slot 0
+LogPakFile: Display: Mounted IoStore container "../../../senpai/Content/Paks/senpai-Windows.utoc"
+LogPakFile: Display: Mounted Pak file '../../../senpai/Content/Paks/senpai-Windows.pak', mount point: '../../../'
+LogPlatformFile: Not using cached read wrapper
+LogStats: Stats thread started at 0.568131
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +1:00, Platform Override: ''
+LogInit: Session CrashGUID >====================================================
+         Session CrashGUID >   UECC-Windows-31DF5DC24F468D4FA8960CBE6C1241CA
+         Session CrashGUID >====================================================
+LogPluginManager: Mounting Engine plugin Paper2D
+LogPluginManager: Mounting Engine plugin AISupport
+LogPluginManager: Mounting Engine plugin EnvironmentQueryEditor
+LogPluginManager: Mounting Engine plugin ControlRig
+LogPluginManager: Mounting Engine plugin ControlRigSpline
+LogPluginManager: Mounting Engine plugin IKRig
+LogPluginManager: Mounting Engine plugin Bridge
+LogPluginManager: Mounting Engine plugin CameraShakePreviewer
+LogPluginManager: Mounting Engine plugin GameplayCameras
+LogPluginManager: Mounting Engine plugin OodleNetwork
+LogPluginManager: Mounting Engine plugin AnimationSharing
+LogPluginManager: Mounting Engine plugin PixWinPlugin
+LogPluginManager: Mounting Engine plugin PluginUtils
+LogPluginManager: Mounting Engine plugin UObjectPlugin
+LogPluginManager: Mounting Engine plugin AssetManagerEditor
+LogPluginManager: Mounting Engine plugin EditorScriptingUtilities
+LogPluginManager: Mounting Engine plugin FacialAnimation
+LogPluginManager: Mounting Engine plugin GeometryMode
+LogPluginManager: Mounting Engine plugin SequencerAnimTools
+LogPluginManager: Mounting Engine plugin SpeedTreeImporter
+LogPluginManager: Mounting Engine plugin DatasmithContent
+LogPluginManager: Mounting Engine plugin VariantManagerContent
+LogPluginManager: Mounting Engine plugin AssetPlacementEdMode
+LogPluginManager: Mounting Engine plugin AutomationUtils
+LogPluginManager: Mounting Engine plugin BackChannel
+LogPluginManager: Mounting Engine plugin ChaosCloth
+LogPluginManager: Mounting Engine plugin ChaosClothEditor
+LogPluginManager: Mounting Engine plugin ChaosEditor
+LogPluginManager: Mounting Engine plugin ChaosNiagara
+LogPluginManager: Mounting Engine plugin ChaosSolverPlugin
+LogPluginManager: Mounting Engine plugin CharacterAI
+LogPluginManager: Mounting Engine plugin FullBodyIK
+LogPluginManager: Mounting Engine plugin GeometryCollectionPlugin
+LogPluginManager: Mounting Engine plugin OpenImageDenoise
+LogPluginManager: Mounting Engine plugin PlatformCrypto
+LogPluginManager: Mounting Engine plugin PythonScriptPlugin
+LogPluginManager: Mounting Engine plugin RawInput
+LogPluginManager: Mounting Engine plugin Niagara
+LogPluginManager: Mounting Engine plugin AlembicImporter
+LogPluginManager: Mounting Engine plugin AvfMedia
+LogPluginManager: Mounting Engine plugin ImgMedia
+LogPluginManager: Mounting Engine plugin MediaCompositing
+LogPluginManager: Mounting Engine plugin WebMMedia
+LogPluginManager: Mounting Engine plugin WmfMedia
+LogPluginManager: Mounting Engine plugin MeshPainting
+LogPluginManager: Mounting Engine plugin TcpMessaging
+LogPluginManager: Mounting Engine plugin UdpMessaging
+LogPluginManager: Mounting Engine plugin ActorSequence
+LogPluginManager: Mounting Engine plugin LevelSequenceEditor
+LogPluginManager: Mounting Engine plugin MatineeToLevelSequence
+LogPluginManager: Mounting Engine plugin SequencerScripting
+LogPluginManager: Mounting Engine plugin TemplateSequence
+LogPluginManager: Mounting Engine plugin OnlineServices
+LogPluginManager: Mounting Engine plugin OnlineBase
+LogPluginManager: Mounting Engine plugin OnlineSubsystem
+LogPluginManager: Mounting Engine plugin OnlineSubsystemNull
+LogPluginManager: Mounting Engine plugin OnlineSubsystemUtils
+LogPluginManager: Mounting Engine plugin LauncherChunkInstaller
+LogPluginManager: Mounting Engine plugin ActorLayerUtilities
+LogPluginManager: Mounting Engine plugin AndroidFileServer
+LogPluginManager: Mounting Engine plugin AndroidPermission
+LogPluginManager: Mounting Engine plugin AppleImageUtils
+LogPluginManager: Mounting Engine plugin ArchVisCharacter
+LogPluginManager: Mounting Engine plugin AssetTags
+LogPluginManager: Mounting Engine plugin AudioCapture
+LogPluginManager: Mounting Engine plugin AudioSynesthesia
+LogPluginManager: Mounting Engine plugin CableComponent
+LogPluginManager: Mounting Engine plugin ChunkDownloader
+LogPluginManager: Mounting Engine plugin CustomMeshComponent
+LogPluginManager: Mounting Engine plugin ExampleDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin GeometryCache
+LogPluginManager: Mounting Engine plugin GeometryProcessing
+LogPluginManager: Mounting Engine plugin GooglePAD
+LogPluginManager: Mounting Engine plugin LocationServicesBPLibrary
+LogPluginManager: Mounting Engine plugin MobilePatchingUtils
+LogPluginManager: Mounting Engine plugin ProceduralMeshComponent
+LogPluginManager: Mounting Engine plugin PropertyAccessEditor
+LogPluginManager: Mounting Engine plugin ResonanceAudio
+LogPluginManager: Mounting Engine plugin RuntimePhysXCooking
+LogPluginManager: Mounting Engine plugin SignificanceManager
+LogPluginManager: Mounting Engine plugin SoundFields
+LogPluginManager: Mounting Engine plugin Synthesis
+LogPluginManager: Mounting Engine plugin WebMMoviePlayer
+LogPluginManager: Mounting Engine plugin WindowsDeviceProfileSelector
+LogPluginManager: Mounting Engine plugin WindowsMoviePlayer
+LogPluginManager: Mounting Project plugin MovableAnimationSegments
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/2D/Paper2D/Content/' mounted to '/Paper2D/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Animation/ControlRig/Content/' mounted to '/ControlRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Animation/ControlRigSpline/Content/' mounted to '/ControlRigSpline/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Animation/IKRig/Content/' mounted to '/IKRig/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Bridge/Content/' mounted to '/Bridge/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Developer/AnimationSharing/Content/' mounted to '/AnimationSharing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Editor/GeometryMode/Content/' mounted to '/GeometryMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Editor/SpeedTreeImporter/Content/' mounted to '/SpeedTreeImporter/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Enterprise/DatasmithContent/Content/' mounted to '/DatasmithContent/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Experimental/AssetPlacementEdMode/Content/' mounted to '/AssetPlacementEdMode/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Experimental/ChaosClothEditor/Content/' mounted to '/ChaosClothEditor/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Experimental/ChaosNiagara/Content/' mounted to '/ChaosNiagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Experimental/ChaosSolverPlugin/Content/' mounted to '/ChaosSolverPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Experimental/FullBodyIK/Content/' mounted to '/FullBodyIK/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Experimental/GeometryCollectionPlugin/Content/' mounted to '/GeometryCollectionPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Experimental/PythonScriptPlugin/Content/' mounted to '/PythonScriptPlugin/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/FX/Niagara/Content/' mounted to '/Niagara/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Media/MediaCompositing/Content/' mounted to '/MediaCompositing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/MovieScene/SequencerScripting/Content/' mounted to '/SequencerScripting/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Runtime/AudioSynesthesia/Content/' mounted to '/AudioSynesthesia/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Runtime/GeometryProcessing/Content/' mounted to '/GeometryProcessing/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Runtime/ResonanceAudio/Content/' mounted to '/ResonanceAudio/'
+LogPackageName: Display: FPackageName: Mount point added: '../../../Engine/Plugins/Runtime/Synthesis/Content/' mounted to '/Synthesis/'
+LogPackageName: Display: FPackageName: Mount point added: '../../Plugins/MovableAnimationSegments/Content/' mounted to '/MovableAnimationSegments/'
+PixWinPlugin: PIX capture plugin failed to initialize! Check that the process is launched from PIX.
+LogInit: Using libcurl 7.55.1-DEV
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with OpenSSL/1.1.1
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+LogInit:  - LocalHostAddr = Default
+LogInit:  - BufferSize = 65536
+LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+LogOnline: OSS: Created online subsystem instance for: NULL
+LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+LogInit: Build: ++UE5+Release-5.0-CL-20979098
+LogInit: Engine Version: 5.0.3-20979098+++UE5+Release-5.0
+LogInit: Compatible Engine Version: 5.0.0-19505902+++UE5+Release-5.0
+LogInit: Net CL: 19505902
+LogInit: OS: Windows 10 (21H1) [10.0.19043.2251] (), CPU: AMD Ryzen 7 5800X 8-Core Processor             , GPU: NVIDIA GeForce RTX 3070 Ti
+LogInit: Compiled (64-bit): Jul  7 2022 02:24:55
+LogInit: Compiled with Visual C++: 19.29.30138.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE5+Release-5.0
+LogInit: Command Line: 
+LogInit: Base Directory: E:/Unreal/senpai/senpai-v0.2.0/Windows/senpai/Binaries/Win64/
+LogInit: Allocator: binned2
+LogInit: Installed Engine Build: 0
+LogDevObjectVersion: Number of dev versions registered: 36
+LogDevObjectVersion:   Dev-ControlRig (A7820CFB-20A7-4359-8C54-2C149623CF50): 13
+LogDevObjectVersion:   Dev-IKRig (F6DFBB78-BB50-A0E4-4018-B84D60CBAF23): 0
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 10
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 4
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 40
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 37
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 3
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 20
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 45
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 13
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 3
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogDevObjectVersion:   Private-Geometry (6EACA3D4-40EC-4CC1-B786-8BED09428FC5): 3
+LogDevObjectVersion:   Dev-AnimPhys (29E575DD-E0A3-4627-9D10-D276232CDCEA): 17
+LogDevObjectVersion:   Dev-Anim (AF43A65D-7FD3-4947-9873-3E8ED9C1BB05): 15
+LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC07): 1
+LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
+LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 59
+LogDevObjectVersion:   FortniteRelease (E7086368-6B23-4C58-8439-1B7016265E91): 3
+LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 10
+LogDevObjectVersion:   Dev-Niagara (F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC): 1
+LogDevObjectVersion:   Dev-Destruction (174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D): 10
+LogDevObjectVersion:   Dev-Physics-Ext (35F94A83-E258-406C-A318-09F59610247C): 41
+LogDevObjectVersion:   Dev-PhysicsMaterial-Chaos (B68FC16E-8B1B-42E2-B453-215C058844FE): 1
+LogDevObjectVersion:   Dev-CineCamera (B2E18506-4273-CFC2-A54E-F4BB758BBA07): 1
+LogDevObjectVersion:   Dev-VirtualProduction (64F58936-FD1B-42BA-BA96-7289D5D0FA4E): 1
+LogDevObjectVersion:   UE5-Main (697DD581-E64F-41AB-AA4A-51ECBEB7B628): 59
+LogDevObjectVersion:   UE5-Release (D89B5E42-24BD-4D46-8412-ACA8DF641779): 36
+LogDevObjectVersion:   UE5-PrivateFrosty (59DA5D52-1232-4948-B878-597870B8E98B): 8
+LogDevObjectVersion:   UE5-Dev-Cooker (26075A32-730F-4708-88E9-8C32F1599D05): 0
+LogDevObjectVersion:   Dev-MediaFramework (6F0ED827-A609-4895-9C91-998D90180EA4): 2
+LogDevObjectVersion:   UE5-Dev-LWCRendering (30D58BE3-95EA-4282-A6E3-B159D8EBB06A): 1
+LogInit: Presizing for max 2097152 objects, including 1 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogStreaming: Display: AsyncLoading2 - Created: Event Driven Loader: true, Async Loading Thread: true, Async Post Load: true
+LogStreaming: Display: AsyncLoading2 - Initialized
+LogInit: Object subsystem initialized
+LogConfig: CVar [[con.DebugLateDefault:1]] deferred - dummy variable created
+LogConfig: CVar [[con.DebugLateCheat:1]] deferred - dummy variable created
+LogConfig: CVar [[r.DetectAndWarnOfBadDrivers:0]] deferred - dummy variable created
+LogConfig: CVar [[LogNamedEventFilters:Frame *]] deferred - dummy variable created
+LogConfig: CVar [[framepro.ScopeMinTimeMicroseconds:10]] deferred - dummy variable created
+LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[con.DebugLateDefault:1]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[con.DebugLateCheat:1]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[r.DetectAndWarnOfBadDrivers:0]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[LogNamedEventFilters:Frame *]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[framepro.ScopeMinTimeMicroseconds:10]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererSettings] File [Engine]
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[VisualizeCalibrationColorMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationColor.PPM_DefaultCalibrationColor]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[VisualizeCalibrationGrayscaleMaterialPath:/Engine/EngineMaterials/PPM_DefaultCalibrationGrayscale.PPM_DefaultCalibrationGrayscale]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[MaxSkinBones:(Default=65536,PerPlatform=(("Mobile", 256)))]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.RendererOverrideSettings] File [Engine]
+[2022.11.13-14.02.53:901][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.StreamingSettings] File [Engine]
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[s.MaxPackageSummarySize:16384]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__SoundBase]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__MaterialInterface]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[FixedBootOrder:/Script/Engine/Default__DeviceProfileManager]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.GarbageCollectionSettings] File [Engine]
+[2022.11.13-14.02.53:901][  0]LogConfig: Applying CVar settings from Section [/Script/Engine.NetworkSettings] File [Engine]
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Average",ToolTip="Simulates average internet conditions")]] deferred - dummy variable created
+[2022.11.13-14.02.53:901][  0]LogConfig: CVar [[NetworkEmulationProfiles:(ProfileName="Bad",ToolTip="Simulates laggy internet conditions")]] deferred - dummy variable created
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [ViewDistanceQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [AntiAliasingQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [ShadowQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [GlobalIlluminationQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [ReflectionQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [PostProcessQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [TextureQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [EffectsQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [FoliageQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: Applying CVar settings from Section [ShadingQuality@3] File [Scalability]
+[2022.11.13-14.02.53:913][  0]LogConfig: CVar [[r.HairStrands.Interpolation.UseSingleGuide:0]] deferred - dummy variable created
+[2022.11.13-14.02.53:951][  0]LogD3D11RHI: Loaded GFSDK_Aftermath_Lib.x64.dll
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI: D3D11 min allowed feature level: 11_0
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI: D3D11 max allowed feature level: 11_1
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI: D3D11 adapters:
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI: Testing D3D11 Adapter 0:
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 3070 Ti
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     VendorId    : 10de
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     DeviceId    : 2482
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     SubSysId    : 146a10de
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     Revision    : 00a1
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     DedicatedVideoMemory : 8431599616 bytes
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     SharedSystemMemory : 17141121024 bytes
+[2022.11.13-14.02.53:953][  0]LogD3D11RHI:     AdapterLuid : 0 75705
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:    0. 'NVIDIA GeForce RTX 3070 Ti' (Feature Level 11_1)
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:       8041/0/16347 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:2, VendorId:0x10de
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI: Testing D3D11 Adapter 1:
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     Description : Microsoft Basic Render Driver
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     VendorId    : 1414
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     DeviceId    : 008c
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     SubSysId    : 0000
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     Revision    : 0000
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     DedicatedVideoMemory : 0 bytes
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     SharedSystemMemory : 17141121024 bytes
+[2022.11.13-14.02.54:043][  0]LogD3D11RHI:     AdapterLuid : 0 79359
+[2022.11.13-14.02.54:044][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_1)
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:       0/0/16347 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI: Chosen D3D11 Adapter:
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 3070 Ti
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     VendorId    : 10de
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     DeviceId    : 2482
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     SubSysId    : 146a10de
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     Revision    : 00a1
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     DedicatedVideoMemory : 8431599616 bytes
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     SharedSystemMemory : 17141121024 bytes
+[2022.11.13-14.02.54:045][  0]LogD3D11RHI:     AdapterLuid : 0 75705
+[2022.11.13-14.02.54:045][  0]LogInit: Selected Device Profile: [Windows]
+[2022.11.13-14.02.54:045][  0]LogDeviceProfileManager: Applying CVar settings loaded from the selected device profile: [Windows]
+[2022.11.13-14.02.54:045][  0]LogHAL: Display: Platform has ~ 32 GB [34282242048 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2022.11.13-14.02.54:045][  0]LogDeviceProfileManager: Going up to parent DeviceProfile []
+[2022.11.13-14.02.54:045][  0]LogConfig: Applying CVar settings from Section [Startup] File [../../../Engine/Config/ConsoleVariables.ini]
+[2022.11.13-14.02.54:045][  0]LogConfig: Applying CVar settings from Section [ConsoleVariables] File [Engine]
+[2022.11.13-14.02.54:045][  0]LogInit: Computer: DESKTOP-BRCMC28
+[2022.11.13-14.02.54:045][  0]LogInit: User: Alex
+[2022.11.13-14.02.54:045][  0]LogInit: CPU Page size=4096, Cores=8
+[2022.11.13-14.02.54:045][  0]LogInit: High frequency timer resolution =10.000000 MHz
+[2022.11.13-14.02.54:045][  0]LogMemory: Memory total: Physical=31.9GB (32GB approx)
+[2022.11.13-14.02.54:045][  0]LogMemory: Platform Memory Stats for Windows
+[2022.11.13-14.02.54:045][  0]LogMemory: Process Physical Memory: 143.48 MB used, 150.91 MB peak
+[2022.11.13-14.02.54:045][  0]LogMemory: Process Virtual Memory: 128.61 MB used, 128.61 MB peak
+[2022.11.13-14.02.54:045][  0]LogMemory: Physical Memory: 16267.64 MB used,  16426.46 MB free, 32694.09 MB total
+[2022.11.13-14.02.54:045][  0]LogMemory: Virtual Memory: 23075.62 MB used,  14482.47 MB free, 37558.09 MB total
+[2022.11.13-14.02.54:045][  0]LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+[2022.11.13-14.02.54:052][  0]LogWindows: WindowsPlatformFeatures enabled
+[2022.11.13-14.02.54:052][  0]LogInit: Physics initialised using underlying interface: Chaos
+[2022.11.13-14.02.54:053][  0]LogInit: Using OS detected language (en-GB).
+[2022.11.13-14.02.54:053][  0]LogInit: Using OS detected locale (en-GB).
+[2022.11.13-14.02.54:053][  0]LogTextLocalizationManager: No specific localization for 'en-GB' exists, so 'en' will be used for the language.
+[2022.11.13-14.02.54:073][  0]LogWindowsTextInputMethodSystem: Available input methods:
+[2022.11.13-14.02.54:073][  0]LogWindowsTextInputMethodSystem:   - German (Austria) - (Keyboard).
+[2022.11.13-14.02.54:073][  0]LogWindowsTextInputMethodSystem:   - English (United Kingdom) - (Keyboard).
+[2022.11.13-14.02.54:073][  0]LogWindowsTextInputMethodSystem:   - English (United States) - (Keyboard).
+[2022.11.13-14.02.54:073][  0]LogWindowsTextInputMethodSystem: Activated input method: German (Austria) - (Keyboard).
+[2022.11.13-14.02.54:092][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2022.11.13-14.02.54:092][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2022.11.13-14.02.54:107][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     GPU DeviceId: 0x2482 (for the marketing name, search the web for "GPU Device Id")
+[2022.11.13-14.02.54:108][  0]LogWindows: Attached monitors:
+[2022.11.13-14.02.54:108][  0]LogWindows:     resolution: 1920x1080, work area: (-1920, 0) -> (0, 1040), device: '\\.\DISPLAY1'
+[2022.11.13-14.02.54:108][  0]LogWindows:     resolution: 1920x1080, work area: (0, 0) -> (1920, 1040), device: '\\.\DISPLAY2' [PRIMARY]
+[2022.11.13-14.02.54:108][  0]LogWindows: Found 2 attached monitors.
+[2022.11.13-14.02.54:108][  0]LogWindows: EnumDisplayDevices:
+[2022.11.13-14.02.54:108][  0]LogWindows:    0. 'NVIDIA GeForce RTX 3070 Ti' (P:0 D:1), name: '\\.\DISPLAY1'
+[2022.11.13-14.02.54:108][  0]LogWindows:    1. 'NVIDIA GeForce RTX 3070 Ti' (P:1 D:1), name: '\\.\DISPLAY2'
+[2022.11.13-14.02.54:108][  0]LogWindows:    2. 'NVIDIA GeForce RTX 3070 Ti' (P:0 D:0), name: '\\.\DISPLAY3'
+[2022.11.13-14.02.54:108][  0]LogWindows:    3. 'NVIDIA GeForce RTX 3070 Ti' (P:0 D:0), name: '\\.\DISPLAY4'
+[2022.11.13-14.02.54:108][  0]LogWindows: DebugString: FoundDriverCount:4 
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce RTX 3070 Ti
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:   Driver Version: 516.01 (internal:31.0.15.1601, unified:516.01)
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:      Driver Date: 4-24-2022
+[2022.11.13-14.02.54:108][  0]LogRHI: Texture pool is 5628 MB (70% of 8041 MB)
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI: Creating D3DDevice using adapter:
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     Description : NVIDIA GeForce RTX 3070 Ti
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     VendorId    : 10de
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     DeviceId    : 2482
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     SubSysId    : 146a10de
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     Revision    : 00a1
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     DedicatedVideoMemory : 8431599616 bytes
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     DedicatedSystemMemory : 0 bytes
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     SharedSystemMemory : 17141121024 bytes
+[2022.11.13-14.02.54:108][  0]LogD3D11RHI:     AdapterLuid : 0 75705
+[2022.11.13-14.02.54:170][  0]LogD3D11RHI: RHI has support for 64 bit atomics
+[2022.11.13-14.02.54:170][  0]LogD3D11RHI: Async texture creation enabled
+[2022.11.13-14.02.54:170][  0]LogD3D11RHI: D3D11_MAP_WRITE_NO_OVERWRITE for dynamic buffer SRVs is supported
+[2022.11.13-14.02.54:170][  0]LogD3D11RHI: Array index from any shader is supported
+[2022.11.13-14.02.54:195][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
+[2022.11.13-14.02.54:195][  0]LogRHI: GeForceNow SDK initialized: 0
+[2022.11.13-14.02.54:199][  0]LogRendererCore: Ray tracing is disabled. Reason: r.RayTracing=0.
+[2022.11.13-14.02.54:200][  0]LogShaderLibrary: Display: Using IoDispatcher for shader code library Global. Total 4119 unique shaders.
+[2022.11.13-14.02.54:200][  0]LogShaderLibrary: Display: Cooked Context: Using Shared Shader Library Global
+[2022.11.13-14.02.54:200][  0]LogShaderLibrary: Display: Logical shader library 'Global' has been created, components 1
+[2022.11.13-14.02.54:200][  0]LogTemp: Display: Clearing the OS Cache
+[2022.11.13-14.02.54:211][  0]LogSlate: Using FreeType 2.10.0
+[2022.11.13-14.02.54:211][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2022.11.13-14.02.54:253][  0]LogShaderLibrary: Display: Using IoDispatcher for shader code library senpai. Total 1858 unique shaders.
+[2022.11.13-14.02.54:253][  0]LogShaderLibrary: Display: Cooked Context: Using Shared Shader Library senpai
+[2022.11.13-14.02.54:253][  0]LogShaderLibrary: Display: Logical shader library 'senpai' has been created, components 1
+[2022.11.13-14.02.54:253][  0]LogRHI: Display: Opened pipeline cache after state change and enqueued 0 of 0 tasks for precompile.
+[2022.11.13-14.02.54:253][  0]LogRHI: Display: Failed to open default shader pipeline cache for senpai using shader platform 0.
+[2022.11.13-14.02.54:253][  0]LogInit: Using OS detected language (en-GB).
+[2022.11.13-14.02.54:253][  0]LogInit: Using OS detected locale (en-GB).
+[2022.11.13-14.02.54:253][  0]LogTextLocalizationManager: No localization for 'en-GB' exists, so 'en' will be used for the language.
+[2022.11.13-14.02.54:253][  0]LogTextLocalizationManager: No localization for 'en-GB' exists, so 'en' will be used for the locale.
+[2022.11.13-14.02.54:253][  0]LogSlate: FontCache flush requested. Reason: Culture for localization was changed
+[2022.11.13-14.02.54:253][  0]LogSlate: FontCache flush requested. Reason: Culture for localization was changed
+[2022.11.13-14.02.54:254][  0]LogAssetRegistry: FAssetRegistry took 0.0007 seconds to start up
+[2022.11.13-14.02.54:326][  0]LogStreaming: Display: FlushAsyncLoading: 1 QueuedPackages, 0 AsyncPackages
+[2022.11.13-14.02.54:326][  0]LogInit: Selected Device Profile: [Windows]
+[2022.11.13-14.02.54:327][  0]LogDeviceProfileManager: Active device profile: [000001BC3344D600][000001BC1EC49D90 50] Windows
+[2022.11.13-14.02.54:327][  0]LogDeviceProfileManager: Profiles: [000001BC3344D600][000001BC1EC49D90 50] Windows, 
+[2022.11.13-14.02.54:327][  0]LogCsvProfiler: Display: Metadata set : deviceprofile="Windows"
+[2022.11.13-14.02.54:346][  0]LogNetVersion: senpai 1.0.0, NetCL: 19505902, EngineNetVer: 23, GameNetVer: 0 (Checksum: 2207301646)
+[2022.11.13-14.02.54:362][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2022.11.13-14.02.54:362][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2022.11.13-14.02.54:366][  0]LogPackageLocalizationCache: Processed 26 localized package path(s) for 1 prioritized culture(s) in 0.000070 seconds
+[2022.11.13-14.02.54:373][  0]LogMoviePlayer: Initializing movie player
+[2022.11.13-14.02.54:374][  0]LogNiagaraDebuggerClient: Niagara Debugger Client Initialized | Session: 50007BC246F046965A3752970C9F8679 | Instance: 45C7887C4A8C36CD45BB0E83614F9BD1 (DESKTOP-BRCMC28-15012).
+[2022.11.13-14.02.54:375][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2022.11.13-14.02.54:379][  0]LogUObjectArray: 17504 objects as part of root set at end of initial load.
+[2022.11.13-14.02.54:379][  0]LogUObjectArray: 8 objects are not in the root set, but can never be destroyed because they are in the DisregardForGC set.
+[2022.11.13-14.02.54:379][  0]LogUObjectAllocator: 3838000 out of 0 bytes used by permanent object pool.
+[2022.11.13-14.02.54:379][  0]LogUObjectArray: CloseDisregardForGC: 17504/17504 objects in disregard for GC pool
+[2022.11.13-14.02.54:380][  0]LogStreaming: Display: AsyncLoading2 - Thread Started: true, IsInitialLoad: false
+[2022.11.13-14.02.54:380][  0]LogEngine: Initializing Engine...
+[2022.11.13-14.02.54:381][  0]LogStats: UGameplayTagsManager::InitializeManager -  0.000 s
+[2022.11.13-14.02.54:394][  0]LogStreaming: Display: AsyncLoading2 - InitialLoad Finalized: 17221 script object entries in 471.18 KB
+[2022.11.13-14.02.54:395][  0]LogInit: Initializing FReadOnlyCVARCache
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: Initializing Audio Device Manager...
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: Loading Default Audio Settings Objects...
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: No default SoundConcurrencyObject specified (or failed to load).
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: Registering Engine Module Parameter Interfaces...
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: Audio Device Manager Initialized
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: Creating Audio Device:                 Id: 1, Scope: Shared, Realtime: True
+[2022.11.13-14.02.54:395][  0]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2022.11.13-14.02.54:395][  0]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2022.11.13-14.02.54:395][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2022.11.13-14.02.54:395][  0]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2022.11.13-14.02.54:395][  0]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2022.11.13-14.02.54:395][  0]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2022.11.13-14.02.54:395][  0]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: AudioDevice MaxSources: 32
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2022.11.13-14.02.54:395][  0]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2022.11.13-14.02.54:400][  0]LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+[2022.11.13-14.02.54:400][  0]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2022.11.13-14.02.54:464][  0]LogAudioMixer: Display: Using Audio Hardware Device Lautsprecher (Realtek(R) Audio)
+[2022.11.13-14.02.54:465][  0]LogAudioMixer: Display: Initializing Sound Submixes...
+[2022.11.13-14.02.54:465][  0]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2022.11.13-14.02.54:465][  0]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2022.11.13-14.02.54:466][  0]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=1
+[2022.11.13-14.02.54:466][  0]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=1
+[2022.11.13-14.02.54:467][  0]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=1
+[2022.11.13-14.02.54:467][  0]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=1
+[2022.11.13-14.02.54:467][  0]LogInit: FAudioDevice initialized.
+[2022.11.13-14.02.54:467][  0]LogNetVersion: Set ProjectVersion to 0.0.3. Version Checksum will be recalculated on next use.
+[2022.11.13-14.02.54:467][  0]LogInit: Texture streaming: Enabled
+[2022.11.13-14.02.54:467][  0]LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+[2022.11.13-14.02.54:472][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.11.13-14.02.54:473][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Untitled'.
+[2022.11.13-14.02.54:474][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.11.13-14.02.54:474][  0]LogInit: Display: Game Engine Initialized.
+[2022.11.13-14.02.54:475][  0]LogInit: Display: Starting Game.
+[2022.11.13-14.02.54:475][  0]LogNet: Browse: /Game/SenpAI/Maps/Map_Menu?Name=Player
+[2022.11.13-14.02.54:475][  0]LogLoad: LoadMap: /Game/SenpAI/Maps/Map_Menu?Name=Player
+[2022.11.13-14.02.54:475][  0]LogWorld: BeginTearingDown for /Temp/Untitled_0
+[2022.11.13-14.02.54:475][  0]LogWorld: UWorld::CleanupWorld for Untitled, bSessionEnded=true, bCleanupResources=true
+[2022.11.13-14.02.54:475][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.11.13-14.02.54:477][  0]LogStreaming: Display: 0.005 ms (0.002+0.002) ms for processing 27/27 objects in NotifyUnreachableObjects( Queued=0, Async=0). Removed 0/1 (77->77 tracked) packages and 0/26 (83->83 tracked) public exports.
+[2022.11.13-14.02.54:478][  0]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.11.13-14.02.54:479][  0]LogUObjectHash: Compacting FUObjectHashTables data took   0.33ms
+[2022.11.13-14.02.54:488][  0]LogAudio: Display: Audio Device (ID: 1) registered with world 'Map_Menu'.
+[2022.11.13-14.02.54:489][  0]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.11.13-14.02.54:490][  0]LogAIModule: Creating AISystem for world Map_Menu
+[2022.11.13-14.02.54:490][  0]LogLoad: Game class is 'GameMode'
+[2022.11.13-14.02.54:490][  0]LogWorld: Bringing World /Game/SenpAI/Maps/Map_Menu.Map_Menu up for play (max tick rate 0) at 2022.11.13-15.02.54
+[2022.11.13-14.02.54:490][  0]LogWorld: Bringing up level for play took: 0.000462
+[2022.11.13-14.02.54:491][  0]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2022.11.13-14.02.54:492][  0]LogGameMode: Display: Match State Changed from EnteringMap to WaitingToStart
+[2022.11.13-14.02.54:492][  0]LogGameState: Match State Changed from EnteringMap to WaitingToStart
+[2022.11.13-14.02.54:492][  0]LogGameMode: Display: Match State Changed from WaitingToStart to InProgress
+[2022.11.13-14.02.54:493][  0]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2022.11.13-14.02.54:493][  0]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> NoCapture
+[2022.11.13-14.02.54:494][  0]LogGameState: Match State Changed from WaitingToStart to InProgress
+[2022.11.13-14.02.54:494][  0]LogLoad: Took 0.018644 seconds to LoadMap(/Game/SenpAI/Maps/Map_Menu)
+[2022.11.13-14.02.54:494][  0]LogSlate: Took 0.000254 seconds to synchronously load lazily loaded font '../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.ufont' (162K)
+[2022.11.13-14.02.54:495][  0]LogSlate: Took 0.000209 seconds to synchronously load lazily loaded font '../../../Engine/Content/EngineFonts/Faces/RobotoBold.ufont' (160K)
+[2022.11.13-14.02.54:496][  0]LogViewport: Scene viewport resized to 1920x1080, mode WindowedFullscreen.
+[2022.11.13-14.02.54:533][  0]LogSlate: Took 0.000290 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2022.11.13-14.02.54:558][  0]LogRHI: Display: ShaderPipelineCache: Paused Batching. 1
+[2022.11.13-14.02.54:559][  0]LogPakFile: AllPaks IndexSizes: DirectoryHashSize=140792, PathHashSize=16, EntriesSize=19104, TotalSize=159912
+[2022.11.13-14.02.54:559][  0]LogRHI: Display: ShaderPipelineCache: Resumed Batching. 0
+[2022.11.13-14.02.54:559][  0]LogRHI: Display: ShaderPipelineCache: Batching Resumed.
+[2022.11.13-14.02.54:559][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2022.11.13-14.02.54:559][  0]LogLoad: (Engine Initialization) Total time: 1.39 seconds
+[2022.11.13-14.02.54:562][  0]LogRawInputWindows: QueryConnectedDevices found 12 devices
+[2022.11.13-14.02.54:563][  0]LogRawInputWindows: QueryConnectedDevices found 12 devices
+[2022.11.13-14.02.54:563][  0]LogRawInputWindows: Warning: Device was registered succesfully but not connected (Usage:4 UsagePage:1)
+[2022.11.13-14.02.54:563][  0]LogRawInputWindows: QueryConnectedDevices found 12 devices
+[2022.11.13-14.02.54:563][  0]LogRawInputWindows: Warning: Device was registered succesfully but not connected (Usage:5 UsagePage:1)
+[2022.11.13-14.02.54:565][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2022.11.13-14.02.54:571][  0]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.11.13-14.02.54:657][  0]LogSlate: Slate font cache was flushed
+[2022.11.13-14.02.54:659][  1]LogSlate: Took 0.000254 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2022.11.13-14.02.54:660][  1]LogSlate: Took 0.000174 seconds to synchronously load lazily loaded font '../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.ufont' (162K)
+[2022.11.13-14.02.54:660][  1]LogSlate: Took 0.000160 seconds to synchronously load lazily loaded font '../../../Engine/Content/EngineFonts/Faces/RobotoBold.ufont' (160K)
+[2022.11.13-14.02.56:056][644]LogViewport: Display: Viewport MouseLockMode Changed, DoNotLock -> LockOnCapture
+[2022.11.13-14.02.56:056][644]LogViewport: Display: Viewport MouseCaptureMode Changed, NoCapture -> CapturePermanently
+[2022.11.13-14.02.56:056][644]LogGameMode: Display: Match State Changed from InProgress to LeavingMap
+[2022.11.13-14.02.56:056][644]LogGameState: Match State Changed from InProgress to LeavingMap
+[2022.11.13-14.02.56:056][644]LogNet: Browse: /Game/Developers/Alex/Map_Burial_Chamber
+[2022.11.13-14.02.56:056][644]LogLoad: LoadMap: /Game/Developers/Alex/Map_Burial_Chamber
+[2022.11.13-14.02.56:056][644]LogWorld: BeginTearingDown for /Game/SenpAI/Maps/Map_Menu
+[2022.11.13-14.02.56:056][644]LogWorld: UWorld::CleanupWorld for Map_Menu, bSessionEnded=true, bCleanupResources=true
+[2022.11.13-14.02.56:056][644]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.11.13-14.02.56:096][644]LogStreaming: Display: 0.023 ms (0.008+0.014) ms for processing 197/197 objects in NotifyUnreachableObjects( Queued=0, Async=0). Removed 5/5 (82->77 tracked) packages and 19/192 (102->83 tracked) public exports.
+[2022.11.13-14.02.56:097][644]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.11.13-14.02.56:098][644]LogUObjectHash: Compacting FUObjectHashTables data took   0.33ms
+[2022.11.13-14.02.56:100][644]LogStreaming: Display: FlushAsyncLoading: 1 QueuedPackages, 0 AsyncPackages
+[2022.11.13-14.02.56:174][644]LogWorldPartition: Initial Data Layer Effective States Activated() Loaded()
+[2022.11.13-14.02.56:174][644]LogAudio: Display: Audio Device (ID: 1) registered with world 'Map_Burial_Chamber'.
+[2022.11.13-14.02.56:175][644]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.11.13-14.02.56:175][644]LogAIModule: Creating AISystem for world Map_Burial_Chamber
+[2022.11.13-14.02.56:175][644]LogWorldPartition: Display: WorldPartition initialize started...
+[2022.11.13-14.02.56:175][644]LogWorldPartition: Display: WorldPartition initialize took 44 us
+[2022.11.13-14.02.56:175][644]LogLoad: Game class is 'AlexTestMap_BP_C'
+[2022.11.13-14.02.56:200][644]LogWorld: Bringing World /Game/Developers/Alex/Map_Burial_Chamber.Map_Burial_Chamber up for play (max tick rate 0) at 2022.11.13-15.02.56
+[2022.11.13-14.02.56:211][644]LogWorld: Bringing up level for play took: 0.035403
+[2022.11.13-14.02.56:216][644]LogStreaming: Warning: Failed to read file '../../../senpai/Saved/SaveGames/AI_model.sav' error.
+[2022.11.13-14.02.56:216][644]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CapturePermanently_IncludingInitialMouseDown
+[2022.11.13-14.02.56:217][644]LogWorldPartition: New Streaming Source: BP_PlayerController_C_2147482444 -> Position: X=1470.000 Y=620.000 Z=362.013
+[2022.11.13-14.02.56:217][644]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2022.11.13-14.02.56:217][644]LogWorldPartition: UWorldPartitionStreamingPolicy: CellsToActivate(1), CellsToLoad(0), CellsToUnload(0)
+[2022.11.13-14.02.56:217][644]LogWorldPartition: UWorldPartitionStreamingPolicy: Sources[0] = X=1470.000 Y=620.000 Z=362.013,P=0.000000 Y=89.999999 R=-0.000000
+[2022.11.13-14.02.56:219][644]LogLoad: Took 0.163557 seconds to LoadMap(/Game/Developers/Alex/Map_Burial_Chamber)
+[2022.11.13-14.03.01:741][791]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 497.993286
+[2022.11.13-14.03.01:779][792]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 496.091034
+[2022.11.13-14.03.01:817][793]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 494.219604
+[2022.11.13-14.03.01:856][794]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 492.234558
+[2022.11.13-14.03.01:894][795]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 490.322205
+[2022.11.13-14.03.01:934][796]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 488.352905
+[2022.11.13-14.03.01:972][797]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 486.405365
+[2022.11.13-14.03.02:010][798]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 484.51474
+[2022.11.13-14.03.02:050][799]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 482.533478
+[2022.11.13-14.03.02:088][800]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 480.611359
+[2022.11.13-14.03.02:125][801]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 478.769073
+[2022.11.13-14.03.02:165][802]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 476.812347
+[2022.11.13-14.03.02:203][803]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 474.843445
+[2022.11.13-14.03.02:243][804]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 472.886292
+[2022.11.13-14.03.02:282][805]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 470.951965
+[2022.11.13-14.03.02:282][805]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 469.017639
+[2022.11.13-14.03.02:319][806]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 467.125916
+[2022.11.13-14.03.02:319][806]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 465.234192
+[2022.11.13-14.03.02:359][807]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 463.266327
+[2022.11.13-14.03.02:359][807]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 461.298462
+[2022.11.13-14.03.02:398][808]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 459.330261
+[2022.11.13-14.03.02:398][808]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 457.362061
+[2022.11.13-14.03.02:438][809]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 455.343628
+[2022.11.13-14.03.02:438][809]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 453.325195
+[2022.11.13-14.03.02:477][810]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 451.401245
+[2022.11.13-14.03.02:478][810]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 449.477295
+[2022.11.13-14.03.02:515][811]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 447.52771
+[2022.11.13-14.03.02:515][811]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 445.578125
+[2022.11.13-14.03.02:555][812]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 443.610992
+[2022.11.13-14.03.02:556][812]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 441.64386
+[2022.11.13-14.03.02:594][813]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 439.695618
+[2022.11.13-14.03.02:594][813]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 437.747375
+[2022.11.13-14.03.02:635][814]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 435.716705
+[2022.11.13-14.03.02:635][814]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 433.686035
+[2022.11.13-14.03.02:673][815]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 431.771149
+[2022.11.13-14.03.02:673][815]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 429.856262
+[2022.11.13-14.03.02:711][816]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 427.939667
+[2022.11.13-14.03.02:712][816]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 426.023071
+[2022.11.13-14.03.02:750][817]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 424.064697
+[2022.11.13-14.03.02:751][817]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 422.106323
+[2022.11.13-14.03.02:751][817]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 420.147949
+[2022.11.13-14.03.02:751][817]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 418.189575
+[2022.11.13-14.03.02:789][818]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 416.231445
+[2022.11.13-14.03.02:790][818]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 414.273315
+[2022.11.13-14.03.02:790][818]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 412.315186
+[2022.11.13-14.03.02:790][818]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 410.357056
+[2022.11.13-14.03.02:826][819]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 408.505859
+[2022.11.13-14.03.02:826][819]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 406.654663
+[2022.11.13-14.03.02:866][820]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 404.700745
+[2022.11.13-14.03.02:866][820]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 402.746826
+[2022.11.13-14.03.02:904][821]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 400.779114
+[2022.11.13-14.03.02:904][821]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 398.811401
+[2022.11.13-14.03.02:944][822]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 396.875854
+[2022.11.13-14.03.02:944][822]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 394.940308
+[2022.11.13-14.03.02:983][823]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 392.988983
+[2022.11.13-14.03.02:983][823]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 391.037659
+[2022.11.13-14.03.03:020][824]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 389.147766
+[2022.11.13-14.03.03:021][824]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 387.257874
+[2022.11.13-14.03.03:060][825]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 385.282715
+[2022.11.13-14.03.03:060][825]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 383.307556
+[2022.11.13-14.03.03:098][826]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 381.382874
+[2022.11.13-14.03.03:098][826]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 379.458191
+[2022.11.13-14.03.03:139][827]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 377.437286
+[2022.11.13-14.03.03:139][827]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 375.416382
+[2022.11.13-14.03.03:177][828]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 373.479706
+[2022.11.13-14.03.03:177][828]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 371.54303
+[2022.11.13-14.03.03:215][829]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 369.649567
+[2022.11.13-14.03.03:215][829]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 367.756104
+[2022.11.13-14.03.03:256][830]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 365.71991
+[2022.11.13-14.03.03:256][830]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 363.683716
+[2022.11.13-14.03.03:295][831]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 361.769958
+[2022.11.13-14.03.03:295][831]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 359.856201
+[2022.11.13-14.03.03:335][832]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 357.836609
+[2022.11.13-14.03.03:335][832]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 355.817017
+[2022.11.13-14.03.03:374][833]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 353.825195
+[2022.11.13-14.03.03:374][833]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 351.833374
+[2022.11.13-14.03.03:413][834]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 349.943573
+[2022.11.13-14.03.03:413][834]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 348.053772
+[2022.11.13-14.03.03:453][835]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 346.091614
+[2022.11.13-14.03.03:453][835]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 344.129456
+[2022.11.13-14.03.03:492][836]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 342.147644
+[2022.11.13-14.03.03:492][836]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 340.165833
+[2022.11.13-14.03.03:529][837]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 338.272156
+[2022.11.13-14.03.03:529][837]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 336.378479
+[2022.11.13-14.03.03:568][838]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 334.482361
+[2022.11.13-14.03.03:568][838]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 332.586243
+[2022.11.13-14.03.03:606][839]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 330.643707
+[2022.11.13-14.03.03:606][839]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 328.701172
+[2022.11.13-14.03.03:645][840]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 326.755859
+[2022.11.13-14.03.03:645][840]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 324.810547
+[2022.11.13-14.03.03:684][841]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 322.884186
+[2022.11.13-14.03.03:684][841]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 320.957825
+[2022.11.13-14.03.03:721][842]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 319.030701
+[2022.11.13-14.03.03:721][842]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 317.103577
+[2022.11.13-14.03.03:760][843]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 315.226105
+[2022.11.13-14.03.03:760][843]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 313.348633
+[2022.11.13-14.03.03:799][844]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 311.430817
+[2022.11.13-14.03.03:799][844]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 309.513
+[2022.11.13-14.03.03:839][845]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 307.519165
+[2022.11.13-14.03.03:839][845]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 305.52533
+[2022.11.13-14.03.03:877][846]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 303.572693
+[2022.11.13-14.03.03:877][846]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 301.620056
+[2022.11.13-14.03.03:915][847]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 299.733429
+[2022.11.13-14.03.03:915][847]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 297.846802
+[2022.11.13-14.03.03:955][848]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 295.783691
+[2022.11.13-14.03.03:955][848]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 293.720581
+[2022.11.13-14.03.03:993][849]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 291.859711
+[2022.11.13-14.03.03:993][849]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 289.99884
+[2022.11.13-14.03.04:035][850]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 287.983063
+[2022.11.13-14.03.04:035][850]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 285.967285
+[2022.11.13-14.03.04:072][851]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 283.982147
+[2022.11.13-14.03.04:073][851]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 281.997009
+[2022.11.13-14.03.04:110][852]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 280.117981
+[2022.11.13-14.03.04:110][852]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 278.238953
+[2022.11.13-14.03.04:151][853]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 276.247345
+[2022.11.13-14.03.04:151][853]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 274.255737
+[2022.11.13-14.03.04:190][854]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 272.253784
+[2022.11.13-14.03.04:190][854]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 270.251831
+[2022.11.13-14.03.04:227][855]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 268.417786
+[2022.11.13-14.03.04:227][855]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 266.58374
+[2022.11.13-14.03.04:266][856]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 264.64035
+[2022.11.13-14.03.04:266][856]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 262.69696
+[2022.11.13-14.03.04:305][857]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 260.672546
+[2022.11.13-14.03.04:305][857]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 258.648132
+[2022.11.13-14.03.04:345][858]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 256.720001
+[2022.11.13-14.03.04:345][858]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 254.79187
+[2022.11.13-14.03.04:385][859]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 252.804169
+[2022.11.13-14.03.04:386][859]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 250.816467
+[2022.11.13-14.03.04:423][860]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 248.884888
+[2022.11.13-14.03.04:462][861]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 246.963593
+[2022.11.13-14.03.04:507][862]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 244.983978
+[2022.11.13-14.03.04:548][863]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 242.780624
+[2022.11.13-14.03.04:587][864]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 240.758331
+[2022.11.13-14.03.04:624][865]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 238.829498
+[2022.11.13-14.03.04:664][866]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 236.90799
+[2022.11.13-14.03.04:704][867]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 234.950333
+[2022.11.13-14.03.04:743][868]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 232.910461
+[2022.11.13-14.03.04:783][869]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 230.977921
+[2022.11.13-14.03.04:783][869]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 229.04538
+[2022.11.13-14.03.04:820][870]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 227.146652
+[2022.11.13-14.03.04:820][870]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 225.247925
+[2022.11.13-14.03.04:859][871]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 223.304367
+[2022.11.13-14.03.04:859][871]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 221.360809
+[2022.11.13-14.03.04:898][872]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 219.40535
+[2022.11.13-14.03.04:898][872]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 217.44989
+[2022.11.13-14.03.04:938][873]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 215.488586
+[2022.11.13-14.03.04:938][873]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 213.527283
+[2022.11.13-14.03.04:976][874]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 211.565582
+[2022.11.13-14.03.04:976][874]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 209.603882
+[2022.11.13-14.03.05:016][875]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 207.684921
+[2022.11.13-14.03.05:016][875]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 205.765961
+[2022.11.13-14.03.05:058][876]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 203.622528
+[2022.11.13-14.03.05:099][877]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 201.62767
+[2022.11.13-14.03.05:100][877]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 199.632812
+[2022.11.13-14.03.05:142][878]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 197.480591
+[2022.11.13-14.03.05:142][878]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 195.328369
+[2022.11.13-14.03.05:180][879]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 193.34166
+[2022.11.13-14.03.05:181][879]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 191.35495
+[2022.11.13-14.03.05:219][880]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 189.43689
+[2022.11.13-14.03.05:219][880]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 187.518829
+[2022.11.13-14.03.05:259][881]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 185.513428
+[2022.11.13-14.03.05:259][881]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 183.508026
+[2022.11.13-14.03.05:298][882]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 181.544846
+[2022.11.13-14.03.05:340][883]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 179.471527
+[2022.11.13-14.03.05:340][883]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 177.398209
+[2022.11.13-14.03.05:378][884]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 175.441666
+[2022.11.13-14.03.05:379][884]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 173.485123
+[2022.11.13-14.03.05:416][885]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 171.563095
+[2022.11.13-14.03.05:417][885]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 169.641068
+[2022.11.13-14.03.05:456][886]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 167.686005
+[2022.11.13-14.03.05:456][886]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 165.730942
+[2022.11.13-14.03.05:496][887]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 163.758209
+[2022.11.13-14.03.05:496][887]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 161.785477
+[2022.11.13-14.03.05:536][888]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 159.75618
+[2022.11.13-14.03.05:575][889]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 157.822128
+[2022.11.13-14.03.05:613][890]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 155.891373
+[2022.11.13-14.03.05:654][891]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 153.935974
+[2022.11.13-14.03.05:692][892]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 151.980026
+[2022.11.13-14.03.05:730][893]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 150.070374
+[2022.11.13-14.03.05:769][894]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 148.132614
+[2022.11.13-14.03.05:807][895]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 146.183853
+[2022.11.13-14.03.05:807][895]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 144.235092
+[2022.11.13-14.03.05:846][896]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 142.285736
+[2022.11.13-14.03.05:847][896]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 140.33638
+[2022.11.13-14.03.05:885][897]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 138.422073
+[2022.11.13-14.03.05:885][897]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 136.507767
+[2022.11.13-14.03.05:922][898]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 134.631561
+[2022.11.13-14.03.05:922][898]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 132.755356
+[2022.11.13-14.03.05:961][899]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 130.807388
+[2022.11.13-14.03.06:000][900]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 128.881256
+[2022.11.13-14.03.06:041][901]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 126.887955
+[2022.11.13-14.03.06:079][902]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 124.899605
+[2022.11.13-14.03.06:116][903]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 123.035789
+[2022.11.13-14.03.06:157][904]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 121.069717
+[2022.11.13-14.03.06:196][905]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 119.083839
+[2022.11.13-14.03.06:236][906]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 117.12014
+[2022.11.13-14.03.06:276][907]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 115.108353
+[2022.11.13-14.03.06:315][908]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 113.114082
+[2022.11.13-14.03.06:315][908]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 111.119812
+[2022.11.13-14.03.06:356][909]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 109.129036
+[2022.11.13-14.03.06:356][909]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 107.13826
+[2022.11.13-14.03.06:395][910]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 105.17244
+[2022.11.13-14.03.06:395][910]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 103.206619
+[2022.11.13-14.03.06:436][911]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 101.158005
+[2022.11.13-14.03.06:436][911]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 99.10939
+[2022.11.13-14.03.06:475][912]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 97.131279
+[2022.11.13-14.03.06:475][912]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 95.153168
+[2022.11.13-14.03.06:513][913]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 93.222755
+[2022.11.13-14.03.06:513][913]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 91.292343
+[2022.11.13-14.03.06:554][914]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 89.290802
+[2022.11.13-14.03.06:554][914]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 87.289261
+[2022.11.13-14.03.06:594][915]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 85.255966
+[2022.11.13-14.03.06:594][915]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 83.222672
+[2022.11.13-14.03.06:635][916]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 81.200661
+[2022.11.13-14.03.06:635][916]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 79.17865
+[2022.11.13-14.03.06:674][917]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 77.214539
+[2022.11.13-14.03.06:674][917]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 75.250427
+[2022.11.13-14.03.06:713][918]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 73.317863
+[2022.11.13-14.03.06:713][918]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 71.3853
+[2022.11.13-14.03.06:753][919]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 69.406006
+[2022.11.13-14.03.06:753][919]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 67.426712
+[2022.11.13-14.03.06:792][920]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 65.42572
+[2022.11.13-14.03.06:792][920]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 63.424725
+[2022.11.13-14.03.06:833][921]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 61.46339
+[2022.11.13-14.03.06:833][921]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 59.502056
+[2022.11.13-14.03.06:872][922]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 57.546997
+[2022.11.13-14.03.06:872][922]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 55.591938
+[2022.11.13-14.03.06:910][923]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 53.599995
+[2022.11.13-14.03.06:910][923]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 51.608051
+[2022.11.13-14.03.06:950][924]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 49.648293
+[2022.11.13-14.03.06:950][924]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 47.688534
+[2022.11.13-14.03.06:990][925]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 45.711708
+[2022.11.13-14.03.06:990][925]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 43.734882
+[2022.11.13-14.03.07:028][926]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 41.813847
+[2022.11.13-14.03.07:028][926]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 39.892811
+[2022.11.13-14.03.07:068][927]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 37.921257
+[2022.11.13-14.03.07:068][927]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 35.949703
+[2022.11.13-14.03.07:108][928]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 33.921974
+[2022.11.13-14.03.07:108][928]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 31.894245
+[2022.11.13-14.03.07:150][929]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 29.81389
+[2022.11.13-14.03.07:150][929]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 27.733536
+[2022.11.13-14.03.07:190][930]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 25.761091
+[2022.11.13-14.03.07:190][930]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 23.788647
+[2022.11.13-14.03.07:227][931]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 21.844286
+[2022.11.13-14.03.07:227][931]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 19.899925
+[2022.11.13-14.03.07:268][932]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 17.914841
+[2022.11.13-14.03.07:269][932]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 15.929756
+[2022.11.13-14.03.07:307][933]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 13.945141
+[2022.11.13-14.03.07:307][933]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 11.960526
+[2022.11.13-14.03.07:346][934]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 9.977065
+[2022.11.13-14.03.07:346][934]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 7.993605
+[2022.11.13-14.03.07:384][935]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 6.08063
+[2022.11.13-14.03.07:385][935]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 4.167655
+[2022.11.13-14.03.07:422][936]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 2.298055
+[2022.11.13-14.03.07:422][936]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 0.428455
+[2022.11.13-14.03.07:460][937]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] 0.0
+[2022.11.13-14.03.07:461][937]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482426] Game Over
+[2022.11.13-14.03.07:461][937]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482413] gave reward: 0.0
+[2022.11.13-14.03.07:461][937]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482402] gave reward: 0.0
+[2022.11.13-14.03.07:461][937]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482396] gave reward: 0.0
+[2022.11.13-14.03.09:477][989]LogNet: Browse: /Game/Developers/Alex/Map_Burial_Chamber
+[2022.11.13-14.03.09:477][989]LogLoad: LoadMap: /Game/Developers/Alex/Map_Burial_Chamber
+[2022.11.13-14.03.09:478][989]LogWorld: BeginTearingDown for /Game/Developers/Alex/Map_Burial_Chamber
+[2022.11.13-14.03.09:485][989]LogWorld: UWorld::CleanupWorld for Map_Burial_Chamber, bSessionEnded=true, bCleanupResources=true
+[2022.11.13-14.03.09:501][989]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.11.13-14.03.09:557][989]LogStreaming: Display: 0.525 ms (0.257+0.267) ms for processing 8474/8474 objects in NotifyUnreachableObjects( Queued=0, Async=0). Removed 356/356 (433->77 tracked) packages and 922/8118 (1005->83 tracked) public exports.
+[2022.11.13-14.03.09:562][989]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.11.13-14.03.09:610][989]LogUObjectHash: Compacting FUObjectHashTables data took   0.48ms
+[2022.11.13-14.03.09:615][989]LogStreaming: Display: FlushAsyncLoading: 1 QueuedPackages, 0 AsyncPackages
+[2022.11.13-14.03.09:679][989]LogWorldPartition: Initial Data Layer Effective States Activated() Loaded()
+[2022.11.13-14.03.09:680][989]LogAudio: Display: Audio Device (ID: 1) registered with world 'Map_Burial_Chamber'.
+[2022.11.13-14.03.09:680][989]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.11.13-14.03.09:681][989]LogAIModule: Creating AISystem for world Map_Burial_Chamber
+[2022.11.13-14.03.09:681][989]LogWorldPartition: Display: WorldPartition initialize started...
+[2022.11.13-14.03.09:681][989]LogWorldPartition: Display: WorldPartition initialize took 11 us
+[2022.11.13-14.03.09:681][989]LogLoad: Game class is 'AlexTestMap_BP_C'
+[2022.11.13-14.03.09:704][989]LogWorld: Bringing World /Game/Developers/Alex/Map_Burial_Chamber.Map_Burial_Chamber up for play (max tick rate 0) at 2022.11.13-15.03.09
+[2022.11.13-14.03.09:715][989]LogWorld: Bringing up level for play took: 0.033897
+[2022.11.13-14.03.09:719][989]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CapturePermanently
+[2022.11.13-14.03.09:719][989]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CapturePermanently_IncludingInitialMouseDown
+[2022.11.13-14.03.09:720][989]LogWorldPartition: New Streaming Source: BP_PlayerController_C_2147482318 -> Position: X=1470.000 Y=620.000 Z=362.013
+[2022.11.13-14.03.09:720][989]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2022.11.13-14.03.09:720][989]LogWorldPartition: UWorldPartitionStreamingPolicy: CellsToActivate(1), CellsToLoad(0), CellsToUnload(0)
+[2022.11.13-14.03.09:720][989]LogWorldPartition: UWorldPartitionStreamingPolicy: Sources[0] = X=1470.000 Y=620.000 Z=362.013,P=0.000000 Y=89.999999 R=-0.000000
+[2022.11.13-14.03.09:722][989]LogLoad: Took 0.244777 seconds to LoadMap(/Game/Developers/Alex/Map_Burial_Chamber)
+[2022.11.13-14.03.16:826][181]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 497.97641
+[2022.11.13-14.03.16:865][182]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 496.004456
+[2022.11.13-14.03.16:865][182]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 494.032501
+[2022.11.13-14.03.16:906][183]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 492.009796
+[2022.11.13-14.03.16:906][183]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 489.987091
+[2022.11.13-14.03.16:945][184]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 488.016144
+[2022.11.13-14.03.16:983][185]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 486.120239
+[2022.11.13-14.03.17:022][186]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 484.116852
+[2022.11.13-14.03.17:063][187]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 482.148621
+[2022.11.13-14.03.17:105][188]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 480.045013
+[2022.11.13-14.03.17:144][189]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 478.047333
+[2022.11.13-14.03.17:183][190]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 476.092316
+[2022.11.13-14.03.17:224][191]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 474.023224
+[2022.11.13-14.03.17:263][192]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 472.06778
+[2022.11.13-14.03.17:304][193]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 469.946259
+[2022.11.13-14.03.17:343][194]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 468.047699
+[2022.11.13-14.03.17:381][195]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 466.159973
+[2022.11.13-14.03.17:422][196]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 464.12323
+[2022.11.13-14.03.17:423][196]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 462.086487
+[2022.11.13-14.03.17:660][202]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 460.129456
+[2022.11.13-14.03.17:700][203]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 458.155487
+[2022.11.13-14.03.17:739][204]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 456.148865
+[2022.11.13-14.03.17:777][205]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 454.278778
+[2022.11.13-14.03.19:151][240]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 452.314484
+[2022.11.13-14.03.19:192][241]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 450.195374
+[2022.11.13-14.03.19:231][242]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 448.283417
+[2022.11.13-14.03.19:269][243]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 446.378418
+[2022.11.13-14.03.19:309][244]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 444.382629
+[2022.11.13-14.03.19:349][245]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 442.372711
+[2022.11.13-14.03.19:349][245]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 440.362793
+[2022.11.13-14.03.19:390][246]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 438.271667
+[2022.11.13-14.03.19:390][246]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 436.180542
+[2022.11.13-14.03.19:428][247]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 434.265686
+[2022.11.13-14.03.19:428][247]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 432.35083
+[2022.11.13-14.03.19:468][248]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 430.452942
+[2022.11.13-14.03.19:508][249]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 428.391052
+[2022.11.13-14.03.19:547][250]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 426.392456
+[2022.11.13-14.03.19:588][251]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 424.375885
+[2022.11.13-14.03.19:627][252]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 422.420135
+[2022.11.13-14.03.19:666][253]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 420.50415
+[2022.11.13-14.03.19:707][254]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 418.41745
+[2022.11.13-14.03.19:747][255]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 416.450012
+[2022.11.13-14.03.19:784][256]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 414.568787
+[2022.11.13-14.03.19:824][257]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 412.584045
+[2022.11.13-14.03.19:863][258]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 410.615295
+[2022.11.13-14.03.19:904][259]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 408.628723
+[2022.11.13-14.03.19:904][259]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 406.642151
+[2022.11.13-14.03.20:858][283]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 404.635345
+[2022.11.13-14.03.20:898][284]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 402.591095
+[2022.11.13-14.03.20:939][285]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 400.604706
+[2022.11.13-14.03.20:979][286]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 398.6745
+[2022.11.13-14.03.21:020][287]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 396.578461
+[2022.11.13-14.03.21:060][288]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 394.53183
+[2022.11.13-14.03.21:102][289]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 392.466888
+[2022.11.13-14.03.21:143][290]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 390.404755
+[2022.11.13-14.03.21:182][291]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 388.454498
+[2022.11.13-14.03.21:223][292]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 386.388458
+[2022.11.13-14.03.29:394][492]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 384.330109
+[2022.11.13-14.03.29:433][493]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 382.345825
+[2022.11.13-14.03.29:472][494]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 380.396698
+[2022.11.13-14.03.29:472][494]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 378.447571
+[2022.11.13-14.03.29:514][495]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 376.414734
+[2022.11.13-14.03.29:514][495]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 374.381897
+[2022.11.13-14.03.29:553][496]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 372.387177
+[2022.11.13-14.03.29:553][496]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 370.392456
+[2022.11.13-14.03.29:593][497]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 368.405518
+[2022.11.13-14.03.29:593][497]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 366.418579
+[2022.11.13-14.03.29:632][498]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 364.455719
+[2022.11.13-14.03.29:670][499]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 362.53421
+[2022.11.13-14.03.29:710][500]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 360.564087
+[2022.11.13-14.03.29:749][501]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 358.528564
+[2022.11.13-14.03.29:790][502]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 356.573059
+[2022.11.13-14.03.29:828][503]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 354.631226
+[2022.11.13-14.03.29:866][504]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 352.710144
+[2022.11.13-14.03.29:906][505]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 350.762817
+[2022.11.13-14.03.29:945][506]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 348.802277
+[2022.11.13-14.03.29:945][506]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 346.841736
+[2022.11.13-14.03.29:982][507]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 344.89093
+[2022.11.13-14.03.29:982][507]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 342.940125
+[2022.11.13-14.03.30:021][508]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 341.065094
+[2022.11.13-14.03.30:021][508]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 339.190063
+[2022.11.13-14.03.30:060][509]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 337.256409
+[2022.11.13-14.03.30:060][509]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 335.322754
+[2022.11.13-14.03.30:100][510]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 333.293396
+[2022.11.13-14.03.30:139][511]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 331.338654
+[2022.11.13-14.03.30:176][512]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 329.477753
+[2022.11.13-14.03.30:216][513]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 327.449677
+[2022.11.13-14.03.30:254][514]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 325.565887
+[2022.11.13-14.03.30:295][515]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 323.542908
+[2022.11.13-14.03.30:333][516]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 321.604218
+[2022.11.13-14.03.30:370][517]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 319.723816
+[2022.11.13-14.03.30:411][518]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 317.756256
+[2022.11.13-14.03.30:450][519]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 315.758392
+[2022.11.13-14.03.30:491][520]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 313.774811
+[2022.11.13-14.03.30:528][521]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 311.852539
+[2022.11.13-14.03.30:566][522]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 309.914917
+[2022.11.13-14.03.30:608][523]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 307.958038
+[2022.11.13-14.03.30:646][524]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 306.018311
+[2022.11.13-14.03.30:686][525]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 304.1586
+[2022.11.13-14.03.30:728][526]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 301.847076
+[2022.11.13-14.03.30:770][527]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 299.88501
+[2022.11.13-14.03.30:811][528]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 297.772369
+[2022.11.13-14.03.30:851][529]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 295.748962
+[2022.11.13-14.03.30:892][530]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 293.748535
+[2022.11.13-14.03.30:931][531]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 291.789764
+[2022.11.13-14.03.30:969][532]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 289.819855
+[2022.11.13-14.03.31:010][533]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 287.822662
+[2022.11.13-14.03.31:050][534]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 285.850525
+[2022.11.13-14.03.31:090][535]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 283.794495
+[2022.11.13-14.03.31:128][536]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 281.882751
+[2022.11.13-14.03.31:167][537]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 279.89325
+[2022.11.13-14.03.31:207][538]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 277.945282
+[2022.11.13-14.03.31:246][539]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 275.980804
+[2022.11.13-14.03.31:283][540]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 274.089905
+[2022.11.13-14.03.31:323][541]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 272.156952
+[2022.11.13-14.03.31:361][542]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 270.227203
+[2022.11.13-14.03.31:401][543]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 268.203064
+[2022.11.13-14.03.31:440][544]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 266.272675
+[2022.11.13-14.03.31:478][545]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 264.430603
+[2022.11.13-14.03.31:517][546]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 262.449158
+[2022.11.13-14.03.31:556][547]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 260.497803
+[2022.11.13-14.03.31:596][548]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 258.517822
+[2022.11.13-14.03.31:634][549]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 256.49469
+[2022.11.13-14.03.31:672][550]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 254.659531
+[2022.11.13-14.03.31:712][551]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 252.715164
+[2022.11.13-14.03.31:751][552]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 250.722458
+[2022.11.13-14.03.31:793][553]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 248.747528
+[2022.11.13-14.03.31:830][554]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 246.779312
+[2022.11.13-14.03.31:868][555]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 244.840698
+[2022.11.13-14.03.31:908][556]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 242.883942
+[2022.11.13-14.03.31:947][557]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 240.942322
+[2022.11.13-14.03.31:988][558]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 238.893784
+[2022.11.13-14.03.32:026][559]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 237.002121
+[2022.11.13-14.03.32:064][560]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 235.078415
+[2022.11.13-14.03.32:103][561]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 233.107315
+[2022.11.13-14.03.32:144][562]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 231.15799
+[2022.11.13-14.03.32:181][563]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 229.213272
+[2022.11.13-14.03.32:221][564]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 227.208481
+[2022.11.13-14.03.32:260][565]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 225.283951
+[2022.11.13-14.03.32:303][566]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 222.865433
+[2022.11.13-14.03.32:343][567]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 221.147034
+[2022.11.13-14.03.32:379][568]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 219.272049
+[2022.11.13-14.03.32:418][569]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 217.301239
+[2022.11.13-14.03.32:456][570]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 215.420395
+[2022.11.13-14.03.32:497][571]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 213.422501
+[2022.11.13-14.03.32:538][572]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 211.410507
+[2022.11.13-14.03.32:574][573]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 209.562943
+[2022.11.13-14.03.32:615][574]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 207.615036
+[2022.11.13-14.03.32:654][575]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 205.586029
+[2022.11.13-14.03.32:695][576]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 203.618088
+[2022.11.13-14.03.32:733][577]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 201.649887
+[2022.11.13-14.03.32:771][578]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 199.724838
+[2022.11.13-14.03.32:811][579]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 197.725891
+[2022.11.13-14.03.32:850][580]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 195.790497
+[2022.11.13-14.03.32:890][581]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 193.817154
+[2022.11.13-14.03.32:929][582]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 191.882553
+[2022.11.13-14.03.32:968][583]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 189.900467
+[2022.11.13-14.03.33:008][584]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 187.883804
+[2022.11.13-14.03.33:047][585]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 185.912781
+[2022.11.13-14.03.33:088][586]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 183.887436
+[2022.11.13-14.03.33:126][587]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 182.001572
+[2022.11.13-14.03.33:163][588]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 180.098083
+[2022.11.13-14.03.33:203][589]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 178.11348
+[2022.11.13-14.03.33:242][590]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 176.182968
+[2022.11.13-14.03.33:279][591]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 174.303558
+[2022.11.13-14.03.33:319][592]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 172.307434
+[2022.11.13-14.03.33:357][593]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 170.382843
+[2022.11.13-14.03.33:398][594]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 168.389679
+[2022.11.13-14.03.33:438][595]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 166.396179
+[2022.11.13-14.03.33:475][596]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 164.50592
+[2022.11.13-14.03.33:516][597]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 162.526459
+[2022.11.13-14.03.33:554][598]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 160.566849
+[2022.11.13-14.03.33:594][599]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 158.635193
+[2022.11.13-14.03.33:635][600]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 156.702393
+[2022.11.13-14.03.33:673][601]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 154.609451
+[2022.11.13-14.03.33:715][602]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 152.662933
+[2022.11.13-14.03.33:755][603]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 150.567291
+[2022.11.13-14.03.33:796][604]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 148.547989
+[2022.11.13-14.03.33:836][605]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 146.555054
+[2022.11.13-14.03.33:874][606]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 144.577728
+[2022.11.13-14.03.33:914][607]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 142.606949
+[2022.11.13-14.03.33:953][608]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 140.591766
+[2022.11.13-14.03.33:994][609]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 138.607346
+[2022.11.13-14.03.34:033][610]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 136.61702
+[2022.11.13-14.03.34:071][611]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 134.705902
+[2022.11.13-14.03.34:111][612]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 132.763779
+[2022.11.13-14.03.34:151][613]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 130.762177
+[2022.11.13-14.03.34:191][614]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 128.757187
+[2022.11.13-14.03.34:229][615]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 126.79335
+[2022.11.13-14.03.34:268][616]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 124.881058
+[2022.11.13-14.03.34:308][617]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 122.893364
+[2022.11.13-14.03.34:348][618]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 120.927284
+[2022.11.13-14.03.34:388][619]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 118.853622
+[2022.11.13-14.03.34:427][620]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 116.940453
+[2022.11.13-14.03.34:465][621]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 115.021873
+[2022.11.13-14.03.34:505][622]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 113.003777
+[2022.11.13-14.03.34:544][623]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 111.091377
+[2022.11.13-14.03.34:581][624]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 109.222328
+[2022.11.13-14.03.34:620][625]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 107.271309
+[2022.11.13-14.03.34:659][626]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 105.340454
+[2022.11.13-14.03.34:699][627]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 103.343658
+[2022.11.13-14.03.34:738][628]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 101.31398
+[2022.11.13-14.03.34:776][629]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 99.452217
+[2022.11.13-14.03.34:817][630]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 97.52018
+[2022.11.13-14.03.34:855][631]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 95.542725
+[2022.11.13-14.03.34:896][632]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 93.539948
+[2022.11.13-14.03.34:934][633]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 91.594658
+[2022.11.13-14.03.34:972][634]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 89.650986
+[2022.11.13-14.03.35:012][635]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 87.710197
+[2022.11.13-14.03.35:051][636]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 85.767349
+[2022.11.13-14.03.35:093][637]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 83.742081
+[2022.11.13-14.03.35:131][638]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 81.739014
+[2022.11.13-14.03.35:170][639]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 79.799095
+[2022.11.13-14.03.35:211][640]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 77.768356
+[2022.11.13-14.03.35:252][641]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 75.776451
+[2022.11.13-14.03.35:293][642]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 73.680328
+[2022.11.13-14.03.35:332][643]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 71.711761
+[2022.11.13-14.03.35:370][644]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 69.771858
+[2022.11.13-14.03.35:411][645]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 67.72332
+[2022.11.13-14.03.35:450][646]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 65.796913
+[2022.11.13-14.03.35:491][647]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 63.767857
+[2022.11.13-14.03.35:529][648]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 61.831272
+[2022.11.13-14.03.35:566][649]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 59.963905
+[2022.11.13-14.03.35:605][650]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 57.965557
+[2022.11.13-14.03.35:644][651]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 56.090408
+[2022.11.13-14.03.35:681][652]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 54.182938
+[2022.11.13-14.03.35:721][653]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 52.230732
+[2022.11.13-14.03.35:759][654]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 50.301861
+[2022.11.13-14.03.35:798][655]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 48.364517
+[2022.11.13-14.03.35:839][656]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 46.376003
+[2022.11.13-14.03.35:877][657]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 44.399776
+[2022.11.13-14.03.35:920][658]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 42.377262
+[2022.11.13-14.03.35:958][659]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 40.358971
+[2022.11.13-14.03.35:999][660]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 38.404633
+[2022.11.13-14.03.36:038][661]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 36.424076
+[2022.11.13-14.03.36:075][662]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 34.515392
+[2022.11.13-14.03.36:114][663]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 32.610691
+[2022.11.13-14.03.36:153][664]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 30.690126
+[2022.11.13-14.03.36:193][665]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 28.650085
+[2022.11.13-14.03.36:232][666]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 26.721571
+[2022.11.13-14.03.36:269][667]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 24.79944
+[2022.11.13-14.03.36:309][668]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 22.838106
+[2022.11.13-14.03.36:348][669]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 20.862196
+[2022.11.13-14.03.36:389][670]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 18.890615
+[2022.11.13-14.03.36:427][671]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 16.95652
+[2022.11.13-14.03.36:464][672]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 15.063835
+[2022.11.13-14.03.36:504][673]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 13.06457
+[2022.11.13-14.03.36:542][674]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 11.141425
+[2022.11.13-14.03.36:579][675]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 9.307945
+[2022.11.13-14.03.36:618][676]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 7.363365
+[2022.11.13-14.03.36:657][677]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 5.41473
+[2022.11.13-14.03.36:697][678]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 3.42585
+[2022.11.13-14.03.36:736][679]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 1.47439
+[2022.11.13-14.03.36:773][680]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] 0.0
+[2022.11.13-14.03.36:773][680]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482300] Game Over
+[2022.11.13-14.03.36:773][680]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482287] gave reward: 0.0
+[2022.11.13-14.03.36:773][680]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482276] gave reward: 0.0
+[2022.11.13-14.03.36:773][680]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482270] gave reward: 0.0
+[2022.11.13-14.03.38:774][731]LogNet: Browse: /Game/Developers/Alex/Map_Burial_Chamber
+[2022.11.13-14.03.38:775][731]LogLoad: LoadMap: /Game/Developers/Alex/Map_Burial_Chamber
+[2022.11.13-14.03.38:775][731]LogWorld: BeginTearingDown for /Game/Developers/Alex/Map_Burial_Chamber
+[2022.11.13-14.03.38:782][731]LogWorld: UWorld::CleanupWorld for Map_Burial_Chamber, bSessionEnded=true, bCleanupResources=true
+[2022.11.13-14.03.38:798][731]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.11.13-14.03.38:827][731]LogStreaming: Display: 0.522 ms (0.232+0.290) ms for processing 8479/8479 objects in NotifyUnreachableObjects( Queued=0, Async=0). Removed 356/356 (433->77 tracked) packages and 922/8123 (1005->83 tracked) public exports.
+[2022.11.13-14.03.38:830][731]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.11.13-14.03.38:883][731]LogUObjectHash: Compacting FUObjectHashTables data took   0.46ms
+[2022.11.13-14.03.38:889][731]LogStreaming: Display: FlushAsyncLoading: 1 QueuedPackages, 0 AsyncPackages
+[2022.11.13-14.03.38:952][731]LogWorldPartition: Initial Data Layer Effective States Activated() Loaded()
+[2022.11.13-14.03.38:953][731]LogAudio: Display: Audio Device (ID: 1) registered with world 'Map_Burial_Chamber'.
+[2022.11.13-14.03.38:954][731]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.11.13-14.03.38:954][731]LogAIModule: Creating AISystem for world Map_Burial_Chamber
+[2022.11.13-14.03.38:954][731]LogWorldPartition: Display: WorldPartition initialize started...
+[2022.11.13-14.03.38:954][731]LogWorldPartition: Display: WorldPartition initialize took 11 us
+[2022.11.13-14.03.38:954][731]LogLoad: Game class is 'AlexTestMap_BP_C'
+[2022.11.13-14.03.38:976][731]LogWorld: Bringing World /Game/Developers/Alex/Map_Burial_Chamber.Map_Burial_Chamber up for play (max tick rate 0) at 2022.11.13-15.03.38
+[2022.11.13-14.03.38:986][731]LogWorld: Bringing up level for play took: 0.031610
+[2022.11.13-14.03.38:990][731]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CapturePermanently
+[2022.11.13-14.03.38:990][731]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CapturePermanently_IncludingInitialMouseDown
+[2022.11.13-14.03.38:991][731]LogWorldPartition: New Streaming Source: BP_PlayerController_C_2147482185 -> Position: X=1470.000 Y=620.000 Z=362.013
+[2022.11.13-14.03.38:991][731]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2022.11.13-14.03.38:991][731]LogWorldPartition: UWorldPartitionStreamingPolicy: CellsToActivate(1), CellsToLoad(0), CellsToUnload(0)
+[2022.11.13-14.03.38:991][731]LogWorldPartition: UWorldPartitionStreamingPolicy: Sources[0] = X=1470.000 Y=620.000 Z=362.013,P=0.000000 Y=89.999999 R=-0.000000
+[2022.11.13-14.03.38:993][731]LogLoad: Took 0.218859 seconds to LoadMap(/Game/Developers/Alex/Map_Burial_Chamber)
+[2022.11.13-14.03.47:033][943]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 498.005951
+[2022.11.13-14.03.47:073][944]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 496.064209
+[2022.11.13-14.03.47:790][962]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 493.942505
+[2022.11.13-14.03.49:405][  2]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 491.989838
+[2022.11.13-14.03.49:405][  2]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 490.03717
+[2022.11.13-14.03.49:405][  2]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 488.084503
+[2022.11.13-14.03.49:405][  2]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 486.131836
+[2022.11.13-14.03.49:444][  3]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 484.214539
+[2022.11.13-14.03.49:444][  3]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 482.297241
+[2022.11.13-14.03.49:444][  3]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 480.379944
+[2022.11.13-14.03.49:444][  3]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 478.462646
+[2022.11.13-14.03.49:485][  4]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 476.391296
+[2022.11.13-14.03.49:485][  4]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 474.319946
+[2022.11.13-14.03.49:485][  4]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 472.248596
+[2022.11.13-14.03.49:485][  4]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 470.177246
+[2022.11.13-14.03.49:524][  5]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 468.181824
+[2022.11.13-14.03.49:525][  5]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 466.186401
+[2022.11.13-14.03.49:525][  5]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 464.190979
+[2022.11.13-14.03.49:525][  5]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 462.195557
+[2022.11.13-14.03.49:566][  6]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 460.166443
+[2022.11.13-14.03.49:566][  6]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 458.137329
+[2022.11.13-14.03.49:605][  7]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 456.136566
+[2022.11.13-14.03.49:605][  7]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 454.135803
+[2022.11.13-14.03.49:644][  8]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 452.224457
+[2022.11.13-14.03.49:644][  8]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 450.31311
+[2022.11.13-14.03.49:686][  9]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 448.273743
+[2022.11.13-14.03.49:686][  9]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 446.234375
+[2022.11.13-14.03.49:726][ 10]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 444.148285
+[2022.11.13-14.03.49:726][ 10]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 442.062195
+[2022.11.13-14.03.49:769][ 11]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 439.981689
+[2022.11.13-14.03.49:769][ 11]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 437.901184
+[2022.11.13-14.03.49:809][ 12]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 435.829529
+[2022.11.13-14.03.49:809][ 12]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 433.757874
+[2022.11.13-14.03.49:848][ 13]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 431.807648
+[2022.11.13-14.03.49:889][ 14]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 429.738892
+[2022.11.13-14.03.49:929][ 15]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 427.802856
+[2022.11.13-14.03.50:778][ 36]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 425.745636
+[2022.11.13-14.03.50:819][ 37]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 423.642609
+[2022.11.13-14.03.50:858][ 38]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 421.676392
+[2022.11.13-14.03.50:898][ 39]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 419.668121
+[2022.11.13-14.03.50:938][ 40]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 417.654572
+[2022.11.13-14.03.50:979][ 41]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 415.650238
+[2022.11.13-14.03.51:020][ 42]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 413.581787
+[2022.11.13-14.03.55:731][160]LogStreaming: Display: 0.027 ms (0.005+0.022) ms for processing 79/79 objects in NotifyUnreachableObjects( Queued=0, Async=0). Removed 0/0 (433->433 tracked) packages and 60/79 (1005->945 tracked) public exports.
+[2022.11.13-14.04.04:749][388]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.04.05:625][410]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147482107] 50.0
+[2022.11.13-14.04.15:461][662]LogScript: Warning: Script Msg: Attempted to access index 3 from array 'Targets' of length 3 in '/Game/SenpAI/Core/Environment/BP_DollyShot_Trigger.BP_DollyShot_Trigger_C'!
+[2022.11.13-14.04.15:461][662]LogScript: Warning: Script Msg: Attempted to access index 3 from array 'Targets' of length 3 in '/Game/SenpAI/Core/Environment/BP_DollyShot_Trigger.BP_DollyShot_Trigger_C'!
+[2022.11.13-14.04.17:753][721]LogBlueprintUserMessages: [BP_Melee_Secondary_Start_Notify_C_0] Start Trace
+[2022.11.13-14.04.18:639][744]LogBlueprintUserMessages: [BP_Melee_Secondary_End_Notify_C_0] End Trace
+[2022.11.13-14.04.25:376][917]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147482147] 50.0
+[2022.11.13-14.04.26:383][943]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.04.27:254][965]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147482056] 50.0
+[2022.11.13-14.04.27:439][970]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.04.28:193][989]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147482056] 50.0
+[2022.11.13-14.04.29:014][ 10]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147482147] 50.0
+[2022.11.13-14.04.30:305][ 43]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482157] FULLY STAGGERED
+[2022.11.13-14.04.32:486][ 99]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482157] BP_Assyrian_Character_C_2147482157 Died
+[2022.11.13-14.04.32:486][ 99]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482154] gave reward: -0.5
+[2022.11.13-14.04.34:836][159]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482157] STAGGER RESET
+[2022.11.13-14.04.35:169][168]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 338.581787
+[2022.11.13-14.04.37:478][227]LogBlueprintUserMessages: [BP_Melee_Secondary_Start_Notify_C_0] Start Trace
+[2022.11.13-14.04.37:749][234]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482146] FULLY STAGGERED
+[2022.11.13-14.04.37:904][238]LogBlueprintUserMessages: [BP_Melee_Secondary_End_Notify_C_1] End Trace
+[2022.11.13-14.04.42:270][349]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482146] STAGGER RESET
+[2022.11.13-14.04.42:372][352]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 263.581787
+[2022.11.13-14.04.47:549][485]LogBlueprintUserMessages: [BP_Melee_Secondary_Start_Notify_C_0] Start Trace
+[2022.11.13-14.04.48:447][508]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482146] FULLY STAGGERED
+[2022.11.13-14.04.48:447][508]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] FULLY STAGGERED
+[2022.11.13-14.04.48:448][508]LogBlueprintUserMessages: [BP_Melee_Secondary_End_Notify_C_0] End Trace
+[2022.11.13-14.04.51:338][582]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 188.581787
+[2022.11.13-14.04.52:992][624]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] STAGGER RESET
+[2022.11.13-14.04.52:992][624]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482146] STAGGER RESET
+[2022.11.13-14.04.53:599][640]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 113.581787
+[2022.11.13-14.04.56:600][717]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] FULLY STAGGERED
+[2022.11.13-14.04.56:865][723]LogStreaming: Display: 0.042 ms (0.022+0.019) ms for processing 415/415 objects in NotifyUnreachableObjects( Queued=0, Async=0). Removed 2/2 (433->431 tracked) packages and 8/413 (945->937 tracked) public exports.
+[2022.11.13-14.05.00:187][809]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.00:906][827]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481728] 50.0
+[2022.11.13-14.05.01:117][832]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] STAGGER RESET
+[2022.11.13-14.05.01:168][834]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.02:137][859]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.02:693][873]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481728] 50.0
+[2022.11.13-14.05.03:071][883]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.04:077][909]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.04:630][923]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481728] 50.0
+[2022.11.13-14.05.04:710][925]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481728] 50.0
+[2022.11.13-14.05.04:785][927]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481728] 50.0
+[2022.11.13-14.05.05:007][933]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.06:103][961]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481728] 50.0
+[2022.11.13-14.05.08:437][ 21]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] FULLY STAGGERED
+[2022.11.13-14.05.10:224][ 67]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.11:015][ 87]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.11:199][ 92]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.11:984][112]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.12:205][118]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.12:964][137]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] STAGGER RESET
+[2022.11.13-14.05.12:988][138]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.13:209][144]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.13:924][162]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.14:883][187]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.15:514][203]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.15:855][212]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.16:451][227]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.16:826][237]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.17:798][262]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.18:356][276]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.18:480][279]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.18:783][287]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.19:413][303]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.19:413][303]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] FULLY STAGGERED
+[2022.11.13-14.05.19:753][312]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.20:384][328]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481677] 50.0
+[2022.11.13-14.05.23:321][399]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] BP_Assyrian_Character_C_2147482139 Died
+[2022.11.13-14.05.23:321][399]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482137] gave reward: 4.0
+[2022.11.13-14.05.23:944][414]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482139] STAGGER RESET
+[2022.11.13-14.05.26:867][486]LogBlueprintUserMessages: [BP_Melee_Secondary_Start_Notify_C_0] Start Trace
+[2022.11.13-14.05.27:760][508]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482146] FULLY STAGGERED
+[2022.11.13-14.05.27:760][508]LogBlueprintUserMessages: [BP_Melee_Secondary_End_Notify_C_0] End Trace
+[2022.11.13-14.05.32:279][623]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482146] STAGGER RESET
+[2022.11.13-14.05.32:927][640]LogBlueprintUserMessages: [BP_PlayerCharacter_C_2147482167] 38.581787
+[2022.11.13-14.05.34:369][677]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.35:421][704]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.35:866][715]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.36:560][733]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.36:962][743]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.38:115][773]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.38:205][775]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.38:792][790]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.39:306][803]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.39:905][818]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.40:323][829]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.40:961][845]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.41:459][858]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.42:528][885]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.42:815][892]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.43:203][902]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.43:465][909]LogAnimMontage: Warning: JumpToSectionName Light01 bEndOfSection: 0 failed for Montage AM_Primary_Bow
+[2022.11.13-14.05.44:147][926]LogBlueprintUserMessages: [BP_BaseRangedWeapon_C_2147481573] 50.0
+[2022.11.13-14.05.44:148][926]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482146] BP_Assyrian_Character_C_2147482146 Died
+[2022.11.13-14.05.44:148][926]LogBlueprintUserMessages: [AIC_SimpleEnemy_C_2147482144] gave reward: 2.5
+[2022.11.13-14.05.44:148][926]LogBlueprintUserMessages: [BP_Assyrian_Character_C_2147482146] FULLY STAGGERED
