@@ -25,6 +25,12 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Movement)
+	bool bIsDashing;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Health)
+	bool bIsDead;
+
 protected:
 
 	/** Called for forwards/backward input */
