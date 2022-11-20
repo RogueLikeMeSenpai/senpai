@@ -17,7 +17,8 @@ TArray<FEnemyRemark> UEnemyRemark_DataAsset::FindApplicableRemarks(USenpaiGameIn
 		return TArray<FEnemyRemark>();
 
 
-	auto spawnHistory = gameInstance->SpawnHistory;
+	auto globalSpawnHistory = gameInstance->SpawnHistory;
+
 	TArray<FEnemyRemark> applicableRemarks;
 	for (const auto& remark: remarks)
 	{
@@ -36,18 +37,24 @@ TArray<FEnemyRemark> UEnemyRemark_DataAsset::FindApplicableRemarks(USenpaiGameIn
 			const FRegexPattern regexPattern(condition.MatchEnemyConfigRegex);			
 			int32 numberOfMatches = 0;
 			
+			TArray<FSpawnDetails> spawnHistory;
+			for (const auto& spawnDetail : globalSpawnHistory) {
+				if (spawnDetail.SpawnPointName == SpawnPointName)
+					spawnHistory.Add(spawnDetail);
+			}
+
+			
 			if (!spawnHistory.IsEmpty())
 			{				
-				int32 lastIndex = spawnHistory.Num() - condition.NumberOfSpawnsToCheck;
-				for (int32 Index = spawnHistory.Num() - 1; Index >= 0 && Index >= lastIndex; --Index)
+				int32 startIndex = spawnHistory.Num() - 1 - condition.BeginningFromHistoryIndex;
+				int32 lastIndex = startIndex - condition.NumberOfSpawnsToCheck;
+				for (int32 Index = startIndex; Index >= 0 && Index >= lastIndex; --Index)
 				{
-					FSpawnDetails spawn = spawnHistory[Index];
+					FSpawnDetails spawn = spawnHistory[Index];					
+					FRegexMatcher matcher(regexPattern, spawn.EnemyConfig);
+					if (matcher.FindNext())
+						++numberOfMatches;
 					
-					if (spawn.SpawnPointName == SpawnPointName) {
-						FRegexMatcher matcher(regexPattern, spawn.EnemyConfig);
-						if (matcher.FindNext())
-							++numberOfMatches;
-					}
 				}
 			}
 			
