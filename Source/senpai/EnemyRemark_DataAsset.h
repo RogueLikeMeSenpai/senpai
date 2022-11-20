@@ -31,6 +31,12 @@ struct FEnemyRemark {
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 MinRun = -1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 MaxRun = -1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FText remark;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
