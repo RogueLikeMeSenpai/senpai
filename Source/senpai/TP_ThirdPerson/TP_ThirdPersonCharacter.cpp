@@ -22,6 +22,8 @@ ATP_ThirdPersonCharacter::ATP_ThirdPersonCharacter()
 
 	// set our turn rate for input
 	TurnRateGamepad = 50.f;
+	bIsDashing = false;
+	bIsDead = false;
 
 	// Don't rotate when the controller rotates. Let that just affect the camera.
 	bUseControllerRotationPitch = false;
@@ -131,6 +133,10 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
+	if (bIsDead) {
+		return;
+	}
+
 	if (!bIsUsingGamepad)
 	{
 		FHitResult hit;
@@ -148,7 +154,10 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 		//UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetHitResultUnderCursor(ECC_WorldStatic, true, hit);
 		FVector location = hit.Location;
 		FRotator lookAt = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), location);
-		SetActorRotation(FRotator(0, lookAt.Yaw, 0));
+		
+		if (!bIsDashing) {
+			SetActorRotation(FRotator(0, lookAt.Yaw, 0));
+		}
 	}
 	else
 	{
@@ -165,7 +174,9 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 			                                                         GetActorLocation() + CameraRelativeLocation);
 			// UE_LOG(LogTemp, Warning, TEXT("relative vector: %f %f %f"), CameraRelativeLocation.X,
 			//        CameraRelativeLocation.Y, CameraRelativeLocation.Z)
-			SetActorRotation(FRotator(0, lookAt.Yaw, 0));
+			if (!bIsDashing) {
+				SetActorRotation(FRotator(0, lookAt.Yaw, 0));
+			}
 		}
 		else
 		{
