@@ -47,7 +47,7 @@ TArray<FEnemyRemark> UEnemyRemark_DataAsset::FindApplicableRemarks(USenpaiGameIn
 			if (!spawnHistory.IsEmpty())
 			{				
 				int32 startIndex = spawnHistory.Num() - 1 - condition.BeginningFromHistoryIndex;
-				int32 lastIndex = startIndex - condition.NumberOfSpawnsToCheck;
+				int32 lastIndex = startIndex - condition.NumberOfSpawnsToCheck + 1;
 				for (int32 Index = startIndex; Index >= 0 && Index >= lastIndex; --Index)
 				{
 					FSpawnDetails spawn = spawnHistory[Index];					
