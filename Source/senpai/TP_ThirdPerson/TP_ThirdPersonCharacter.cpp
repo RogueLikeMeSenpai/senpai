@@ -10,6 +10,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "DrawDebugHelpers.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -139,22 +140,32 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 
 	if (!bIsUsingGamepad)
 	{
-		FHitResult hit;
+		//FHitResult hit;
 		FVector WorldOrigin;
 		FVector WorldDirection;
 		FVector2D ScreenPosition;
-		FCollisionQueryParams CollisionQueryParams;
-		CollisionQueryParams.AddIgnoredActor(this);
+		//FCollisionQueryParams CollisionQueryParams;
+		//CollisionQueryParams.AddIgnoredActor(this);
 		const APlayerController* controller = Cast<APlayerController>(GetController());
 		controller->GetMousePosition(ScreenPosition.X,ScreenPosition.Y);
+
+		float T = 0;
+		FVector Intersection;
+		bool didIntersect = false;
+
 		if (UGameplayStatics::DeprojectScreenToWorld(controller, ScreenPosition, WorldOrigin, WorldDirection) == true)
 		{
-			GetWorld()->LineTraceSingleByChannel(hit, WorldOrigin, WorldOrigin + WorldDirection * CameraBoom->TargetArmLength*8, ECC_WorldStatic, CollisionQueryParams);
+			didIntersect = UKismetMathLibrary::LinePlaneIntersection_OriginNormal(WorldOrigin, WorldOrigin + WorldDirection * CameraBoom->TargetArmLength*8, GetActorLocation(),FVector::UpVector,T,Intersection);
+
+			//GetWorld()->LineTraceSingleByChannel(hit, WorldOrigin, WorldOrigin + WorldDirection * CameraBoom->TargetArmLength*8, ECC_WorldStatic, CollisionQueryParams);
 		}
 		//UGameplayStatics::GetPlayerController(GetWorld(), 0)->GetHitResultUnderCursor(ECC_WorldStatic, true, hit);
-		FVector location = hit.Location;
+
+		if(!didIntersect){return;}
+
+		FVector location = Intersection;
 		FRotator lookAt = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), location);
-		
+		//DrawDebugSphere(GetWorld(),location,50,32,FColor::Red);
 		if (!bIsDashing) {
 			SetActorRotation(FRotator(0, lookAt.Yaw, 0));
 		}
