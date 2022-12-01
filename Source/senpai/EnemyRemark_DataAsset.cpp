@@ -24,7 +24,7 @@ TArray<FEnemyRemark> UEnemyRemark_DataAsset::FindApplicableRemarks(USenpaiGameIn
 	{
 		if (
 			(remark.MinRun >= 0 && remark.MinRun > gameInstance->CurrentRun) ||
-			(remark.MaxRun >= 0 && remark.MaxRun < gameInstance->CurrentLevel)
+			(remark.MaxRun >= 0 && remark.MaxRun < gameInstance->CurrentRun)
 			)
 		{
 			continue;
