@@ -21,6 +21,7 @@ struct FSpawnDetails {
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString  EnemyConfig;
+
 };
 
 /**
@@ -37,10 +38,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 CurrentRun = -1;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString checkpoint;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<FSpawnDetails> SpawnHistory;
 
 	UFUNCTION(BlueprintCallable)
-	void ChangeLevel(int32 LevelId);
+	void RegisterLevelChange(int32 LevelId, bool death);
 
 	UFUNCTION(BlueprintCallable)
 	void RegisterSpawn(FString SpawnPointName, FString EnemyConfig);
