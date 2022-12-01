@@ -36,7 +36,10 @@ protected:
 	UStaticMeshComponent* MeshComp;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-	TSubclassOf<UDamageType> DamageType;
+	TSubclassOf<UDamageType> PrimaryDamageType;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	TSubclassOf<UDamageType> SecondaryDamageType;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UNiagaraSystem* AttackEffect;
