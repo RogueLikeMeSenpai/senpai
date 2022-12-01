@@ -5,7 +5,8 @@
 
 void USenpaiGameInstanceBase::RegisterLevelChange(int32 Level, bool death)
 {
-	this->checkpoint = "";
+	if(this->CurrentLevel != Level)
+		this->checkpoint = "";
 	this->CurrentLevel = Level;
 	if (this->CurrentLevel == 0 || death)
 		++this->CurrentRun;
