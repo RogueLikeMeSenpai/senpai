@@ -15,6 +15,7 @@ class SENPAI_API UGameDataTracker : public UObject
 	GENERATED_BODY()
 
 public:
+	UFUNCTION(BlueprintCallable)
 	void track();
 	
 };

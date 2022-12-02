@@ -3,6 +3,11 @@
 
 #include "SenpaiGameInstanceBase.h"
 
+USenpaiGameInstanceBase::USenpaiGameInstanceBase()
+{
+	gameDataTracker = CreateDefaultSubobject<UGameDataTracker>(TEXT("GameDataTracker0"));
+}
+
 void USenpaiGameInstanceBase::RegisterLevelChange(int32 Level, bool death)
 {
 	if(this->CurrentLevel != Level)
@@ -21,9 +26,4 @@ void USenpaiGameInstanceBase::RegisterSpawn(FString SpawnPointName, FString Enem
 	spawnDetails.EnemyConfig = EnemyConfig;
 
 	this->SpawnHistory.Add(spawnDetails);	
-}
-
-void USenpaiGameInstanceBase::TrackEvent()
-{
-	gameDataTracker->track();
 }

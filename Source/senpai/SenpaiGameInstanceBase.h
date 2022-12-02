@@ -43,16 +43,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<FSpawnDetails> SpawnHistory;
 
+	UPROPERTY(BlueprintReadOnly)
+	UGameDataTracker* gameDataTracker;
+
+	USenpaiGameInstanceBase();
+
 	UFUNCTION(BlueprintCallable)
 	void RegisterLevelChange(int32 LevelId, bool death);
 
 	UFUNCTION(BlueprintCallable)
 	void RegisterSpawn(FString SpawnPointName, FString EnemyConfig);
 
-	UFUNCTION(BlueprintCallable)
-	void TrackEvent();
-
-private:
-	UPROPERTY()
-	UGameDataTracker* gameDataTracker;
+	
 };
