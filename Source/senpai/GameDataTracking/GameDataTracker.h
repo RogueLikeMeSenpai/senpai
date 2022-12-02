@@ -6,6 +6,27 @@
 #include "UObject/NoExportTypes.h"
 #include "GameDataTracker.generated.h"
 
+
+USTRUCT(BlueprintType)
+struct FTrackingEvent {
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString name;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString gameConfiguration;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 run;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 level;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString participant;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FDateTime timestamp;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TMap<FString, FString> data;
+};
+
 /**
  * 
  */
@@ -16,6 +37,9 @@ class SENPAI_API UGameDataTracker : public UObject
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void track();
+	void track(FTrackingEvent event);
 	
+private:
+	UPROPERTY()
+	TArray<FTrackingEvent> events;
 };

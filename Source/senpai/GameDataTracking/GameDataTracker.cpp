@@ -3,7 +3,8 @@
 
 #include "GameDataTracker.h"
 
-void UGameDataTracker::track()
+void UGameDataTracker::track(FTrackingEvent event)
 {
-	UE_LOG(LogTemp, Display, TEXT("Track"));
+	UE_LOG(LogTemp, Display, TEXT("Tracked event: %s"), *event.name);
+	events.Add(event);
 }
