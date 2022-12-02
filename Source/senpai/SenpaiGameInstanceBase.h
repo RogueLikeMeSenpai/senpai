@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "GameDataTracking/GameDataTracker.h"
 #include "SenpaiGameInstanceBase.generated.h"
 
 USTRUCT(BlueprintType)
@@ -47,4 +48,11 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void RegisterSpawn(FString SpawnPointName, FString EnemyConfig);
+
+	UFUNCTION(BlueprintCallable)
+	void TrackEvent();
+
+private:
+	UPROPERTY()
+	UGameDataTracker* gameDataTracker;
 };

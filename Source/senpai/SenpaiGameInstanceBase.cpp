@@ -22,3 +22,8 @@ void USenpaiGameInstanceBase::RegisterSpawn(FString SpawnPointName, FString Enem
 
 	this->SpawnHistory.Add(spawnDetails);	
 }
+
+void USenpaiGameInstanceBase::TrackEvent()
+{
+	gameDataTracker->track();
+}
