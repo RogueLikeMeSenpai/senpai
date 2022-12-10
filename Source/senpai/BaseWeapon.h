@@ -30,6 +30,8 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Weapon")
 	FDealtDamageSignature OnDealtDamage;
 
+
+
 protected:
 
 	UPROPERTY( EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
@@ -103,6 +105,9 @@ public:
 	//usage is optional
 	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
 	void EndSecondaryAttack();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void AttachedToParent();
 
 	
 	virtual void Tick(float DeltaTime) override;

@@ -96,3 +96,8 @@ void ABaseWeapon::TriggerDamageDealt(float Damage, AActor* DamagedActor)
 //{
 //	UE_LOG(LogTemp, Display, TEXT("Damage Dealt"));
 //}
+
+void ABaseWeapon::AttachedToParent_Implementation()
+{
+
+}
