@@ -41,6 +41,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	FString toJson();
+
+	UFUNCTION(BlueprintCallable)
+	void writeToFile(FString content, FString fileName);
 	
 private:
 	UPROPERTY()
