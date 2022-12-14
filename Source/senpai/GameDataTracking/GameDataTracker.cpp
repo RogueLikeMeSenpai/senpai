@@ -12,18 +12,29 @@ void UGameDataTracker::track(FTrackingEvent event)
 
 FString UGameDataTracker::toJson()
 {
-    TArray<TSharedPtr<FJsonValue>> jsonArray;
+    TArray<TSharedPtr<FJsonValue>> eventsJsonArray;
     for (auto& trackingEvent : events)
     {        
-        TSharedPtr<FJsonObject> jsonObject = MakeShareable(new FJsonObject);        
-        jsonObject->SetStringField("name", trackingEvent.name);
-        jsonObject->SetNumberField("run", trackingEvent.run);
+        TSharedPtr<FJsonObject> eventJsonObject = MakeShareable(new FJsonObject);        
+        eventJsonObject->SetStringField("name", trackingEvent.name);
+        eventJsonObject->SetStringField("gameConfiguration", trackingEvent.gameConfiguration);
+        eventJsonObject->SetNumberField("run", trackingEvent.run);
+        eventJsonObject->SetNumberField("level", trackingEvent.level);
+        eventJsonObject->SetStringField("participant", trackingEvent.participant);
+        eventJsonObject->SetNumberField("timestamp", trackingEvent.timestamp.ToUnixTimestamp());
+
+        TSharedPtr<FJsonObject> dataJsonObject = MakeShareable(new FJsonObject);
+        for (auto& dataPair : trackingEvent.data)
+        {
+            dataJsonObject->SetStringField(dataPair.Key, dataPair.Value);
+        }
+        eventJsonObject->SetObjectField("data", dataJsonObject);
         
-        jsonArray.Add(MakeShareable(new FJsonValueObject(jsonObject)));
+        eventsJsonArray.Add(MakeShareable(new FJsonValueObject(eventJsonObject)));
     }
 
     FString jsonString;
     TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&jsonString);
-    FJsonSerializer::Serialize(jsonArray, Writer);
+    FJsonSerializer::Serialize(eventsJsonArray, Writer);
     return jsonString;  
 }

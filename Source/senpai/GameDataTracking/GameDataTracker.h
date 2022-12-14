@@ -24,7 +24,7 @@ struct FTrackingEvent {
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FDateTime timestamp;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TMap<FString, FString> data;
+	TMap<FString, FString> data; // TODO change to array?
 };
 
 /**
