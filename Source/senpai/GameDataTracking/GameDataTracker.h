@@ -38,6 +38,9 @@ class SENPAI_API UGameDataTracker : public UObject
 public:
 	UFUNCTION(BlueprintCallable)
 	void track(FTrackingEvent event);
+
+	UFUNCTION(BlueprintCallable)
+	FString toJson();
 	
 private:
 	UPROPERTY()
