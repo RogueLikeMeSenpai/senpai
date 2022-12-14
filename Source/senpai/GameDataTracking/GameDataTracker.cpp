@@ -25,7 +25,19 @@ FString UGameDataTracker::toJson()
     TArray<TSharedPtr<FJsonValue>> MyJsonArray;
     for (auto& Element : events)
     {
-        MyJsonArray.Add(MakeShareable(new FJsonValueString(Element.name)));
+        
+        
+        TSharedPtr<FJsonObject> MyJson = MakeShareable(new FJsonObject);        
+        MyJson->SetStringField("name", Element.name);
+        MyJson->SetNumberField("run", Element.run);
+
+        TSharedPtr<FJsonValueObject> MyJsonValueObject = MakeShareable(new FJsonValueObject(MyJson));
+        MyJsonArray.Add(MyJsonValueObject);
+
+
+        //MyJsonArray.Add(MakeShareable(new FJsonValueString(Element.name)));
+        //MyJsonArray.Add(MakeShareable(new FJsonObject));
+        //MyJsonArray.Add(MyJson);
     }
     FString MyJsonFString;
     TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&MyJsonFString);
