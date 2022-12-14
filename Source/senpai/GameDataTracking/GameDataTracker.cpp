@@ -12,51 +12,18 @@ void UGameDataTracker::track(FTrackingEvent event)
 
 FString UGameDataTracker::toJson()
 {
-    // Json object
-    //TSharedPtr<FJsonObject> MyJson = MakeShareable(new FJsonObject);
-    //MyJson->SetStringField("MyStringFieldKey", FString("MyStringfieldValue"));
-    //MyJson->SetNumberField("MyNumberFieldKey", 42);
-
-    //FString MyJsonFString;
-    //TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&MyJsonFString);
-    //FJsonSerializer::Serialize(MyJson.ToSharedRef(), Writer);
-
-    // Json array
-    TArray<TSharedPtr<FJsonValue>> MyJsonArray;
-    for (auto& Element : events)
-    {
+    TArray<TSharedPtr<FJsonValue>> jsonArray;
+    for (auto& trackingEvent : events)
+    {        
+        TSharedPtr<FJsonObject> jsonObject = MakeShareable(new FJsonObject);        
+        jsonObject->SetStringField("name", trackingEvent.name);
+        jsonObject->SetNumberField("run", trackingEvent.run);
         
-        
-        TSharedPtr<FJsonObject> MyJson = MakeShareable(new FJsonObject);        
-        MyJson->SetStringField("name", Element.name);
-        MyJson->SetNumberField("run", Element.run);
-
-        TSharedPtr<FJsonValueObject> MyJsonValueObject = MakeShareable(new FJsonValueObject(MyJson));
-        MyJsonArray.Add(MyJsonValueObject);
-
-
-        //MyJsonArray.Add(MakeShareable(new FJsonValueString(Element.name)));
-        //MyJsonArray.Add(MakeShareable(new FJsonObject));
-        //MyJsonArray.Add(MyJson);
+        jsonArray.Add(MakeShareable(new FJsonValueObject(jsonObject)));
     }
-    FString MyJsonFString;
-    TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&MyJsonFString);
-    FJsonSerializer::Serialize(MyJsonArray, Writer);
-    return MyJsonFString;
 
-
-    //TArray<TSharedPtr<FJsonValue>> MyJsonArray;
-    //// Put some data in the JSON array
-
-    //for (auto & Element : MyFNameArray)
-    //{
-
-    //    MyJsonArray.Add(MakeShareable(new FJsonValueString(Element.ToString())));
-
-    //}
-    //FString MyJsonFString;
-    //TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&MyJsonFString);
-    //FJsonSerializer::Serialize(MyJsonArray, Writer);
-    //return MyJsonFString;
-    
+    FString jsonString;
+    TSharedRef<TJsonWriter<>> Writer = TJsonWriterFactory<>::Create(&jsonString);
+    FJsonSerializer::Serialize(jsonArray, Writer);
+    return jsonString;  
 }
