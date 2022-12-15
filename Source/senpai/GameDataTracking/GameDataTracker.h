@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+//#include "Templates/SharedPointer.h"
+#include "Interfaces/IHttpRequest.h"
 #include "GameDataTracker.generated.h"
 
 
@@ -27,6 +29,23 @@ struct FTrackingEvent {
 	TMap<FString, FString> data; // TODO change to array?
 };
 
+USTRUCT()
+struct FAWSHelloWorld_Request
+{
+	GENERATED_BODY()
+	UPROPERTY() FString firstName;
+	UPROPERTY() FString lastName;
+};
+
+USTRUCT()
+struct FAWSHelloWorld_Response
+{
+	GENERATED_BODY()
+	UPROPERTY() FString body;
+};
+
+//typedef TSharedRef<IHttpRequest, ESPMode::ThreadSafe> TSharedRefHttpRequest;
+
 /**
  * 
  */
@@ -44,8 +63,32 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void writeToFile(FString content, FString fileName);
+
+	UFUNCTION(BlueprintCallable)
+	void makeHttpRequest();
+
+	
 	
 private:
 	UPROPERTY()
 	TArray<FTrackingEvent> events;
+
+	FString ApiBaseUrl = "https://fvr1ssg1rh.execute-api.eu-central-1.amazonaws.com/dev";
+
+	IHttpRequest* test;
+
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> PostRequest(FString Subroute, FString ContentJsonString);
+
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> RequestWithRoute(FString Subroute);
+	void SetRequestHeaders(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request);
+	void httpResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+	void Send(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request);
+	bool ResponseIsValid(FHttpResponsePtr Response, bool bWasSuccessful);
+
+	template<typename StructType>
+	void GetJsonStringFromStruct(StructType FilledStruct, FString& StringOutput);
+
+	template<typename StructType>
+	void GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput);
+	
 };

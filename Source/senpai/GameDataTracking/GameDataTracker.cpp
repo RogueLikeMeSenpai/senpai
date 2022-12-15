@@ -3,7 +3,9 @@
 
 #include "GameDataTracker.h"
 #include "Json.h"
+#include "JsonUtilities.h"
 #include "Misc/FileHelper.h"
+#include "Runtime/Online/HTTP/Public/Http.h"
 
 void UGameDataTracker::track(FTrackingEvent event)
 {
@@ -103,4 +105,97 @@ void UGameDataTracker::writeToFile(FString content, FString fileName)
     //    UE_LOG(LogTemp, Warning, TEXT("FileManipulation: ERROR: Can not read the file because it was not found."));
     //    UE_LOG(LogTemp, Warning, TEXT("FileManipulation: Expected file location: %s"), *file);
     //}
+}
+
+// TODO response
+
+template<typename StructType>
+inline void UGameDataTracker::GetJsonStringFromStruct(StructType FilledStruct, FString& StringOutput)
+{
+    FJsonObjectConverter::UStructToJsonObjectString(StructType::StaticStruct(), &FilledStruct, StringOutput, 0, 0);
+}
+
+template<typename StructType>
+void UGameDataTracker::GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput)
+{
+    StructType StructData;
+    FString JsonString = Response->GetContentAsString();
+    FJsonObjectConverter::JsonObjectStringToUStruct(JsonString, &StructOutput, 0, 0);
+}
+
+void UGameDataTracker::makeHttpRequest()
+{
+    
+    FAWSHelloWorld_Request structRequest;
+    structRequest.firstName = "Unreal";
+    structRequest.lastName = "Engine";
+
+    FString ContentJsonString;
+    GetJsonStringFromStruct(structRequest, ContentJsonString);
+
+    TSharedRef Request = PostRequest("", ContentJsonString);
+    Request->OnProcessRequestComplete().BindUObject(this, &UGameDataTracker::httpResponse);
+    Send(Request);
+}
+
+TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::PostRequest(FString Subroute, FString ContentJsonString)
+{
+    TSharedRef Request = RequestWithRoute(Subroute);
+    Request->SetVerb("POST");
+    Request->SetContentAsString(ContentJsonString);
+    return Request;
+}
+
+TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::RequestWithRoute(FString Subroute)
+{
+    //<IHttpRequest, ESPMode::ThreadSafe>
+    TSharedRef Request = FHttpModule::Get().CreateRequest();
+    Request->SetURL(ApiBaseUrl + Subroute);
+    SetRequestHeaders(Request);
+    return Request;
+}
+
+void UGameDataTracker::SetRequestHeaders(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request)
+{
+    Request->SetHeader(TEXT("User-Agent"), TEXT("X-UnrealEngine-Agent"));
+    Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+    Request->SetHeader(TEXT("Accepts"), TEXT("application/json"));
+}
+
+void UGameDataTracker::httpResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+{
+    if (!ResponseIsValid(Response, bWasSuccessful)) 
+        return;
+
+    UE_LOG(LogTemp, Display, TEXT("httpResponse: Success: %s"), *FString((bWasSuccessful ? "true" : "false")));
+    FString responseContent = Response->GetContentAsString();
+    UE_LOG(LogTemp, Display, TEXT("httpResponse: content: %s"), *responseContent);
+
+    FAWSHelloWorld_Response responseStruct;
+    GetStructFromJsonString(Response, responseStruct);
+    UE_LOG(LogTemp, Warning, TEXT("httpResponse: body: %s"), *responseStruct.body);
+
+    /*FResponse_Login LoginResponse;
+    GetStructFromJsonString(Response, LoginResponse);*/
+}
+
+void UGameDataTracker::Send(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request)
+{
+
+    Request->ProcessRequest();
+}
+
+bool UGameDataTracker::ResponseIsValid(FHttpResponsePtr Response, bool bWasSuccessful)
+{
+    if (!bWasSuccessful || !Response.IsValid()) 
+        return false;
+
+    if (EHttpResponseCodes::IsOk(Response->GetResponseCode()))
+        return true; 
+    else 
+    { 
+        UE_LOG(LogTemp, Warning, TEXT("Http Response returned error code: %d"), Response->GetResponseCode()); 
+        return false; 
+    }
+    return false;
 }
