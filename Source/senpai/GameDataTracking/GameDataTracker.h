@@ -4,8 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//#include "Templates/SharedPointer.h"
+// #include "Templates/SharedPointer.h"
 #include "Interfaces/IHttpRequest.h"
+
 #include "GameDataTracker.generated.h"
 
 
@@ -51,17 +52,39 @@ struct FAuthToken
 	GENERATED_BODY()
 	UPROPERTY() FString access_token;
 	UPROPERTY() FString token_type;
-	UPROPERTY() int32 expires_in;
+	UPROPERTY() int32 expires_in; // seconds
 	UPROPERTY() FString refresh_token; // TODO persist?
 };
 
+
 USTRUCT()
-struct FAuthTokenResponse {
+struct FUserResponse {
 	GENERATED_BODY()
-	UPROPERTY() FAuthToken body;
+	UPROPERTY() FString id;
+	UPROPERTY() FString email;
+	UPROPERTY() FString confirmation_sent_at;
+	UPROPERTY() FString created_at;
+	UPROPERTY() FString updated_at;
+};
+
+USTRUCT(BlueprintType)
+struct FAuthUser {
+	GENERATED_BODY()
+	UPROPERTY() bool loggedIn;
+	UPROPERTY(BlueprintReadOnly) FString email;
+	UPROPERTY() FAuthToken authToken;
+	UPROPERTY() FDateTime loggedInTimestampUtc;
+	UPROPERTY(BlueprintReadOnly) FDateTime tokenExpirationTimestampUtc;
+	
 };
 
 //typedef TSharedRef<IHttpRequest, ESPMode::ThreadSafe> TSharedRefHttpRequest;
+
+static const struct FAuthUser EmptyUser = {};
+
+//DECLARE_DYNAMIC_DELEGATE(FDelegateTest);
+
+DECLARE_DYNAMIC_DELEGATE_OneParam(FDelegateLoggedIn, FAuthUser, user);
 
 /**
  * 
@@ -85,14 +108,28 @@ public:
 	void makeHttpRequest();
 	
 	UFUNCTION(BlueprintCallable)
-	void requestAuthToken(FString username, FString password);
+	void requestAuthToken(FString username, FString password, FDelegateLoggedIn delegateLoggedIn);
+
+	//UFUNCTION(BlueprintCallable)
+	//void TestMyDelegate(FDelegateTest myDelegate);
+
+	UFUNCTION(BlueprintCallable)
+	bool isLoggedIn();
 	
 	
 private:
+	//UPROPERTY()
+	//FDelegateTest m_delegate;
+
+	UPROPERTY()
+	FDelegateLoggedIn m_delegateLoggedIn;
+
 	UPROPERTY()
 	TArray<FTrackingEvent> events;
 
-	FAuthToken authToken;
+	UPROPERTY()
+	FAuthUser user;
+
 
 	FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
 	FString tokenEndpoint = "/.netlify/identity/token";
@@ -100,6 +137,8 @@ private:
 	IHttpRequest* test;
 
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> PostRequest(FString Subroute, FString Content, FString contentType);
+	//TSharedRef<IHttpRequest, ESPMode::ThreadSafe> GetRequest(FString Subroute);
+
 	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> RequestWithRoute(FString Subroute, FString contentType);
 	void SetRequestHeaders(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request, FString contentType);
 	void httpResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
@@ -113,4 +152,7 @@ private:
 	void GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput);
 	
 	void authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+
+	/*void requestUser();
+	void userResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);*/
 };

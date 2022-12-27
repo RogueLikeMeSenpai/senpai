@@ -146,6 +146,13 @@ TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::PostRequest(FStr
     return Request;
 }
 
+//TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::GetRequest(FString Subroute)
+//{
+//    TSharedRef Request = RequestWithRoute(Subroute, "");
+//    Request->SetVerb("GET");
+//    return TSharedRef<IHttpRequest, ESPMode::ThreadSafe>();
+//}
+
 TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::RequestWithRoute(FString Subroute, FString contentType)
 {
     //<IHttpRequest, ESPMode::ThreadSafe>
@@ -202,8 +209,10 @@ bool UGameDataTracker::ResponseIsValid(FHttpResponsePtr Response, bool bWasSucce
 }
 
 
-void UGameDataTracker::requestAuthToken(FString username, FString password)
+void UGameDataTracker::requestAuthToken(FString username, FString password, FDelegateLoggedIn delegateLoggedIn)
 {    
+    this->m_delegateLoggedIn = delegateLoggedIn;    
+
     //FText contentText = FText::FormatOrdered(FTextFormat::FromString("grant_type=password&username={0}&password={1}"), username, password);
     //FString content = contentText.ToString();    
     FString content = "grant_type=password&username=";
@@ -214,6 +223,24 @@ void UGameDataTracker::requestAuthToken(FString username, FString password)
     TSharedRef Request = PostRequest(this->tokenEndpoint, content, TEXT("application/x-www-form-urlencoded"));
     Request->OnProcessRequestComplete().BindUObject(this, &UGameDataTracker::authTokenResponse);
     Send(Request);
+
+    this->user = EmptyUser;
+    this->user.email = username;
+}
+
+//void UGameDataTracker::TestMyDelegate(FDelegateTest myDelegate)
+//{
+//    this->m_delegate = myDelegate;
+//    // this->requestAuthToken("max.deutsch@posteo.at", "test");
+//}
+
+bool UGameDataTracker::isLoggedIn()
+{
+    if (this->user.loggedIn) {
+        // FTimesthis->user->loggedInTimestamp + FTimespan(0, 0, this->user->authToken.expires_in);
+        return FDateTime::UtcNow() < this->user.tokenExpirationTimestampUtc;
+    }
+    return false;
 }
 
 void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
@@ -227,5 +254,37 @@ void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponseP
 
     FAuthToken responseStruct;
     GetStructFromJsonString(Response, responseStruct);
-    UE_LOG(LogTemp, Warning, TEXT("httpResponse: accessToken: %s"), *responseStruct.access_token);
+    //UE_LOG(LogTemp, Warning, TEXT("httpResponse: accessToken: %s"), *responseStruct.access_token);
+    
+    
+    this->user.loggedIn = true;
+    this->user.authToken = responseStruct;
+    this->user.loggedInTimestampUtc = FDateTime::UtcNow();
+    this->user.tokenExpirationTimestampUtc = this->user.loggedInTimestampUtc + FTimespan(0, 0, responseStruct.expires_in);
+
+    this->m_delegateLoggedIn.ExecuteIfBound(this->user);
+    // this->m_delegate.ExecuteIfBound();
+
 }
+
+//void UGameDataTracker::requestUser()
+//{    
+//    TSharedRef Request = GetRequest(this->tokenEndpoint);
+//    Request->OnProcessRequestComplete().BindUObject(this, &UGameDataTracker::authTokenResponse);
+//    Send(Request);
+//}
+
+//void UGameDataTracker::userResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+//{
+//    if (!ResponseIsValid(Response, bWasSuccessful))
+//        return;
+//
+//    UE_LOG(LogTemp, Display, TEXT("httpResponse: Success: %s"), *FString((bWasSuccessful ? "true" : "false")));
+//    FString responseContent = Response->GetContentAsString();
+//    UE_LOG(LogTemp, Display, TEXT("httpResponse: content: %s"), *responseContent);
+//
+//    FUserResponse responseStruct;
+//    GetStructFromJsonString(Response, responseStruct);
+//    
+//    
+//}
