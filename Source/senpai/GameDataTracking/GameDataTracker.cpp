@@ -133,34 +133,35 @@ void UGameDataTracker::makeHttpRequest()
     FString ContentJsonString;
     GetJsonStringFromStruct(structRequest, ContentJsonString);
 
-    TSharedRef Request = PostRequest("", ContentJsonString);
+    TSharedRef Request = PostRequest("", ContentJsonString, TEXT("application/json"));
     Request->OnProcessRequestComplete().BindUObject(this, &UGameDataTracker::httpResponse);
     Send(Request);
 }
 
-TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::PostRequest(FString Subroute, FString ContentJsonString)
+TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::PostRequest(FString Subroute, FString Content, FString contentType)
 {
-    TSharedRef Request = RequestWithRoute(Subroute);
+    TSharedRef Request = RequestWithRoute(Subroute, contentType);
     Request->SetVerb("POST");
-    Request->SetContentAsString(ContentJsonString);
+    Request->SetContentAsString(Content);
     return Request;
 }
 
-TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::RequestWithRoute(FString Subroute)
+TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::RequestWithRoute(FString Subroute, FString contentType)
 {
     //<IHttpRequest, ESPMode::ThreadSafe>
     TSharedRef Request = FHttpModule::Get().CreateRequest();
     Request->SetURL(ApiBaseUrl + Subroute);
-    SetRequestHeaders(Request);
+    SetRequestHeaders(Request, contentType);
     return Request;
 }
 
-void UGameDataTracker::SetRequestHeaders(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request)
+void UGameDataTracker::SetRequestHeaders(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request, FString contentType)
 {
     Request->SetHeader(TEXT("User-Agent"), TEXT("X-UnrealEngine-Agent"));
-    Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
-    Request->SetHeader(TEXT("Accepts"), TEXT("application/json"));
+    Request->SetHeader(TEXT("Content-Type"), contentType);
+    Request->SetHeader(TEXT("Accepts"), TEXT("application/json"));    
 }
+
 
 void UGameDataTracker::httpResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 {
@@ -198,4 +199,33 @@ bool UGameDataTracker::ResponseIsValid(FHttpResponsePtr Response, bool bWasSucce
         return false; 
     }
     return false;
+}
+
+
+void UGameDataTracker::requestAuthToken(FString username, FString password)
+{    
+    //FText contentText = FText::FormatOrdered(FTextFormat::FromString("grant_type=password&username={0}&password={1}"), username, password);
+    //FString content = contentText.ToString();    
+    FString content = "grant_type=password&username=";
+    content.Append(username);
+    content.Append("&password=");
+    content.Append(password);
+
+    TSharedRef Request = PostRequest(this->tokenEndpoint, content, TEXT("application/x-www-form-urlencoded"));
+    Request->OnProcessRequestComplete().BindUObject(this, &UGameDataTracker::authTokenResponse);
+    Send(Request);
+}
+
+void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+{
+    if (!ResponseIsValid(Response, bWasSuccessful))
+        return;
+
+    UE_LOG(LogTemp, Display, TEXT("httpResponse: Success: %s"), *FString((bWasSuccessful ? "true" : "false")));
+    FString responseContent = Response->GetContentAsString();
+    UE_LOG(LogTemp, Display, TEXT("httpResponse: content: %s"), *responseContent);
+
+    FAuthToken responseStruct;
+    GetStructFromJsonString(Response, responseStruct);
+    UE_LOG(LogTemp, Warning, TEXT("httpResponse: accessToken: %s"), *responseStruct.access_token);
 }

@@ -44,6 +44,23 @@ struct FAWSHelloWorld_Response
 	UPROPERTY() FString body;
 };
 
+
+USTRUCT()
+struct FAuthToken
+{
+	GENERATED_BODY()
+	UPROPERTY() FString access_token;
+	UPROPERTY() FString token_type;
+	UPROPERTY() int32 expires_in;
+	UPROPERTY() FString refresh_token; // TODO persist?
+};
+
+USTRUCT()
+struct FAuthTokenResponse {
+	GENERATED_BODY()
+	UPROPERTY() FAuthToken body;
+};
+
 //typedef TSharedRef<IHttpRequest, ESPMode::ThreadSafe> TSharedRefHttpRequest;
 
 /**
@@ -66,21 +83,25 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void makeHttpRequest();
-
+	
+	UFUNCTION(BlueprintCallable)
+	void requestAuthToken(FString username, FString password);
 	
 	
 private:
 	UPROPERTY()
 	TArray<FTrackingEvent> events;
 
-	FString ApiBaseUrl = "https://fvr1ssg1rh.execute-api.eu-central-1.amazonaws.com/dev";
+	FAuthToken authToken;
+
+	FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
+	FString tokenEndpoint = "/.netlify/identity/token";
 
 	IHttpRequest* test;
 
-	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> PostRequest(FString Subroute, FString ContentJsonString);
-
-	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> RequestWithRoute(FString Subroute);
-	void SetRequestHeaders(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request);
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> PostRequest(FString Subroute, FString Content, FString contentType);
+	TSharedRef<IHttpRequest, ESPMode::ThreadSafe> RequestWithRoute(FString Subroute, FString contentType);
+	void SetRequestHeaders(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request, FString contentType);
 	void httpResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 	void Send(TSharedRef<IHttpRequest, ESPMode::ThreadSafe>& Request);
 	bool ResponseIsValid(FHttpResponsePtr Response, bool bWasSuccessful);
@@ -91,4 +112,5 @@ private:
 	template<typename StructType>
 	void GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput);
 	
+	void authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 };
