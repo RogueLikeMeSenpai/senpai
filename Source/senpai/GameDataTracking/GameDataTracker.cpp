@@ -320,6 +320,7 @@ void UGameDataTracker::fetchParticipationResponse(FHttpRequestPtr Request, FHttp
     }
     GetStructFromJsonString(Response, this->participation);
     this->onParticipationChange.Broadcast(this->participation, true);
+    this->saveParticipation();
 }
 
 //void UGameDataTracker::requestUser()
