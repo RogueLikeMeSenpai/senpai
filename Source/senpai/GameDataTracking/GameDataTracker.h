@@ -115,6 +115,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	bool isLoggedIn();
+
+	UPROPERTY(BlueprintReadOnly)
+	FString participationId;
 	
 	
 private:
@@ -129,6 +132,8 @@ private:
 
 	UPROPERTY()
 	FAuthUser user;
+
+	
 
 
 	FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
