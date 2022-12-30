@@ -243,6 +243,14 @@ bool UGameDataTracker::isLoggedIn()
     return false;
 }
 
+void UGameDataTracker::fetchParticipation(FString participationId)
+{
+    this->participation.id = participationId;
+    this->participation.gameConfigurationId = "fetched gc";
+    this->onParticipationChange.Broadcast(participation, true);
+    return;
+}
+
 void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 {
     if (!ResponseIsValid(Response, bWasSuccessful))

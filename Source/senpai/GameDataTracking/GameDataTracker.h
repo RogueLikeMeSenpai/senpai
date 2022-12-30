@@ -78,6 +78,14 @@ struct FAuthUser {
 	
 };
 
+USTRUCT(BlueprintType)
+struct FParticipation {
+	GENERATED_BODY()
+	UPROPERTY(BlueprintReadOnly) FString id;
+	UPROPERTY(BlueprintReadOnly) bool submittedSurvey;
+	UPROPERTY(BlueprintReadOnly) FString gameConfigurationId;
+};
+
 //typedef TSharedRef<IHttpRequest, ESPMode::ThreadSafe> TSharedRefHttpRequest;
 
 static const struct FAuthUser EmptyUser = {};
@@ -85,6 +93,8 @@ static const struct FAuthUser EmptyUser = {};
 //DECLARE_DYNAMIC_DELEGATE(FDelegateTest);
 
 DECLARE_DYNAMIC_DELEGATE_OneParam(FDelegateLoggedIn, FAuthUser, user);
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnParticipationChange, FParticipation, participation, bool, valid);
 
 /**
  * 
@@ -116,8 +126,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool isLoggedIn();
 
-	UPROPERTY(BlueprintReadOnly)
-	FString participationId;
+	UPROPERTY(BlueprintReadOnly) FParticipation participation;
+	UPROPERTY(BlueprintAssignable) FOnParticipationChange onParticipationChange;
+
+	UFUNCTION(BlueprintCallable) 
+	void fetchParticipation(FString participationId);
 	
 	
 private:
@@ -131,9 +144,7 @@ private:
 	TArray<FTrackingEvent> events;
 
 	UPROPERTY()
-	FAuthUser user;
-
-	
+	FAuthUser user;	
 
 
 	FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
