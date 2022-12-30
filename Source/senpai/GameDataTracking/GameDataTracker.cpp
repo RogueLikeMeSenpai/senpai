@@ -6,6 +6,8 @@
 #include "JsonUtilities.h"
 #include "Misc/FileHelper.h"
 #include "Runtime/Online/HTTP/Public/Http.h"
+#include "ParticipationSaveGame.h"
+#include "Kismet/GameplayStatics.h"
 
 void UGameDataTracker::track(FTrackingEvent event)
 {
@@ -245,10 +247,45 @@ bool UGameDataTracker::isLoggedIn()
 
 void UGameDataTracker::fetchParticipation(FString participationId)
 {
-    this->participation.id = participationId;
-    this->participation.gameConfigurationId = "fetched gc";
-    this->onParticipationChange.Broadcast(participation, true);
+    // this->participation.id = participationId;
+    // this->participation.gameConfigurationId = "fetched gc";
+    // this->onParticipationChange.Broadcast(participation, true);
+
+    FParticipation participationLogin;
+    participationLogin.id = participationId;
+
+    FString ContentJsonString;
+    GetJsonStringFromStruct(participationLogin, ContentJsonString);
+
+    TSharedRef Request = PostRequest(loginEndpoint, ContentJsonString, TEXT("application/json"));
+    Request->OnProcessRequestComplete().BindUObject(this, &UGameDataTracker::fetchParticipationResponse);
+    Send(Request);
     return;
+}
+
+void UGameDataTracker::loadParticipation()
+{
+    if (UGameplayStatics::DoesSaveGameExist(participationSlotName, 0)) 
+    {
+        UParticipationSaveGame* saveGame = Cast<UParticipationSaveGame>(UGameplayStatics::LoadGameFromSlot(participationSlotName, 0));
+        if (saveGame) 
+        {
+            this->participation = saveGame->participation;
+            this->onParticipationChange.Broadcast(this->participation, true);
+        }
+    }    
+    else
+    {
+        this->onParticipationChange.Broadcast(this->participation, false);
+    }
+    
+}
+
+void UGameDataTracker::saveParticipation()
+{
+    UParticipationSaveGame* saveGame = Cast<UParticipationSaveGame>(UGameplayStatics::CreateSaveGameObject(UParticipationSaveGame::StaticClass()));
+    saveGame->participation = this->participation;
+    UGameplayStatics::SaveGameToSlot(saveGame, participationSlotName, 0);
 }
 
 void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
@@ -273,6 +310,16 @@ void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponseP
     this->m_delegateLoggedIn.ExecuteIfBound(this->user);
     // this->m_delegate.ExecuteIfBound();
 
+}
+
+void UGameDataTracker::fetchParticipationResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+{
+    if (!ResponseIsValid(Response, bWasSuccessful)) {
+        this->onParticipationChange.Broadcast(this->participation, false);
+        return;
+    }
+    GetStructFromJsonString(Response, this->participation);
+    this->onParticipationChange.Broadcast(this->participation, true);
 }
 
 //void UGameDataTracker::requestUser()

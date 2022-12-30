@@ -6,7 +6,7 @@
 #include "UObject/NoExportTypes.h"
 // #include "Templates/SharedPointer.h"
 #include "Interfaces/IHttpRequest.h"
-
+#include "Participation.h"
 #include "GameDataTracker.generated.h"
 
 
@@ -78,17 +78,11 @@ struct FAuthUser {
 	
 };
 
-USTRUCT(BlueprintType)
-struct FParticipation {
-	GENERATED_BODY()
-	UPROPERTY(BlueprintReadOnly) FString id;
-	UPROPERTY(BlueprintReadOnly) bool submittedSurvey;
-	UPROPERTY(BlueprintReadOnly) FString gameConfigurationId;
-};
 
 //typedef TSharedRef<IHttpRequest, ESPMode::ThreadSafe> TSharedRefHttpRequest;
 
 static const struct FAuthUser EmptyUser = {};
+static const FString participationSlotName = "participation";
 
 //DECLARE_DYNAMIC_DELEGATE(FDelegateTest);
 
@@ -105,6 +99,7 @@ class SENPAI_API UGameDataTracker : public UObject
 	GENERATED_BODY()
 
 public:
+
 	UFUNCTION(BlueprintCallable)
 	void track(FTrackingEvent event);
 
@@ -131,6 +126,12 @@ public:
 
 	UFUNCTION(BlueprintCallable) 
 	void fetchParticipation(FString participationId);
+
+	UFUNCTION(BlueprintCallable)
+	void loadParticipation();
+
+	UFUNCTION(BlueprintCallable)
+	void saveParticipation();
 	
 	
 private:
@@ -147,8 +148,9 @@ private:
 	FAuthUser user;	
 
 
-	FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
-	FString tokenEndpoint = "/.netlify/identity/token";
+	const FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
+	const FString tokenEndpoint = "/.netlify/identity/token";
+	const FString loginEndpoint = "/.netlify/functions/login-participation";
 
 	IHttpRequest* test;
 
@@ -168,6 +170,7 @@ private:
 	void GetStructFromJsonString(FHttpResponsePtr Response, StructType& StructOutput);
 	
 	void authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+	void fetchParticipationResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 
 	/*void requestUser();
 	void userResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);*/
