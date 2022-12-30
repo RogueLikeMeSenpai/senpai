@@ -132,6 +132,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void saveParticipation();
+
+	UFUNCTION(BlueprintCallable)
+	void deleteParticipation();
 	
 	
 private:

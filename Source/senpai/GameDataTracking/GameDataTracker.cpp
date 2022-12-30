@@ -288,6 +288,12 @@ void UGameDataTracker::saveParticipation()
     UGameplayStatics::SaveGameToSlot(saveGame, participationSlotName, 0);
 }
 
+void UGameDataTracker::deleteParticipation()
+{
+    UGameplayStatics::DeleteGameInSlot(participationSlotName, 0);
+    this->onParticipationChange.Broadcast(this->participation, false);
+}
+
 void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 {
     if (!ResponseIsValid(Response, bWasSuccessful))
