@@ -18,6 +18,9 @@ public:
     // Sets default values for this component's properties
     UDriftingBandits();
 
+    UFUNCTION(BlueprintCallable)
+    void init(TArray<FString> enemies);
+
     //create/set all possible enemies in Qtable with 0
 
     void initQtable();
@@ -47,8 +50,6 @@ public:
     TArray<FString> getIndex2Name() const;
 
     void setIndex2Name(const TArray<FString> i2n);
-
-
 
 
 protected:

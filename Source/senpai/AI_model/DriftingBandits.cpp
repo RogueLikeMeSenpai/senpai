@@ -4,12 +4,25 @@
 #include "DriftingBandits.h"
 
 UDriftingBandits::UDriftingBandits() : m_Name2Index({}) {
+}
 
+void UDriftingBandits::init(TArray<FString> enemies)
+{
     m_EnemyCount = 0;
     m_rho = 0.7;
     m_beta = 1.0;
     m_TagCount = 8;
-    populateEnemies();
+    if (enemies.IsEmpty())
+    {
+        populateEnemies();
+    }
+    else
+    {
+        for (FString enemy : enemies)
+        {
+            addEnemy(enemy);
+        }
+    }
 }
 
 void UDriftingBandits::addEnemy(FString enemy) {
@@ -66,7 +79,7 @@ FString UDriftingBandits::createEnemy() {
 }
 
 void UDriftingBandits::giveReward(FString enemy, double reward) {
-    if (!m_Name2Index.Contains(enemy)) {
+d    if (!m_Name2Index.Contains(enemy)) {
         UE_LOG(LogTemp, Error, TEXT("Could not give reward %f for enemy %s because it is not defined in this AI Model"), reward, *enemy);
         return;
     }
