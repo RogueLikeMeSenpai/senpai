@@ -79,7 +79,7 @@ FString UDriftingBandits::createEnemy() {
 }
 
 void UDriftingBandits::giveReward(FString enemy, double reward) {
-d    if (!m_Name2Index.Contains(enemy)) {
+    if (!m_Name2Index.Contains(enemy)) {
         UE_LOG(LogTemp, Error, TEXT("Could not give reward %f for enemy %s because it is not defined in this AI Model"), reward, *enemy);
         return;
     }
