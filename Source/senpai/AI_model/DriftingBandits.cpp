@@ -47,6 +47,7 @@ void UDriftingBandits::populateEnemies() {
 
 }
 
+
 //wipe previous learnings
 void UDriftingBandits::initQtable() {
     for (int i = 0; i < m_EnemyCount;++i) {
@@ -65,6 +66,10 @@ FString UDriftingBandits::createEnemy() {
 }
 
 void UDriftingBandits::giveReward(FString enemy, double reward) {
+    if (!m_Name2Index.Contains(enemy)) {
+        UE_LOG(LogTemp, Error, TEXT("Could not give reward %f for enemy %s because it is not defined in this AI Model"), reward, *enemy);
+        return;
+    }
     unsigned int enemyI = *m_Name2Index.Find(enemy);
     m_Ntable[enemyI] ++;
     m_Qtable[enemyI] = m_rho * (1 - pow(m_rho, m_Ntable[enemyI] - 1)) / (1 - pow(m_rho, m_Ntable[enemyI])) * m_Qtable[enemyI] + (1 - m_rho) / (1 - pow(m_rho, m_Ntable[enemyI])) * reward;
