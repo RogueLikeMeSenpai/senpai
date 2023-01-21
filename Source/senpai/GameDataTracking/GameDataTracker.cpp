@@ -253,6 +253,7 @@ void UGameDataTracker::fetchParticipation(FString participationId)
 
     FParticipation participationLogin;
     participationLogin.id = participationId;
+    participationLogin.assignGameConfig = true;
 
     FString ContentJsonString;
     GetJsonStringFromStruct(participationLogin, ContentJsonString);
@@ -271,12 +272,12 @@ void UGameDataTracker::loadParticipation()
         if (saveGame) 
         {
             this->participation = saveGame->participation;
-            this->onParticipationChange.Broadcast(this->participation, true);
+            this->onParticipationChange.Broadcast(this->participation, true, "");
         }
     }    
     else
     {
-        this->onParticipationChange.Broadcast(this->participation, false);
+        this->onParticipationChange.Broadcast(this->participation, false, "");
     }
     
 }
@@ -291,7 +292,7 @@ void UGameDataTracker::saveParticipation()
 void UGameDataTracker::deleteParticipation()
 {
     UGameplayStatics::DeleteGameInSlot(participationSlotName, 0);
-    this->onParticipationChange.Broadcast(this->participation, false);
+    this->onParticipationChange.Broadcast(this->participation, false, "");
 }
 
 void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
@@ -321,11 +322,11 @@ void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponseP
 void UGameDataTracker::fetchParticipationResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 {
     if (!ResponseIsValid(Response, bWasSuccessful)) {
-        this->onParticipationChange.Broadcast(this->participation, false);
+        this->onParticipationChange.Broadcast(this->participation, false, FString("Invalid code"));
         return;
     }
     GetStructFromJsonString(Response, this->participation);
-    this->onParticipationChange.Broadcast(this->participation, true);
+    this->onParticipationChange.Broadcast(this->participation, true, "");
     this->saveParticipation();
 }
 

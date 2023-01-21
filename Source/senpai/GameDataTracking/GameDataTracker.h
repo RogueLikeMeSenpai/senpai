@@ -88,7 +88,7 @@ static const FString participationSlotName = "participation";
 
 DECLARE_DYNAMIC_DELEGATE_OneParam(FDelegateLoggedIn, FAuthUser, user);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnParticipationChange, FParticipation, participation, bool, valid);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnParticipationChange, FParticipation, participation, bool, valid, FString, error);
 
 /**
  * 

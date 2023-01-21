@@ -8,5 +8,7 @@ struct FParticipation {
 	GENERATED_BODY()
 	UPROPERTY(BlueprintReadOnly) FString id;
 	UPROPERTY(BlueprintReadOnly) bool submittedSurvey;
-	UPROPERTY(BlueprintReadOnly) FString gameConfigurationId;
+	UPROPERTY(BlueprintReadOnly) FString gameConfigId;
+	UPROPERTY(BlueprintReadOnly) bool assignGameConfig;
 };
+
