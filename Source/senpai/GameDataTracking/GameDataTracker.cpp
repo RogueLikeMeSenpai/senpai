@@ -362,23 +362,36 @@ void UGameDataTracker::UploadEvents()
     IFileManager& FileManager = IFileManager::Get();
     FileManager.FindFiles(files, *pathWildcard, true, false);
 
-    for (auto file : files) {
+    for (auto& fileName : files) {
+        FString fullFilePath = FPaths::Combine(participationDirectory, fileName);
         FString content;
-        FFileHelper::LoadFileToString(content, *file);
-        UE_LOG(LogTemp, Display, TEXT("fileContent: %s"), *content);
+        if (FFileHelper::LoadFileToString(content, *fullFilePath, FFileHelper::EHashOptions::None)) {
+            UE_LOG(LogTemp, Display, TEXT("Read file '%s'"), *fullFilePath);
+            track(content);
+        }
+        else {
+            UE_LOG(LogTemp, Warning, TEXT("Could not read file '%s'"), *fullFilePath, *content);
+        }
+        
     }
-    
-    /*FString filePath = FPaths::Combine(participationDirectory, fileName);
 
-    IPlatformFile& FileManager = FPlatformFileManager::Get().GetPlatformFile();
+}
 
-    if (FFileHelper::SaveStringToFile(content, *filePath))
-    {
-        UE_LOG(LogTemp, Display, TEXT("FileManipulation: Successfully Written '%s'"), *filePath);
+void UGameDataTracker::track(FString& ContentJsonString)
+{
+    TSharedRef Request = PostRequest(trackEndpoint, ContentJsonString, TEXT("application/json"));
+    Request->OnProcessRequestComplete().BindUObject(this, &UGameDataTracker::trackResponse);
+    Send(Request);
+    return;
+
+}
+
+void UGameDataTracker::trackResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+{
+    if (!ResponseIsValid(Response, bWasSuccessful)) {
+
+        return;
     }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("FileManipulation: Failed to write content to '%s'"), *filePath);
-    }*/
-
+    FString responseString = Response->GetContentAsString();
+    UE_LOG(LogTemp, Display, TEXT("successfully uploaded event data. response: '%s'"), *responseString);
 }

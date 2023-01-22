@@ -153,9 +153,12 @@ private:
 	FTimerHandle PersistEventsTimerHandle;
 
 
-	const FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
+	// const FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
+	const FString ApiBaseUrl = "http://localhost:8888";
 	const FString tokenEndpoint = "/.netlify/identity/token";
 	const FString loginEndpoint = "/.netlify/functions/login-participation";
+	const FString trackEndpoint = "/.netlify/functions/track";
+
 	const FString participationDirectory = FPaths::Combine(FPaths::ProjectUserDir(), "participation");
 
 	IHttpRequest* test;
@@ -177,6 +180,8 @@ private:
 	
 	void authTokenResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 	void fetchParticipationResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
+	void track(FString& content);
+	void trackResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);
 
 	/*void requestUser();
 	void userResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);*/
