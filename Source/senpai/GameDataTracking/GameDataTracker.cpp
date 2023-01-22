@@ -9,6 +9,7 @@
 #include "ParticipationSaveGame.h"
 #include "Kismet/GameplayStatics.h"
 
+
 void UGameDataTracker::track(FTrackingEvent event)
 {
 	UE_LOG(LogTemp, Display, TEXT("Tracked event: %s"), *event.name);
@@ -22,10 +23,10 @@ FString UGameDataTracker::toJson()
     {        
         TSharedPtr<FJsonObject> eventJsonObject = MakeShareable(new FJsonObject);        
         eventJsonObject->SetStringField("name", trackingEvent.name);
-        eventJsonObject->SetStringField("gameConfiguration", trackingEvent.gameConfiguration);
+        eventJsonObject->SetStringField("gameConfigId", trackingEvent.gameConfigId);
         eventJsonObject->SetNumberField("run", trackingEvent.run);
         eventJsonObject->SetNumberField("level", trackingEvent.level);
-        eventJsonObject->SetStringField("participant", trackingEvent.participant);
+        eventJsonObject->SetStringField("participationId", trackingEvent.participationId);
         eventJsonObject->SetNumberField("timestamp", trackingEvent.timestamp.ToUnixTimestamp());
 
         TSharedPtr<FJsonObject> dataJsonObject = MakeShareable(new FJsonObject);
@@ -46,9 +47,11 @@ FString UGameDataTracker::toJson()
 
 void UGameDataTracker::writeToFile(FString content, FString fileName)
 {
-    FString filePath = FPaths::ProjectUserDir();
-    filePath.Append(fileName);
-
+    //FString filePath = FPaths::ProjectUserDir();
+    //filePath.Append(fileName);
+    FString filePath = FPaths::Combine(FPaths::ProjectUserDir(), "participation", fileName);
+    
+    
     IPlatformFile& FileManager = FPlatformFileManager::Get().GetPlatformFile();
     
     if (FFileHelper::SaveStringToFile(content, *filePath))
@@ -330,24 +333,23 @@ void UGameDataTracker::fetchParticipationResponse(FHttpRequestPtr Request, FHttp
     this->saveParticipation();
 }
 
-//void UGameDataTracker::requestUser()
-//{    
-//    TSharedRef Request = GetRequest(this->tokenEndpoint);
-//    Request->OnProcessRequestComplete().BindUObject(this, &UGameDataTracker::authTokenResponse);
-//    Send(Request);
-//}
+void UGameDataTracker::startPersistEventsTimer(float rate)
+{
+    GetWorld()->GetTimerManager().SetTimer(PersistEventsTimerHandle, this, &UGameDataTracker::OnPersistEvents, rate, true);
+}
 
-//void UGameDataTracker::userResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
-//{
-//    if (!ResponseIsValid(Response, bWasSuccessful))
-//        return;
-//
-//    UE_LOG(LogTemp, Display, TEXT("httpResponse: Success: %s"), *FString((bWasSuccessful ? "true" : "false")));
-//    FString responseContent = Response->GetContentAsString();
-//    UE_LOG(LogTemp, Display, TEXT("httpResponse: content: %s"), *responseContent);
-//
-//    FUserResponse responseStruct;
-//    GetStructFromJsonString(Response, responseStruct);
-//    
-//    
-//}
+void UGameDataTracker::OnPersistEvents()
+{
+    UE_LOG(LogTemp, Display, TEXT("OnPersistEvents started"));
+    if (events.IsEmpty()) {
+        UE_LOG(LogTemp, Display, TEXT("OnPersistEvents finished. No events to persist"));
+        return;
+    }
+    
+    FString json = toJson();
+    events.Empty(); // TODO thread safe?
+    FString fileName = FPaths::CreateTempFilename(TEXT(""), TEXT("ge_"), TEXT(""));
+    //FString fileName = FString::Printf(TEXT("ge_%lld"), FDateTime::UtcNow().ToUnixTimestamp());
+    writeToFile(json, fileName);
+    UE_LOG(LogTemp, Display, TEXT("OnPersistEvents finished"));
+}

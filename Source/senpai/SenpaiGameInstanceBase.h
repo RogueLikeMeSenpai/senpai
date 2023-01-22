@@ -54,5 +54,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void RegisterSpawn(FString SpawnPointName, FString EnemyConfig);
 
+	UFUNCTION(BlueprintCallable)
+	void track(FString name, TMap<FString, FString> data);
+
 	
 };

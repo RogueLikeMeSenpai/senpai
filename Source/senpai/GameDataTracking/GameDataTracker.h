@@ -17,13 +17,13 @@ struct FTrackingEvent {
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString name;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString gameConfiguration;
+	FString gameConfigId;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 run;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 level;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString participant;
+	FString participationId;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FDateTime timestamp;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -150,6 +150,8 @@ private:
 	UPROPERTY()
 	FAuthUser user;	
 
+	FTimerHandle PersistEventsTimerHandle;
+
 
 	const FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
 	const FString tokenEndpoint = "/.netlify/identity/token";
@@ -177,4 +179,11 @@ private:
 
 	/*void requestUser();
 	void userResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful);*/
+
+	UFUNCTION(BlueprintCallable)
+	void startPersistEventsTimer(float rate);
+
+	UFUNCTION()
+	void OnPersistEvents();
+
 };

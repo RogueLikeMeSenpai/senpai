@@ -169,7 +169,6 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 		if (!bIsDashing) {
 			SetActorRotation(FRotator(0, lookAt.Yaw, 0));
 		}
-		UE_LOG(LogTemp,Warning,TEXT("%i"),bIsDashing);
 	}
 	else
 	{

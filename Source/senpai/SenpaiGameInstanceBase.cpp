@@ -27,3 +27,17 @@ void USenpaiGameInstanceBase::RegisterSpawn(FString SpawnPointName, FString Enem
 
 	this->SpawnHistory.Add(spawnDetails);	
 }
+
+void USenpaiGameInstanceBase::track(FString name, TMap<FString, FString> data)
+{
+	FTrackingEvent event;
+	event.data = data;
+	event.name = name;
+	event.level = this->CurrentLevel;
+	event.run = this->CurrentRun;
+	event.timestamp = FDateTime::UtcNow();
+	event.participationId = this->gameDataTracker->participation.id;
+	event.gameConfigId = this->gameDataTracker->participation.gameConfigId;
+
+	this->gameDataTracker->track(event);
+}
