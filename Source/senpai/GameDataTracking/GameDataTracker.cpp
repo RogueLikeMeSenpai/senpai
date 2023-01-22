@@ -49,8 +49,7 @@ void UGameDataTracker::writeToFile(FString content, FString fileName)
 {
     //FString filePath = FPaths::ProjectUserDir();
     //filePath.Append(fileName);
-    FString filePath = FPaths::Combine(FPaths::ProjectUserDir(), "participation", fileName);
-    
+    FString filePath = FPaths::Combine(participationDirectory, fileName);
     
     IPlatformFile& FileManager = FPlatformFileManager::Get().GetPlatformFile();
     
@@ -352,4 +351,34 @@ void UGameDataTracker::OnPersistEvents()
     //FString fileName = FString::Printf(TEXT("ge_%lld"), FDateTime::UtcNow().ToUnixTimestamp());
     writeToFile(json, fileName);
     UE_LOG(LogTemp, Display, TEXT("OnPersistEvents finished"));
+}
+
+void UGameDataTracker::UploadEvents()
+{
+
+    // FFileHelper::
+    TArray<FString> files;
+    FString pathWildcard = FPaths::Combine(participationDirectory, "ge_*");
+    IFileManager& FileManager = IFileManager::Get();
+    FileManager.FindFiles(files, *pathWildcard, true, false);
+
+    for (auto file : files) {
+        FString content;
+        FFileHelper::LoadFileToString(content, *file);
+        UE_LOG(LogTemp, Display, TEXT("fileContent: %s"), *content);
+    }
+    
+    /*FString filePath = FPaths::Combine(participationDirectory, fileName);
+
+    IPlatformFile& FileManager = FPlatformFileManager::Get().GetPlatformFile();
+
+    if (FFileHelper::SaveStringToFile(content, *filePath))
+    {
+        UE_LOG(LogTemp, Display, TEXT("FileManipulation: Successfully Written '%s'"), *filePath);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("FileManipulation: Failed to write content to '%s'"), *filePath);
+    }*/
+
 }

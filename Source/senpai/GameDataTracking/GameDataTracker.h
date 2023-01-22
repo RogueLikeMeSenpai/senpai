@@ -156,6 +156,7 @@ private:
 	const FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
 	const FString tokenEndpoint = "/.netlify/identity/token";
 	const FString loginEndpoint = "/.netlify/functions/login-participation";
+	const FString participationDirectory = FPaths::Combine(FPaths::ProjectUserDir(), "participation");
 
 	IHttpRequest* test;
 
@@ -185,5 +186,8 @@ private:
 
 	UFUNCTION()
 	void OnPersistEvents();
+
+	UFUNCTION(BlueprintCallable)
+	void UploadEvents();
 
 };
