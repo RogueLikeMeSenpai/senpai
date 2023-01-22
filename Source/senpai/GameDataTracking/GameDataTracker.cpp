@@ -334,10 +334,10 @@ void UGameDataTracker::fetchParticipationResponse(FHttpRequestPtr Request, FHttp
 
 void UGameDataTracker::startPersistEventsTimer(float rate)
 {
-    GetWorld()->GetTimerManager().SetTimer(PersistEventsTimerHandle, this, &UGameDataTracker::OnPersistEvents, rate, true);
+    GetWorld()->GetTimerManager().SetTimer(PersistEventsTimerHandle, this, &UGameDataTracker::PersistEvents, rate, true);
 }
 
-void UGameDataTracker::OnPersistEvents()
+void UGameDataTracker::PersistEvents()
 {
     UE_LOG(LogTemp, Display, TEXT("OnPersistEvents started"));
     if (events.IsEmpty()) {

@@ -12,7 +12,7 @@
 
 
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDealtDamageSignature, float, Damage, AActor*, DamagedActor);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FDealtDamageSignature, float, Damage, AActor*, DamagedActor, UClass*, WeaponClass);
 
 UCLASS()
 class SENPAI_API ABaseWeapon : public AActor

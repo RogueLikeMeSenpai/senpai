@@ -88,8 +88,8 @@ void ABaseWeapon::Tick(float DeltaTime)
 }
 
 void ABaseWeapon::TriggerDamageDealt(float Damage, AActor* DamagedActor)
-{
-	OnDealtDamage.Broadcast(Damage, DamagedActor);
+{	
+	OnDealtDamage.Broadcast(Damage, DamagedActor, this->GetClass());
 }
 
 //void ABaseWeapon::DealtDamage()

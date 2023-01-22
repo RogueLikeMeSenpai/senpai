@@ -189,8 +189,8 @@ private:
 	UFUNCTION(BlueprintCallable)
 	void startPersistEventsTimer(float rate);
 
-	UFUNCTION()
-	void OnPersistEvents();
+	UFUNCTION(BlueprintCallable)
+	void PersistEvents();
 
 	UFUNCTION(BlueprintCallable)
 	void UploadEvents();
