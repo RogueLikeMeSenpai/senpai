@@ -27,7 +27,7 @@ FString UGameDataTracker::toJson()
         eventJsonObject->SetNumberField("run", trackingEvent.run);
         eventJsonObject->SetNumberField("level", trackingEvent.level);
         eventJsonObject->SetStringField("participationId", trackingEvent.participationId);
-        eventJsonObject->SetNumberField("timestamp", trackingEvent.timestamp.ToUnixTimestamp());
+        eventJsonObject->SetStringField("timestamp", trackingEvent.timestamp.ToIso8601());
 
         TSharedPtr<FJsonObject> dataJsonObject = MakeShareable(new FJsonObject);
         for (auto& dataPair : trackingEvent.data)

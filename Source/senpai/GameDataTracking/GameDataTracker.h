@@ -153,8 +153,8 @@ private:
 	FTimerHandle PersistEventsTimerHandle;
 
 
-	// const FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
-	const FString ApiBaseUrl = "http://localhost:8888";
+	 const FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
+	//const FString ApiBaseUrl = "http://localhost:8888";
 	const FString tokenEndpoint = "/.netlify/identity/token";
 	const FString loginEndpoint = "/.netlify/functions/login-participation";
 	const FString trackEndpoint = "/.netlify/functions/track";
