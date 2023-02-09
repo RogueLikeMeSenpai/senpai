@@ -56,7 +56,7 @@ void UBaseHealthComponent::ReceiveDamage(float Damage)
 	CurrentHealth -= Damage;
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0.f, MaxHealth);
 	//UE_LOG(LogTemp, Warning, TEXT("%s got %f damage"), *GetName(), Damage);
-	OnHealthChanged.Broadcast(GetOwner());
+	OnHealthChanged.Broadcast(GetOwner(), Damage);
 	if(CurrentHealth <= 0.f)
 	{
 		//Dead

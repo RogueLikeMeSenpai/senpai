@@ -7,7 +7,7 @@
 #include "BaseHealthComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeathSignature, AActor*, DeadActor);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHealthChangedSignature, AActor*, Owner);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHealthChangedSignature, AActor*, Owner, float, change);
 
 
 UCLASS(Blueprintable, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
