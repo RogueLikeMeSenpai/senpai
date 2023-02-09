@@ -29,12 +29,14 @@ FString UGameDataTracker::toJson()
         eventJsonObject->SetStringField("participationId", trackingEvent.participationId);
         eventJsonObject->SetStringField("timestamp", trackingEvent.timestamp.ToIso8601());
 
-        TSharedPtr<FJsonObject> dataJsonObject = MakeShareable(new FJsonObject);
-        for (auto& dataPair : trackingEvent.data)
-        {
-            dataJsonObject->SetStringField(dataPair.Key, dataPair.Value);
+        if (!trackingEvent.data.IsEmpty()) {
+            TSharedPtr<FJsonObject> dataJsonObject = MakeShareable(new FJsonObject);
+            for (auto& dataPair : trackingEvent.data)
+            {
+                dataJsonObject->SetStringField(dataPair.Key, dataPair.Value);
+            }
+            eventJsonObject->SetObjectField("data", dataJsonObject);
         }
-        eventJsonObject->SetObjectField("data", dataJsonObject);
         
         eventsJsonArray.Add(MakeShareable(new FJsonValueObject(eventJsonObject)));
     }
