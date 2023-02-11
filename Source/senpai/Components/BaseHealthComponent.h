@@ -6,7 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "BaseHealthComponent.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDeathSignature, AActor*, DeadActor);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FDeathSignature, AActor*, DeadActor, AActor*, DamageCauser);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FHealthChangedSignature, AActor*, Owner, float, change);
 
 
@@ -36,13 +36,13 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	void ReceiveDamage(float Damage);
+	void ReceiveDamage(float Damage, AActor* DamageCauser);
 
 	UFUNCTION()
 	void DamageActor(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
 
 	UFUNCTION()
-	void KillActor(AActor* DeadActor);
+	void KillActor(AActor* DeadActor, AActor* DamageCauser);
 
 public:	
 	// Called every frame

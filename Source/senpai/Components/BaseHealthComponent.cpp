@@ -31,11 +31,11 @@ void UBaseHealthComponent::BeginPlay()
 void UBaseHealthComponent::DamageActor(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
 	AController* InstigatedBy, AActor* DamageCauser)
 {
-	ReceiveDamage(Damage);
+	ReceiveDamage(Damage, DamageCauser);
 	//UE_LOG(LogTemp, Warning, TEXT("Got %f Damage"), Damage);
 }
 
-void UBaseHealthComponent::KillActor(AActor* DeadActor)
+void UBaseHealthComponent::KillActor(AActor* DeadActor, AActor* DamageCauser)
 {
 	//UE_LOG(LogTemp, Warning, TEXT("%s died!"), *GetName());
 	GetOwner()->OnTakeAnyDamage.RemoveAll(this);
@@ -51,7 +51,7 @@ void UBaseHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 }
 
 
-void UBaseHealthComponent::ReceiveDamage(float Damage)
+void UBaseHealthComponent::ReceiveDamage(float Damage, AActor* DamageCauser)
 {
 	CurrentHealth -= Damage;
 	CurrentHealth = FMath::Clamp(CurrentHealth, 0.f, MaxHealth);
@@ -62,7 +62,7 @@ void UBaseHealthComponent::ReceiveDamage(float Damage)
 		//Dead
 		//UE_LOG(LogTemp, Warning, TEXT("%s should die"), *GetName());
 		GetOwner()->OnTakeAnyDamage.RemoveAll(this);
-		OnDeath.Broadcast(GetOwner());
+		OnDeath.Broadcast(GetOwner(), DamageCauser);
 	}
 }
 
