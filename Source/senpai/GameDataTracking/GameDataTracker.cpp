@@ -251,7 +251,7 @@ bool UGameDataTracker::isLoggedIn()
     return false;
 }
 
-void UGameDataTracker::fetchParticipation(FString participationId)
+void UGameDataTracker::fetchParticipation(FString participationId, bool completeGameplay, bool completeDataUpload)
 {
     // this->participation.id = participationId;
     // this->participation.gameConfigurationId = "fetched gc";
@@ -260,6 +260,8 @@ void UGameDataTracker::fetchParticipation(FString participationId)
     FParticipation participationLogin;
     participationLogin.id = participationId;
     participationLogin.assignGameConfig = true;
+    participationLogin.completeGameplay = completeGameplay;
+    participationLogin.completeDataUpload = completeDataUpload;
 
     FString ContentJsonString;
     GetJsonStringFromStruct(participationLogin, ContentJsonString);
@@ -375,10 +377,9 @@ void UGameDataTracker::UploadEvents()
         }
         else {
             UE_LOG(LogTemp, Warning, TEXT("Could not read file '%s'"), *fullFilePath, *content);
-        }
-        
+        }        
     }
-
+    fetchParticipation(participation.id, false, true);
 }
 
 void UGameDataTracker::track(FString& ContentJsonString)

@@ -128,7 +128,7 @@ public:
 	UPROPERTY(BlueprintAssignable) FOnParticipationChange onParticipationChange;
 
 	UFUNCTION(BlueprintCallable) 
-	void fetchParticipation(FString participationId);
+	void fetchParticipation(FString participationId, bool completeGameplay, bool completeDataUpload);
 
 	UFUNCTION(BlueprintCallable)
 	void loadParticipation();
