@@ -100,6 +100,9 @@ class SENPAI_API UGameDataTracker : public UObject
 
 public:
 
+	UPROPERTY(BlueprintReadOnly)
+	FString websiteUrl = "https://dreamy-kelpie-61e7a3.netlify.app/";
+
 	UFUNCTION(BlueprintCallable)
 	void track(FTrackingEvent event);
 

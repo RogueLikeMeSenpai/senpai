@@ -146,6 +146,7 @@ void UGameDataTracker::makeHttpRequest()
 
 TSharedRef<IHttpRequest, ESPMode::ThreadSafe> UGameDataTracker::PostRequest(FString Subroute, FString Content, FString contentType)
 {
+    UE_LOG(LogTemp, Display, TEXT("post request on subroute %s with content %s and type %s"), *Subroute, *Content, *contentType);
     TSharedRef Request = RequestWithRoute(Subroute, contentType);
     Request->SetVerb("POST");
     Request->SetContentAsString(Content);
@@ -208,7 +209,8 @@ bool UGameDataTracker::ResponseIsValid(FHttpResponsePtr Response, bool bWasSucce
         return true; 
     else 
     { 
-        UE_LOG(LogTemp, Warning, TEXT("Http Response returned error code: %d"), Response->GetResponseCode()); 
+        UE_LOG(LogTemp, Warning, TEXT("Http Response returned error code %d and response %s"), Response->GetResponseCode(), *Response->GetContentAsString());
+        
         return false; 
     }
     return false;
@@ -326,7 +328,7 @@ void UGameDataTracker::authTokenResponse(FHttpRequestPtr Request, FHttpResponseP
 void UGameDataTracker::fetchParticipationResponse(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 {
     if (!ResponseIsValid(Response, bWasSuccessful)) {
-        this->onParticipationChange.Broadcast(this->participation, false, FString("Invalid code"));
+        this->onParticipationChange.Broadcast(this->participation, false, Response->GetContentAsString());
         return;
     }
     GetStructFromJsonString(Response, this->participation);
