@@ -279,8 +279,9 @@ void UGameDataTracker::loadParticipation()
         UParticipationSaveGame* saveGame = Cast<UParticipationSaveGame>(UGameplayStatics::LoadGameFromSlot(participationSlotName, 0));
         if (saveGame) 
         {
-            this->participation = saveGame->participation;
-            this->onParticipationChange.Broadcast(this->participation, true, "");
+            fetchParticipation(saveGame->participation.id, false, false);
+            /*this->participation = saveGame->participation;
+            this->onParticipationChange.Broadcast(this->participation, true, "");*/
         }
     }    
     else
