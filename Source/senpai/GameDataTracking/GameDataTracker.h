@@ -101,7 +101,7 @@ class SENPAI_API UGameDataTracker : public UObject
 public:
 
 	UPROPERTY(BlueprintReadOnly)
-	FString websiteUrl = "https://dreamy-kelpie-61e7a3.netlify.app/";
+	FString websiteUrl = "https://sanu.at/";
 
 	UFUNCTION(BlueprintCallable)
 	void track(FTrackingEvent event);
@@ -156,7 +156,7 @@ private:
 	FTimerHandle PersistEventsTimerHandle;
 
 
-	 const FString ApiBaseUrl = "https://dreamy-kelpie-61e7a3.netlify.app";
+	 const FString ApiBaseUrl = "https://sanu.at";
 	//const FString ApiBaseUrl = "http://localhost:8888";
 	const FString tokenEndpoint = "/.netlify/identity/token";
 	const FString loginEndpoint = "/.netlify/functions/login-participation";
