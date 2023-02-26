@@ -165,6 +165,7 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 
 		FVector location = Intersection;
 		FRotator lookAt = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), location);
+		this->customRotation = lookAt;
 		//DrawDebugSphere(GetWorld(),location,50,32,FColor::Red);
 		if (!bIsDashing) {
 			SetActorRotation(FRotator(0, lookAt.Yaw, 0));
@@ -183,6 +184,7 @@ void ATP_ThirdPersonCharacter::Tick(float DeltaSeconds)
 			FVector CameraRelativeLocation = forward * -GamePadLookAtDirection.Y + right * GamePadLookAtDirection.X;
 			FRotator lookAt = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(),
 			                                                         GetActorLocation() + CameraRelativeLocation);
+			this->customRotation = lookAt;
 			// UE_LOG(LogTemp, Warning, TEXT("relative vector: %f %f %f"), CameraRelativeLocation.X,
 			//        CameraRelativeLocation.Y, CameraRelativeLocation.Z)
 			if (!bIsDashing) {

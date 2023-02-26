@@ -31,6 +31,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Health)
 	bool bIsDead;
 
+	UPROPERTY(BlueprintReadOnly)
+	FRotator customRotation;
+
 protected:
 
 	/** Called for forwards/backward input */
