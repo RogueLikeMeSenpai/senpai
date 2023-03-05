@@ -57,5 +57,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void track(FString name, TMap<FString, FString> data);
 
+private:
+	FString m_projectVersion;
+	FString GetProjectVersion();
 	
 };

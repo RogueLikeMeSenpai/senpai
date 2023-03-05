@@ -6,6 +6,7 @@
 USenpaiGameInstanceBase::USenpaiGameInstanceBase()
 {
 	gameDataTracker = CreateDefaultSubobject<UGameDataTracker>(TEXT("GameDataTracker0"));
+	m_projectVersion = GetProjectVersion();
 }
 
 void USenpaiGameInstanceBase::RegisterLevelChange(int32 Level, bool death)
@@ -31,6 +32,7 @@ void USenpaiGameInstanceBase::RegisterSpawn(FString SpawnPointName, FString Enem
 void USenpaiGameInstanceBase::track(FString name, TMap<FString, FString> data)
 {
 	FTrackingEvent event;
+	event.projectVersion = m_projectVersion;
 	event.data = data;
 	event.name = name;
 	event.level = this->CurrentLevel;
@@ -40,4 +42,17 @@ void USenpaiGameInstanceBase::track(FString name, TMap<FString, FString> data)
 	event.gameConfigId = this->gameDataTracker->participation.gameConfigId;
 
 	this->gameDataTracker->track(event);
+}
+
+FString USenpaiGameInstanceBase::GetProjectVersion()
+{
+	FString AppVersion;
+	GConfig->GetString(
+		TEXT("/Script/EngineSettings.GeneralProjectSettings"),
+		TEXT("ProjectVersion"),
+		AppVersion,
+		GGameIni
+	);
+
+	return AppVersion;
 }
